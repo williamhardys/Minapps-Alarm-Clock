@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ClockViewController.swift
 //  minapps-alarm-clock
 //
 //  Created by Jibran Syed on 12/8/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController 
+class ClockViewController: UIViewController 
 {
 
     override func viewDidLoad() 
