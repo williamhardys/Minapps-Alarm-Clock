@@ -13,6 +13,10 @@
 		5153C3BC1FDAD3AD0037B3C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3BA1FDAD3AD0037B3C7 /* LaunchScreen.storyboard */; };
 		5153C3C71FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3C61FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift */; };
 		5153C3D51FDADBCD0037B3C7 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3D41FDADBCD0037B3C7 /* ClockViewController.swift */; };
+		5153C3DE1FDB966B0037B3C7 /* Nouveau_IBM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3DD1FDB966B0037B3C7 /* Nouveau_IBM.ttf */; };
+		5153C3E11FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3E01FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav */; };
+		5153C3E31FDC3DE50037B3C7 /* ClockTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3E21FDC3DE50037B3C7 /* ClockTimeData.swift */; };
+		5153C3E51FDC543C0037B3C7 /* TimeMeridiem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3E41FDC543C0037B3C7 /* TimeMeridiem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		5153C3C61FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = minapps_alarm_clockTests.swift; sourceTree = "<group>"; };
 		5153C3C81FDAD3AD0037B3C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5153C3D41FDADBCD0037B3C7 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
+		5153C3DD1FDB966B0037B3C7 /* Nouveau_IBM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nouveau_IBM.ttf; sourceTree = "<group>"; };
+		5153C3E01FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "123349__tempouser__digital-alarm.wav"; sourceTree = "<group>"; };
+		5153C3E21FDC3DE50037B3C7 /* ClockTimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTimeData.swift; sourceTree = "<group>"; };
+		5153C3E41FDC543C0037B3C7 /* TimeMeridiem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMeridiem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 		5153C3B01FDAD3AD0037B3C7 /* minapps-alarm-clock */ = {
 			isa = PBXGroup;
 			children = (
+				5153C3DF1FDC3CED0037B3C7 /* Sounds */,
 				5153C3D61FDAE0FA0037B3C7 /* Fonts */,
 				5153C3D31FDAD9CE0037B3C7 /* Model */,
 				5153C3D21FDAD9C90037B3C7 /* View */,
@@ -117,6 +126,8 @@
 		5153C3D31FDAD9CE0037B3C7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5153C3E21FDC3DE50037B3C7 /* ClockTimeData.swift */,
+				5153C3E41FDC543C0037B3C7 /* TimeMeridiem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,8 +135,17 @@
 		5153C3D61FDAE0FA0037B3C7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				5153C3DD1FDB966B0037B3C7 /* Nouveau_IBM.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5153C3DF1FDC3CED0037B3C7 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				5153C3E01FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +232,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5153C3BC1FDAD3AD0037B3C7 /* LaunchScreen.storyboard in Resources */,
+				5153C3DE1FDB966B0037B3C7 /* Nouveau_IBM.ttf in Resources */,
 				5153C3B91FDAD3AD0037B3C7 /* Assets.xcassets in Resources */,
+				5153C3E11FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav in Resources */,
 				5153C3B71FDAD3AD0037B3C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5153C3E51FDC543C0037B3C7 /* TimeMeridiem.swift in Sources */,
+				5153C3E31FDC3DE50037B3C7 /* ClockTimeData.swift in Sources */,
 				5153C3B21FDAD3AD0037B3C7 /* AppDelegate.swift in Sources */,
 				5153C3D51FDADBCD0037B3C7 /* ClockViewController.swift in Sources */,
 			);
