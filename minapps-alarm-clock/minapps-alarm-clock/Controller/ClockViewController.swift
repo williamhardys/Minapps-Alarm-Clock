@@ -13,6 +13,8 @@ class ClockViewController: UIViewController
     @IBOutlet weak var lblHoursAndMinutes: UILabel!
     @IBOutlet weak var lblSeconds: UILabel!
     @IBOutlet weak var lblAmOrPm: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var lblBatteryGadge: UILabel!
     
     
     private var clockTimer: Timer?
