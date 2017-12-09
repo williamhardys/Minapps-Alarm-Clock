@@ -9,7 +9,7 @@
 import Foundation
 
 
-class ClockTimeData
+struct ClockTimeData
 {
     private var _hoursAbsolute: Int
     private var _minutes: Int
@@ -28,7 +28,14 @@ class ClockTimeData
     {
         get
         {
-            return self._hoursAbsolute
+            let remainder = self._hoursAbsolute % 12
+            
+            if remainder == 0
+            {
+                return 12
+            }
+            
+            return remainder
         }
     }
     
@@ -36,7 +43,12 @@ class ClockTimeData
     {
         get
         {
-            return .am
+            if self._hoursAbsolute < 12
+            {
+                return .am
+            }
+            
+            return .pm
         }
     }
     
@@ -79,7 +91,10 @@ class ClockTimeData
     }
     
     
-    func updateTime(withDate date: Date)
+    
+    
+    
+    mutating func updateTime(withDate date: Date)
     {
         let cal = Calendar.current
         
@@ -89,7 +104,7 @@ class ClockTimeData
     }
     
     
-    func updateTime(withHours hours: Int, minutes: Int, andSeconds seconds: Int)
+    mutating func updateTime(withHours hours: Int, minutes: Int, andSeconds seconds: Int)
     {
         self._hoursAbsolute = hours
         self._minutes = minutes
