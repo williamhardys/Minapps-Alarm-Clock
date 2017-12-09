@@ -106,36 +106,9 @@ struct ClockTimeData
     
     mutating func updateTime(withHours hours: Int, minutes: Int, andSeconds seconds: Int)
     {
-        self._hoursAbsolute = hours
-        self._minutes = minutes
-        self._seconds = seconds
-        
-        if _hoursAbsolute > 23
-        {
-            _hoursAbsolute = 23
-        }
-        else if _hoursAbsolute < 0
-        {
-            _hoursAbsolute = 0
-        }
-        
-        if _minutes > 59
-        {
-            _minutes = 59
-        }
-        else if _minutes < 0
-        {
-            _minutes = 0
-        }
-        
-        if _seconds > 59
-        {
-            _seconds = 59
-        }
-        else if _seconds < 0
-        {
-            _seconds = 0
-        }
+        self._hoursAbsolute = hours % 24
+        self._minutes = minutes % 60
+        self._seconds = seconds % 60
     }
     
 }
