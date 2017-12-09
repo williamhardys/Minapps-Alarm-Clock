@@ -76,4 +76,107 @@ class ClockTimeDataTests: XCTestCase
         XCTAssertEqual(timeData.seconds, 18)
     }
     
+    
+    func testHour24()
+    {
+        let inHours = 13
+        
+        let timeData = ClockTimeData(withHours: inHours, minutes: 0, andSeconds: 0)
+        
+        XCTAssertEqual(timeData.hours24, inHours)
+    }
+    
+    
+    func testHour12()
+    {
+        var timeData = ClockTimeData(withHours: 0, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 12)
+        
+        timeData.updateTime(withHours: 1, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 1)
+        
+        timeData.updateTime(withHours: 2, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 2)
+        
+        timeData.updateTime(withHours: 3, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 3)
+        
+        timeData.updateTime(withHours: 10, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 10)
+        
+        timeData.updateTime(withHours: 11, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 11)
+        
+        timeData.updateTime(withHours: 12, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 12)
+        
+        timeData.updateTime(withHours: 13, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 1)
+        
+        timeData.updateTime(withHours: 14, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 2)
+        
+        timeData.updateTime(withHours: 15, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 3)
+        
+        timeData.updateTime(withHours: 21, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 9)
+        
+        timeData.updateTime(withHours: 22, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 10)
+        
+        timeData.updateTime(withHours: 23, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 11)
+        
+        timeData.updateTime(withHours: 24, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.hours12, 12)
+    }
+    
+    
+    func testAmOrPM()
+    {
+        var timeData = ClockTimeData(withHours: 0, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .am)
+        
+        timeData.updateTime(withHours: 1, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .am)
+        
+        timeData.updateTime(withHours: 2, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .am)
+        
+        timeData.updateTime(withHours: 3, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .am)
+        
+        timeData.updateTime(withHours: 10, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .am)
+        
+        timeData.updateTime(withHours: 11, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .am)
+        
+        timeData.updateTime(withHours: 12, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .pm)
+        
+        timeData.updateTime(withHours: 13, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .pm)
+        
+        timeData.updateTime(withHours: 14, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .pm)
+        
+        timeData.updateTime(withHours: 15, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .pm)
+        
+        timeData.updateTime(withHours: 21, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .pm)
+        
+        timeData.updateTime(withHours: 22, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .pm)
+        
+        timeData.updateTime(withHours: 23, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .pm)
+        
+        timeData.updateTime(withHours: 24, minutes: 0, andSeconds: 0)
+        XCTAssertEqual(timeData.amOrPm, .am)
+    }
+    
+    
 }
