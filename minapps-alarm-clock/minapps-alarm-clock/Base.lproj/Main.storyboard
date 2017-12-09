@@ -50,6 +50,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="lblHoursAndMinutes" destination="JLf-cy-NQ8" id="EGs-3v-xeH"/>
+                        <outlet property="lblSeconds" destination="QmY-NJ-a5B" id="sEV-lf-1Gt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
