@@ -110,6 +110,13 @@ struct ClockTimeData
     
     
     
+    init() 
+    {
+        self._hoursAbsolute = 0
+        self._minutes = 0
+        self._seconds = 0
+    }
+    
     init(withDate date: Date) 
     {
         self._hoursAbsolute = 0

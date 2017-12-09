@@ -15,7 +15,7 @@ class ClockViewController: UIViewController
     
     
     private var clockTimer: Timer?
-    
+    private var clockData = ClockTimeData()
     
     
     override func viewDidLoad() 
@@ -79,6 +79,7 @@ class ClockViewController: UIViewController
     
     private func updateClockFace()
     {
+        /*
         let currentTime = Date()
         let cal = Calendar.current
         
@@ -90,6 +91,14 @@ class ClockViewController: UIViewController
         
         self.lblHoursAndMinutes.text = "\(trailingHourSpace)\(hours):\(String(format: "%02d", minutes))"
         self.lblSeconds.text = ":\(String(format: "%02d", seconds))"
+         */
+        
+        // Get current time
+        self.clockData = ClockTimeData(withDate: Date())
+        
+        // Output string values
+        self.lblHoursAndMinutes.text = "\(self.clockData.hoursText24):\(self.clockData.minutesText)"
+        self.lblSeconds.text = ":\(self.clockData.secondsText)"
     }
     
 }

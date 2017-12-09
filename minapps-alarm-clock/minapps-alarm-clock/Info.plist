@@ -51,5 +51,7 @@
 	<array>
 		<string>Nouveau_IBM.ttf</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
