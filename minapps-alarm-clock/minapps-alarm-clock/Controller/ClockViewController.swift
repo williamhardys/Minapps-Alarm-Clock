@@ -12,6 +12,7 @@ class ClockViewController: UIViewController
 {
     @IBOutlet weak var lblHoursAndMinutes: UILabel!
     @IBOutlet weak var lblSeconds: UILabel!
+    @IBOutlet weak var lblAmOrPm: UILabel!
     
     
     private var clockTimer: Timer?
@@ -79,26 +80,14 @@ class ClockViewController: UIViewController
     
     private func updateClockFace()
     {
-        /*
-        let currentTime = Date()
-        let cal = Calendar.current
-        
-        let hours = cal.component(.hour, from: currentTime)
-        let minutes = cal.component(.minute, from: currentTime)
-        let seconds = cal.component(.second, from: currentTime)
-        
-        let trailingHourSpace = (hours < 10) ? " " : ""     // Needed for consistent text layout when jumping from hr 12 to hr 01
-        
-        self.lblHoursAndMinutes.text = "\(trailingHourSpace)\(hours):\(String(format: "%02d", minutes))"
-        self.lblSeconds.text = ":\(String(format: "%02d", seconds))"
-         */
-        
         // Get current time
         self.clockData = ClockTimeData(withDate: Date())
         
         // Output string values
-        self.lblHoursAndMinutes.text = "\(self.clockData.hoursText24):\(self.clockData.minutesText)"
+        self.lblHoursAndMinutes.text = "\(self.clockData.hoursText12):\(self.clockData.minutesText)"
         self.lblSeconds.text = ":\(self.clockData.secondsText)"
+        //self.lblSeconds.text = ""
+        self.lblAmOrPm.text = " \(self.clockData.amOrPmText.uppercased())"
     }
     
 }

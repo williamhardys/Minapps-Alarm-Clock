@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,20 +20,26 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ClockViewController" customModule="minapps_alarm_clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gR2-l9-Nup">
-                                <rect key="frame" x="32" y="214" width="311" height="240"/>
+                                <rect key="frame" x="32" y="87" width="672" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-cy-NQ8">
-                                        <rect key="frame" x="0.0" y="0.0" width="226" height="240"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="383.66666666666669" height="240"/>
                                         <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="240"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" text=":00" lineBreakMode="tailTruncation" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="QmY-NJ-a5B">
-                                        <rect key="frame" x="226" y="0.0" width="85" height="240"/>
+                                        <rect key="frame" x="383.66666666666669" y="0.0" width="144.33333333333331" height="240"/>
+                                        <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="150"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" text=" AM" lineBreakMode="tailTruncation" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="Gfb-6N-4Rm">
+                                        <rect key="frame" x="528" y="0.0" width="144" height="240"/>
                                         <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="150"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -51,6 +57,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="lblAmOrPm" destination="Gfb-6N-4Rm" id="26B-b6-Cqq"/>
                         <outlet property="lblHoursAndMinutes" destination="JLf-cy-NQ8" id="EGs-3v-xeH"/>
                         <outlet property="lblSeconds" destination="QmY-NJ-a5B" id="sEV-lf-1Gt"/>
                     </connections>
