@@ -68,6 +68,45 @@ struct ClockTimeData
         }
     }
     
+    var hoursText24: String
+    {
+        get
+        {
+            return self.formatHourString(hourValue: self.hours24)
+        }
+    }
+    
+    var hoursText12: String
+    {
+        get
+        {
+            return self.formatHourString(hourValue: self.hours24)
+        }
+    }
+    
+    var amOrPmText: String
+    {
+        get
+        {
+            return self.amOrPm.rawValue
+        }
+    }
+    
+    var minutesText: String
+    {
+        get
+        {
+            return "\(String(format: "%02d", self._minutes))"
+        }
+    }
+    
+    var secondsText: String
+    {
+        get
+        {
+            return "\(String(format: "%02d", self._seconds))"
+        }
+    }
     
     
     
@@ -109,6 +148,13 @@ struct ClockTimeData
         self._hoursAbsolute = hours % 24
         self._minutes = minutes % 60
         self._seconds = seconds % 60
+    }
+    
+    
+    private func formatHourString(hourValue: Int) -> String
+    {
+        let trailingHourSpace = (hourValue < 10) ? " " : ""     // Needed for consistent text layout when jumping from hr 12 to hr 01
+        return "\(trailingHourSpace)\(hourValue)"
     }
     
 }

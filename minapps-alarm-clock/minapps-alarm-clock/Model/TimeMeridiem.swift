@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum TimeMeridiem
+enum TimeMeridiem: String
 {
-    case am
-    case pm
+    case am = "am"
+    case pm = "pm"
 }
