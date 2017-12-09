@@ -80,7 +80,7 @@ struct ClockTimeData
     {
         get
         {
-            return self.formatHourString(hourValue: self.hours24)
+            return self.formatHourString(hourValue: self.hours12)
         }
     }
     

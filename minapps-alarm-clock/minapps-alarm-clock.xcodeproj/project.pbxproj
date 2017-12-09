@@ -11,7 +11,6 @@
 		5153C3B71FDAD3AD0037B3C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3B51FDAD3AD0037B3C7 /* Main.storyboard */; };
 		5153C3B91FDAD3AD0037B3C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3B81FDAD3AD0037B3C7 /* Assets.xcassets */; };
 		5153C3BC1FDAD3AD0037B3C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3BA1FDAD3AD0037B3C7 /* LaunchScreen.storyboard */; };
-		5153C3C71FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3C61FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift */; };
 		5153C3D51FDADBCD0037B3C7 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3D41FDADBCD0037B3C7 /* ClockViewController.swift */; };
 		5153C3DE1FDB966B0037B3C7 /* Nouveau_IBM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3DD1FDB966B0037B3C7 /* Nouveau_IBM.ttf */; };
 		5153C3E11FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3E01FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav */; };
@@ -38,7 +37,6 @@
 		5153C3BB1FDAD3AD0037B3C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5153C3BD1FDAD3AD0037B3C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5153C3C21FDAD3AD0037B3C7 /* minapps-alarm-clockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "minapps-alarm-clockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5153C3C61FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = minapps_alarm_clockTests.swift; sourceTree = "<group>"; };
 		5153C3C81FDAD3AD0037B3C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5153C3D41FDADBCD0037B3C7 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		5153C3DD1FDB966B0037B3C7 /* Nouveau_IBM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nouveau_IBM.ttf; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 		5153C3C51FDAD3AD0037B3C7 /* minapps-alarm-clockTests */ = {
 			isa = PBXGroup;
 			children = (
-				5153C3C61FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift */,
 				5153C3C81FDAD3AD0037B3C7 /* Info.plist */,
 				5153C3E61FDC5C450037B3C7 /* ClockTimeDataTests.swift */,
 			);
@@ -267,7 +264,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5153C3C71FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift in Sources */,
 				5153C3E71FDC5C450037B3C7 /* ClockTimeDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
