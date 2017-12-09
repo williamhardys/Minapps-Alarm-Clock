@@ -23,10 +23,11 @@ class ClockViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Needed to prevent user from seeing 00:00 on app start
         self.updateClockFace()
         
         // Just in case
-        self.clockTimer?.invalidate()
+        self.stopClockTimer()
         
         // Initialize
         self.initializeClockTimer()
@@ -38,6 +39,7 @@ class ClockViewController: UIViewController
         
         if self.clockTimer?.isValid == false
         {
+            self.stopClockTimer()
             self.initializeClockTimer()
         }
     }
@@ -45,7 +47,7 @@ class ClockViewController: UIViewController
     
     override func viewWillDisappear(_ animated: Bool) 
     {
-        self.clockTimer?.invalidate()
+        self.stopClockTimer()
         
         super.viewWillDisappear(animated)
     }
@@ -56,7 +58,7 @@ class ClockViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
-        self.clockTimer?.invalidate()
+        self.stopClockTimer()
     }
     
     
@@ -65,6 +67,13 @@ class ClockViewController: UIViewController
         self.clockTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (timer) in
             self.updateClockFace()
         })
+    }
+    
+    
+    private func stopClockTimer()
+    {
+        self.clockTimer?.invalidate()
+        self.clockTimer = nil
     }
     
     
@@ -77,8 +86,9 @@ class ClockViewController: UIViewController
         let minutes = cal.component(.minute, from: currentTime)
         let seconds = cal.component(.second, from: currentTime)
         
+        let trailingHourSpace = (hours < 10) ? " " : ""     // Needed for consistent text layout when jumping from hr 12 to hr 01
         
-        self.lblHoursAndMinutes.text = "\(hours):\(String(format: "%02d", minutes))"
+        self.lblHoursAndMinutes.text = "\(trailingHourSpace)\(hours):\(String(format: "%02d", minutes))"
         self.lblSeconds.text = ":\(String(format: "%02d", seconds))"
     }
     

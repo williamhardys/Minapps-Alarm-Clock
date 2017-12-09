@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="chintzy.ttf">
-            <string>ChintzyCPUBRK</string>
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -24,17 +24,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gR2-l9-Nup">
-                                <rect key="frame" x="32" y="226" width="311" height="215.5"/>
+                                <rect key="frame" x="32" y="194" width="311" height="279.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-cy-NQ8">
-                                        <rect key="frame" x="0.0" y="0.0" width="233" height="215.5"/>
-                                        <fontDescription key="fontDescription" name="ChintzyCPUBRK" family="Chintzy CPU BRK" pointSize="240"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="226" height="279.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="240"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" text=":00" lineBreakMode="tailTruncation" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="QmY-NJ-a5B">
-                                        <rect key="frame" x="233" y="0.0" width="78" height="215.5"/>
-                                        <fontDescription key="fontDescription" name="ChintzyCPUBRK" family="Chintzy CPU BRK" pointSize="150"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" text=":00" lineBreakMode="tailTruncation" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="QmY-NJ-a5B">
+                                        <rect key="frame" x="226" y="0.0" width="85" height="279.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="150"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>

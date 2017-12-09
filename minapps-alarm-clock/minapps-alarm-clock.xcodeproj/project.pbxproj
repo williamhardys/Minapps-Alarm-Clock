@@ -13,7 +13,6 @@
 		5153C3BC1FDAD3AD0037B3C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3BA1FDAD3AD0037B3C7 /* LaunchScreen.storyboard */; };
 		5153C3C71FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3C61FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift */; };
 		5153C3D51FDADBCD0037B3C7 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3D41FDADBCD0037B3C7 /* ClockViewController.swift */; };
-		5153C3D81FDAE1520037B3C7 /* chintzy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3D71FDAE1520037B3C7 /* chintzy.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +36,6 @@
 		5153C3C61FDAD3AD0037B3C7 /* minapps_alarm_clockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = minapps_alarm_clockTests.swift; sourceTree = "<group>"; };
 		5153C3C81FDAD3AD0037B3C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5153C3D41FDADBCD0037B3C7 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
-		5153C3D71FDAE1520037B3C7 /* chintzy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = chintzy.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +124,6 @@
 		5153C3D61FDAE0FA0037B3C7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				5153C3D71FDAE1520037B3C7 /* chintzy.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -214,7 +211,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5153C3D81FDAE1520037B3C7 /* chintzy.ttf in Resources */,
 				5153C3BC1FDAD3AD0037B3C7 /* LaunchScreen.storyboard in Resources */,
 				5153C3B91FDAD3AD0037B3C7 /* Assets.xcassets in Resources */,
 				5153C3B71FDAD3AD0037B3C7 /* Main.storyboard in Resources */,
