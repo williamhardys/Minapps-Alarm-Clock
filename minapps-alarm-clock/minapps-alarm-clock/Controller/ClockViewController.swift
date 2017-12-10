@@ -27,6 +27,11 @@ class ClockViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Setup battery monitoring
+        UIDevice.current.isBatteryMonitoringEnabled = true
+        NotificationCenter.default.addObserver(self, selector: #selector(onBatteryLevelChanged(_:)), name: .UIDeviceBatteryLevelDidChange, object: nil)
+        self.updateBatteryGadge()
+        
         // Needed to prevent user from seeing 00:00 on app start
         self.updateClockFace()
         
@@ -46,6 +51,9 @@ class ClockViewController: UIViewController
             self.stopClockTimer()
             self.initializeClockTimer()
         }
+        
+        self.updateClockFace()
+        self.updateBatteryGadge()
     }
     
     
@@ -63,6 +71,15 @@ class ClockViewController: UIViewController
         // Dispose of any resources that can be recreated.
         
         self.stopClockTimer()
+    }
+    
+    
+    private var batteryPercentage: Int
+    {
+        get
+        {
+            return Int(UIDevice.current.batteryLevel * 100.0)
+        }
     }
     
     
@@ -99,6 +116,19 @@ class ClockViewController: UIViewController
         
         // Update string values
         self.lblDate.text = "\(dateData.weekdayShort.uppercased()), \(dateData.monthShort.uppercased()) \(dateData.day) \(dateData.year)"
+    }
+    
+    
+    private func updateBatteryGadge()
+    {
+        self.lblBatteryGadge.text = "\(self.batteryPercentage)%"
+    }
+    
+    
+    @objc
+    func onBatteryLevelChanged(_ notification: Notification)
+    {
+        self.updateBatteryGadge()
     }
     
 }
