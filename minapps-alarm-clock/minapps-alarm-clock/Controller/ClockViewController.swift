@@ -15,6 +15,10 @@ class ClockViewController: UIViewController
     @IBOutlet weak var lblAmOrPm: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblBatteryGadge: UILabel!
+    @IBOutlet weak var imgBell: UIImageView!
+    @IBOutlet weak var imgBattery: UIImageView!
+    @IBOutlet weak var btnGear: UIButton!
+    @IBOutlet weak var lblAlarmInfo: UILabel!
     
     
     private var clockTimer: Timer?
@@ -130,6 +134,21 @@ class ClockViewController: UIViewController
     {
         self.updateBatteryGadge()
     }
+    
+    
+    
+    
+    @IBAction func onSettingsBtnPressed(_ sender: Any) 
+    {
+        
+    }
+    
+    @IBAction func onAlarmBtnPressed(_ sender: Any) 
+    {
+        
+    }
+    
+    
     
 }
 

@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gR2-l9-Nup">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gR2-l9-Nup" userLabel="Stack View - Clock">
                                 <rect key="frame" x="32" y="213.5" width="311" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-cy-NQ8">
@@ -46,41 +46,82 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOc-5j-qLT">
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOc-5j-qLT" userLabel="Stack View - Date &amp; Battery">
                                 <rect key="frame" x="32" y="40" width="311" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="FRI, NOV 24 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iw-oy-4o1">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="247.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconBattery" translatesAutoresizingMaskIntoConstraints="NO" id="qL3-IZ-clI">
+                                        <rect key="frame" x="247.5" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="WQS-6O-UkY"/>
+                                            <constraint firstAttribute="height" constant="20" id="bO3-Rs-BOn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E3-pD-0vt">
+                                        <rect key="frame" x="267.5" y="0.0" width="43.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8w6-aJ-Nq9">
-                                <rect key="frame" x="32" y="627" width="311" height="20"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8w6-aJ-Nq9" userLabel="Stack View - Alarm &amp; Setings">
+                                <rect key="frame" x="32" y="615" width="311" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="06:45 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBJ-kJ-wa2">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
-                                        <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
-                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="@" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JT6-lq-Qrg">
-                                        <rect key="frame" x="300" y="0.0" width="11" height="20"/>
-                                        <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
-                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lz3-Ln-wW2" userLabel="ViewButtonAlarm">
+                                        <rect key="frame" x="0.0" y="0.0" width="279" height="32"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconBell" translatesAutoresizingMaskIntoConstraints="NO" id="aZJ-KR-fqa">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="ep0-Yd-7Fa"/>
+                                                    <constraint firstAttribute="width" constant="32" id="nKS-yw-cFT"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqz-mL-FEL" userLabel="ButtonAlarm">
+                                                <rect key="frame" x="0.0" y="0.0" width="279" height="32"/>
+                                                <connections>
+                                                    <action selector="onAlarmBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jAb-6W-TD9"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 06:45 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vFL-zY-Wfm">
+                                                <rect key="frame" x="32" y="0.0" width="247" height="32"/>
+                                                <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="aZJ-KR-fqa" firstAttribute="leading" secondItem="lz3-Ln-wW2" secondAttribute="leading" id="2Sk-Bz-wUV"/>
+                                            <constraint firstItem="vFL-zY-Wfm" firstAttribute="top" secondItem="lz3-Ln-wW2" secondAttribute="top" id="2UR-Ba-POk"/>
+                                            <constraint firstItem="gqz-mL-FEL" firstAttribute="top" secondItem="lz3-Ln-wW2" secondAttribute="top" id="3ce-re-SEZ"/>
+                                            <constraint firstItem="vFL-zY-Wfm" firstAttribute="leading" secondItem="aZJ-KR-fqa" secondAttribute="trailing" id="6sy-GM-y7F"/>
+                                            <constraint firstAttribute="bottom" secondItem="vFL-zY-Wfm" secondAttribute="bottom" id="JNI-yU-aqO"/>
+                                            <constraint firstItem="gqz-mL-FEL" firstAttribute="leading" secondItem="lz3-Ln-wW2" secondAttribute="leading" id="S56-6M-1eK"/>
+                                            <constraint firstAttribute="trailing" secondItem="vFL-zY-Wfm" secondAttribute="trailing" id="V2p-rU-lhl"/>
+                                            <constraint firstItem="aZJ-KR-fqa" firstAttribute="centerY" secondItem="lz3-Ln-wW2" secondAttribute="centerY" id="ZjK-Vy-YDy"/>
+                                            <constraint firstAttribute="trailing" secondItem="gqz-mL-FEL" secondAttribute="trailing" id="fui-QK-o8p"/>
+                                            <constraint firstAttribute="bottom" secondItem="gqz-mL-FEL" secondAttribute="bottom" id="g3y-UY-bdt"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5K-W1-RhP" userLabel="ButtonGear">
+                                        <rect key="frame" x="279" y="0.0" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="8UF-Rw-nC7"/>
+                                            <constraint firstAttribute="height" constant="32" id="pPM-rl-oLr"/>
+                                        </constraints>
+                                        <state key="normal" image="IconGear"/>
+                                        <connections>
+                                            <action selector="onSettingsBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3TB-rq-Y9G"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E3-pD-0vt">
-                                <rect key="frame" x="264" y="133" width="43.5" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
-                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -97,7 +138,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnGear" destination="e5K-W1-RhP" id="RHn-bw-zmX"/>
+                        <outlet property="imgBattery" destination="qL3-IZ-clI" id="Hwd-bQ-8ax"/>
+                        <outlet property="imgBell" destination="aZJ-KR-fqa" id="bd1-xN-afE"/>
+                        <outlet property="lblAlarmInfo" destination="vFL-zY-Wfm" id="9fU-1K-6o5"/>
                         <outlet property="lblAmOrPm" destination="Gfb-6N-4Rm" id="26B-b6-Cqq"/>
                         <outlet property="lblBatteryGadge" destination="6E3-pD-0vt" id="tyt-AV-hsK"/>
                         <outlet property="lblDate" destination="6iw-oy-4o1" id="Vre-Ik-FdI"/>
@@ -107,35 +154,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.25" y="120.28985507246378"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="dHb-fL-lf4">
-            <objects>
-                <tableViewController id="mCo-15-iQh" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LSt-h2-ArX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fW4-wf-P9a">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fW4-wf-P9a" id="gXw-pv-gNc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="mCo-15-iQh" id="odE-4v-xDO"/>
-                            <outlet property="delegate" destination="mCo-15-iQh" id="2Lq-0J-Zrt"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nAd-VL-rHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="914" y="120"/>
+            <point key="canvasLocation" x="130.40000000000001" y="120.08995502248877"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IconBattery" width="32" height="32"/>
+        <image name="IconBell" width="32" height="32"/>
+        <image name="IconGear" width="32" height="32"/>
+    </resources>
 </document>
