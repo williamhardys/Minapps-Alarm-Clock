@@ -92,7 +92,6 @@
 				5153C3DF1FDC3CED0037B3C7 /* Sounds */,
 				5153C3D61FDAE0FA0037B3C7 /* Fonts */,
 				5153C3D31FDAD9CE0037B3C7 /* Model */,
-				5153C3D21FDAD9C90037B3C7 /* View */,
 				5153C3D11FDAD9BF0037B3C7 /* Controller */,
 				5153C3B51FDAD3AD0037B3C7 /* Main.storyboard */,
 				5153C3BD1FDAD3AD0037B3C7 /* Info.plist */,
@@ -119,13 +118,6 @@
 				5153C3D41FDADBCD0037B3C7 /* ClockViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		5153C3D21FDAD9C90037B3C7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		5153C3D31FDAD9CE0037B3C7 /* Model */ = {
