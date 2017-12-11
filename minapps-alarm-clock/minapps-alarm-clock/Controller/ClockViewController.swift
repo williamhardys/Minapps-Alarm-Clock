@@ -129,15 +129,21 @@ class ClockViewController: UIViewController
         
         // Output string values
         self.lblHoursAndMinutes.text = "\(clockData.hoursText12):\(clockData.minutesText)"
-        self.lblSeconds.text = ":\(clockData.secondsText)"
         self.lblAmOrPm.text = " \(clockData.amOrPmText.uppercased())"
+        
+        self.lblSeconds.text = ":\(clockData.secondsText)"
         
         
         // Get current date
-        self.dateData.updateDate(withDate: currentDateTime)
-        
-        // Update string values
-        self.lblDate.text = "\(dateData.weekdayShort.uppercased()), \(dateData.monthShort.uppercased()) \(dateData.day) \(dateData.year)"
+        if SettingsService.instance.doesShowDate()
+        {
+            self.dateData.updateDate(withDate: currentDateTime)
+            self.lblDate.text = "\(dateData.weekdayShort.uppercased()), \(dateData.monthShort.uppercased()) \(dateData.day) \(dateData.year)"
+        }
+        else
+        {
+            self.lblDate.text = ""
+        }
     }
     
     
