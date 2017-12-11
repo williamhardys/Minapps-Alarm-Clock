@@ -47,14 +47,22 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOc-5j-qLT" userLabel="Stack View - Date &amp; Battery">
+<<<<<<< HEAD
                                 <rect key="frame" x="32" y="40" width="311" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="FRI, NOV 24 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iw-oy-4o1">
                                         <rect key="frame" x="0.0" y="0.0" width="247.5" height="20"/>
+=======
+                                <rect key="frame" x="32" y="40" width="311" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="FRI, NOV 24 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iw-oy-4o1">
+                                        <rect key="frame" x="0.0" y="0.0" width="224.5" height="32"/>
+>>>>>>> 0b93d313f49370e57e35739150e7154999427b74
                                         <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+<<<<<<< HEAD
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconBattery" translatesAutoresizingMaskIntoConstraints="NO" id="qL3-IZ-clI">
                                         <rect key="frame" x="247.5" y="0.0" width="20" height="20"/>
                                         <constraints>
@@ -64,12 +72,70 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E3-pD-0vt">
                                         <rect key="frame" x="267.5" y="0.0" width="43.5" height="20"/>
+=======
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qeh-UW-C3w" userLabel="ViewForBattery">
+                                        <rect key="frame" x="224.5" y="0.0" width="32" height="32"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="Xa0-fx-a7o"/>
+                                            <constraint firstAttribute="width" constant="32" id="iKg-oe-H4n"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 000%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E3-pD-0vt">
+                                        <rect key="frame" x="256.5" y="0.0" width="54.5" height="32"/>
                                         <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8w6-aJ-Nq9" userLabel="Stack View - Alarm &amp; Settings">
+                                <rect key="frame" x="32" y="615" width="311" height="32"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XhS-Z1-tDD" userLabel="ViewForBell">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pq5-Jg-ASK">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="5sK-1f-Edt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pq5-Jg-ASK" secondAttribute="trailing" id="Cim-ze-oHk"/>
+                                            <constraint firstItem="Pq5-Jg-ASK" firstAttribute="top" secondItem="XhS-Z1-tDD" secondAttribute="top" id="PGT-fq-Rg5"/>
+                                            <constraint firstAttribute="height" constant="32" id="TFf-iY-p0q"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pq5-Jg-ASK" secondAttribute="bottom" id="dQf-Ku-sYN"/>
+                                            <constraint firstItem="Pq5-Jg-ASK" firstAttribute="leading" secondItem="XhS-Z1-tDD" secondAttribute="leading" id="gem-g7-UgM"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text=" 06:45 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBJ-kJ-wa2">
+                                        <rect key="frame" x="32" y="0.0" width="247" height="32"/>
+>>>>>>> 0b93d313f49370e57e35739150e7154999427b74
+                                        <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Tc-CL-ngK" userLabel="ViewForGear">
+                                        <rect key="frame" x="279" y="0.0" width="32" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN6-Qm-AIr">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="nN6-Qm-AIr" firstAttribute="leading" secondItem="6Tc-CL-ngK" secondAttribute="leading" id="31k-Xo-TBd"/>
+                                            <constraint firstItem="nN6-Qm-AIr" firstAttribute="top" secondItem="6Tc-CL-ngK" secondAttribute="top" id="3MJ-c3-on4"/>
+                                            <constraint firstAttribute="bottom" secondItem="nN6-Qm-AIr" secondAttribute="bottom" id="Eoa-qL-B7i"/>
+                                            <constraint firstAttribute="height" constant="32" id="UZL-hp-kcd"/>
+                                            <constraint firstAttribute="width" constant="32" id="m8S-co-TuD"/>
+                                            <constraint firstAttribute="trailing" secondItem="nN6-Qm-AIr" secondAttribute="trailing" id="ubs-VW-cCs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+<<<<<<< HEAD
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8w6-aJ-Nq9" userLabel="Stack View - Alarm &amp; Setings">
                                 <rect key="frame" x="32" y="615" width="311" height="32"/>
                                 <subviews>
@@ -122,6 +188,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
+=======
+>>>>>>> 0b93d313f49370e57e35739150e7154999427b74
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -150,6 +218,9 @@
                         <outlet property="lblDate" destination="6iw-oy-4o1" id="Vre-Ik-FdI"/>
                         <outlet property="lblHoursAndMinutes" destination="JLf-cy-NQ8" id="EGs-3v-xeH"/>
                         <outlet property="lblSeconds" destination="QmY-NJ-a5B" id="sEV-lf-1Gt"/>
+                        <outlet property="viewForBatteryIcon" destination="Qeh-UW-C3w" id="K23-73-idH"/>
+                        <outlet property="viewForBellIcon" destination="XhS-Z1-tDD" id="sVg-eD-iOO"/>
+                        <outlet property="viewForGearIcon" destination="6Tc-CL-ngK" id="dgp-FM-Cma"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

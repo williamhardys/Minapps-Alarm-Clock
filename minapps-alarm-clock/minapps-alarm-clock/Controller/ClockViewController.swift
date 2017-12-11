@@ -20,6 +20,10 @@ class ClockViewController: UIViewController
     @IBOutlet weak var btnGear: UIButton!
     @IBOutlet weak var lblAlarmInfo: UILabel!
     
+    @IBOutlet weak var viewForBatteryIcon: UIView!
+    @IBOutlet weak var viewForBellIcon: UIView!
+    @IBOutlet weak var viewForGearIcon: UIView!
+    
     
     private var clockTimer: Timer?
     private var clockData = ClockTimeData()

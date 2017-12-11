@@ -1,0 +1,6 @@
+framework module Pods_minapps_alarm_clockTests {
+  umbrella header "Pods-minapps-alarm-clockTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
