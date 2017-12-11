@@ -143,7 +143,16 @@ class ClockViewController: UIViewController
     
     private func updateBatteryGadge()
     {
-        self.lblBatteryGadge.text = "\(self.batteryPercentage)%"
+        if SettingsService.instance.doesShowBattery() 
+        {
+            self.imgBattery.isHidden = false
+            self.lblBatteryGadge.text = "\(self.batteryPercentage)%"
+        }
+        else
+        {
+            self.imgBattery.isHidden = true
+            self.lblBatteryGadge.text = ""
+        }
     }
     
     

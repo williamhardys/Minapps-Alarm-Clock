@@ -10,15 +10,15 @@ import UIKit
 
 class SettingsService
 {
-    static let KEY_COLOR = "settings_color"
-    static let KEY_FONT = "settings_font"
-    static let KEY_USE_24_HOUR = "settings_use_24_hour_mode"
-    static let KEY_SHOW_SEC = "settings_show_seconds"
-    static let KEY_SHOW_DATE = "settings_show_date"
-    static let KEY_SHOW_BATT = "settings_show_battery"
-    static let KEY_BRIGHTNESS = "settings_brightness_level"
-    static let KEY_ENABLE_SWIPE_BRIGHTNESS = "settings_enable_brightness_swipe"
-    static let KEY_AUTOLOCK_PLUGGED_IN = "settings_enable_lock_plugged_in"
+    let KEY_COLOR = "settings_color"
+    let KEY_FONT = "settings_font"
+    let KEY_USE_24_HOUR = "settings_use_24_hour_mode"
+    let KEY_SHOW_SEC = "settings_show_seconds"
+    let KEY_SHOW_DATE = "settings_show_date"
+    let KEY_SHOW_BATT = "settings_show_battery"
+    let KEY_BRIGHTNESS = "settings_brightness_level"
+    let KEY_ENABLE_SWIPE_BRIGHTNESS = "settings_enable_brightness_swipe"
+    let KEY_AUTOLOCK_PLUGGED_IN = "settings_enable_lock_plugged_in"
     
     
     static let instance = SettingsService()
@@ -33,11 +33,34 @@ class SettingsService
     private var _settingsData = UserDefaults.standard
     
     
+    
+    func isUsing24HourConvention() -> Bool 
+    {
+        return _settingsData.bool(forKey: KEY_USE_24_HOUR)
+    }
+    
+    func doesShowSeconds() -> Bool
+    {
+        return _settingsData.bool(forKey: KEY_SHOW_SEC)
+    }
+    
+    func doesShowDate() -> Bool 
+    {
+        return _settingsData.bool(forKey: KEY_SHOW_DATE)
+    }
+    
+    func doesShowBattery() -> Bool
+    {
+        return _settingsData.bool(forKey: KEY_SHOW_BATT)
+    }
+    
+    
+    
     func getColor() -> UIColor 
     {
         var chosenColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         
-        let colorCode = _settingsData.integer(forKey: SettingsService.KEY_COLOR)
+        let colorCode = _settingsData.integer(forKey: KEY_COLOR)
         
         switch colorCode
         {
