@@ -40,9 +40,6 @@ class ClockViewController: UIViewController
         // Needed to prevent user from seeing 00:00 on app start
         self.updateClockFace()
         
-        // Just in case
-        self.stopClockTimer()
-        
         // Initialize
         self.initializeClockTimer()
     }
@@ -104,6 +101,8 @@ class ClockViewController: UIViewController
     
     private func initializeClockTimer()
     {
+        self.stopClockTimer()
+        
         self.clockTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (timer) in
             self.updateClockFace()
         })
