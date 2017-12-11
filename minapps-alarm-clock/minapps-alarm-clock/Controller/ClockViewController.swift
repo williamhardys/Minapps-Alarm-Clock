@@ -30,6 +30,7 @@ class ClockViewController: UIViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.setupColor(#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1))
         
         // Setup battery monitoring
         UIDevice.current.isBatteryMonitoringEnabled = true
@@ -84,6 +85,20 @@ class ClockViewController: UIViewController
         {
             return Int(UIDevice.current.batteryLevel * 100.0)
         }
+    }
+    
+    
+    func setupColor(_ newColor: UIColor)
+    {
+        self.btnGear.imageView?.tintColor = newColor
+        self.imgBell.tintColor = newColor
+        self.imgBattery.tintColor = newColor
+        self.lblBatteryGadge.textColor = newColor
+        self.lblDate.textColor = newColor
+        self.lblAmOrPm.textColor = newColor
+        self.lblSeconds.textColor = newColor
+        self.lblAlarmInfo.textColor = newColor
+        self.lblHoursAndMinutes.textColor = newColor
     }
     
     
