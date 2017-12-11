@@ -48,6 +48,9 @@ class ClockViewController: UIViewController
     {
         super.viewWillAppear(animated)
         
+        self.setupColor(#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1))
+        self.updateClockFace()
+        
         if self.clockTimer?.isValid == false
         {
             self.stopClockTimer()
@@ -154,7 +157,10 @@ class ClockViewController: UIViewController
     
     @IBAction func onSettingsBtnPressed(_ sender: Any) 
     {
-        
+        if let appSettings = URL(string: UIApplicationOpenSettingsURLString)
+        {
+            UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+        }
     }
     
     @IBAction func onAlarmBtnPressed(_ sender: Any) 
