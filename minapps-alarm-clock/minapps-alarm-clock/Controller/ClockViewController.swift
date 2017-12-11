@@ -16,6 +16,10 @@ class ClockViewController: UIViewController
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblBatteryGadge: UILabel!
     
+    @IBOutlet weak var viewForBatteryIcon: UIView!
+    @IBOutlet weak var viewForBellIcon: UIView!
+    @IBOutlet weak var viewForGearIcon: UIView!
+    
     
     private var clockTimer: Timer?
     private var clockData = ClockTimeData()

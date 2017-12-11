@@ -19,6 +19,11 @@
 		5153C3E71FDC5C450037B3C7 /* ClockTimeDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3E61FDC5C450037B3C7 /* ClockTimeDataTests.swift */; };
 		5153C3E91FDCA7B20037B3C7 /* ClockDateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3E81FDCA7B20037B3C7 /* ClockDateData.swift */; };
 		5153C3EB1FDCAA870037B3C7 /* ClockDateDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3EA1FDCAA870037B3C7 /* ClockDateDataTests.swift */; };
+		5153C3F81FDDFA7D0037B3C7 /* IconGear.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3F51FDDFA7D0037B3C7 /* IconGear.svg */; };
+		5153C3F91FDDFA7D0037B3C7 /* IconBattery.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3F61FDDFA7D0037B3C7 /* IconBattery.svg */; };
+		5153C3FA1FDDFA7D0037B3C7 /* IconBell.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3F71FDDFA7D0037B3C7 /* IconBell.svg */; };
+		6D38873F164CB84FF7B5388A /* Pods_minapps_alarm_clockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6C271760E7E13061C5906D /* Pods_minapps_alarm_clockTests.framework */; };
+		E9D1590BA0974007CE7F1EE2 /* Pods_minapps_alarm_clock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 618728397547F7A872A45775 /* Pods_minapps_alarm_clock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,15 @@
 		5153C3E61FDC5C450037B3C7 /* ClockTimeDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTimeDataTests.swift; sourceTree = "<group>"; };
 		5153C3E81FDCA7B20037B3C7 /* ClockDateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDateData.swift; sourceTree = "<group>"; };
 		5153C3EA1FDCAA870037B3C7 /* ClockDateDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDateDataTests.swift; sourceTree = "<group>"; };
+		5153C3F51FDDFA7D0037B3C7 /* IconGear.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IconGear.svg; sourceTree = "<group>"; };
+		5153C3F61FDDFA7D0037B3C7 /* IconBattery.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IconBattery.svg; sourceTree = "<group>"; };
+		5153C3F71FDDFA7D0037B3C7 /* IconBell.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IconBell.svg; sourceTree = "<group>"; };
+		5B45C5E596509652AD53D655 /* Pods-minapps-alarm-clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minapps-alarm-clock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-minapps-alarm-clock/Pods-minapps-alarm-clock.debug.xcconfig"; sourceTree = "<group>"; };
+		618728397547F7A872A45775 /* Pods_minapps_alarm_clock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_minapps_alarm_clock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C4151DFE3DEDA57D39624D9 /* Pods-minapps-alarm-clockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minapps-alarm-clockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-minapps-alarm-clockTests/Pods-minapps-alarm-clockTests.release.xcconfig"; sourceTree = "<group>"; };
+		795EF69116EDC746B90BAEF0 /* Pods-minapps-alarm-clockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minapps-alarm-clockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-minapps-alarm-clockTests/Pods-minapps-alarm-clockTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF6C271760E7E13061C5906D /* Pods_minapps_alarm_clockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_minapps_alarm_clockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3717DF4D4265B1FB5BEBDB /* Pods-minapps-alarm-clock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minapps-alarm-clock.release.xcconfig"; path = "Pods/Target Support Files/Pods-minapps-alarm-clock/Pods-minapps-alarm-clock.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D1590BA0974007CE7F1EE2 /* Pods_minapps_alarm_clock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,18 +77,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D38873F164CB84FF7B5388A /* Pods_minapps_alarm_clockTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		117E2DE7AD537FB29530CE03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B45C5E596509652AD53D655 /* Pods-minapps-alarm-clock.debug.xcconfig */,
+				EF3717DF4D4265B1FB5BEBDB /* Pods-minapps-alarm-clock.release.xcconfig */,
+				795EF69116EDC746B90BAEF0 /* Pods-minapps-alarm-clockTests.debug.xcconfig */,
+				6C4151DFE3DEDA57D39624D9 /* Pods-minapps-alarm-clockTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5153C3A51FDAD3AC0037B3C7 = {
 			isa = PBXGroup;
 			children = (
 				5153C3B01FDAD3AD0037B3C7 /* minapps-alarm-clock */,
 				5153C3C51FDAD3AD0037B3C7 /* minapps-alarm-clockTests */,
 				5153C3AF1FDAD3AD0037B3C7 /* Products */,
+				117E2DE7AD537FB29530CE03 /* Pods */,
+				E0BC91545BE43AA337DA9ED0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +118,7 @@
 		5153C3B01FDAD3AD0037B3C7 /* minapps-alarm-clock */ = {
 			isa = PBXGroup;
 			children = (
+				5153C3F41FDDFA750037B3C7 /* SVGs */,
 				5153C3DF1FDC3CED0037B3C7 /* Sounds */,
 				5153C3D61FDAE0FA0037B3C7 /* Fonts */,
 				5153C3D31FDAD9CE0037B3C7 /* Model */,
@@ -154,6 +184,25 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		5153C3F41FDDFA750037B3C7 /* SVGs */ = {
+			isa = PBXGroup;
+			children = (
+				5153C3F61FDDFA7D0037B3C7 /* IconBattery.svg */,
+				5153C3F71FDDFA7D0037B3C7 /* IconBell.svg */,
+				5153C3F51FDDFA7D0037B3C7 /* IconGear.svg */,
+			);
+			path = SVGs;
+			sourceTree = "<group>";
+		};
+		E0BC91545BE43AA337DA9ED0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				618728397547F7A872A45775 /* Pods_minapps_alarm_clock.framework */,
+				AF6C271760E7E13061C5906D /* Pods_minapps_alarm_clockTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,9 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5153C3CB1FDAD3AD0037B3C7 /* Build configuration list for PBXNativeTarget "minapps-alarm-clock" */;
 			buildPhases = (
+				66D98E9F84842A55A647FBFE /* [CP] Check Pods Manifest.lock */,
 				5153C3AA1FDAD3AD0037B3C7 /* Sources */,
 				5153C3AB1FDAD3AD0037B3C7 /* Frameworks */,
 				5153C3AC1FDAD3AD0037B3C7 /* Resources */,
+				40F653F27C4BFBC54426EA10 /* [CP] Embed Pods Frameworks */,
+				1866AEF0108580592C705DA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -178,9 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5153C3CE1FDAD3AD0037B3C7 /* Build configuration list for PBXNativeTarget "minapps-alarm-clockTests" */;
 			buildPhases = (
+				E14A2320B9E30E48E0B71915 /* [CP] Check Pods Manifest.lock */,
 				5153C3BE1FDAD3AD0037B3C7 /* Sources */,
 				5153C3BF1FDAD3AD0037B3C7 /* Frameworks */,
 				5153C3C01FDAD3AD0037B3C7 /* Resources */,
+				4DEBEDDF32DD291970545BF8 /* [CP] Embed Pods Frameworks */,
+				825BB8BB1CC0BA3A68BDF230 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,8 +292,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5153C3F91FDDFA7D0037B3C7 /* IconBattery.svg in Resources */,
 				5153C3BC1FDAD3AD0037B3C7 /* LaunchScreen.storyboard in Resources */,
+				5153C3FA1FDDFA7D0037B3C7 /* IconBell.svg in Resources */,
 				5153C3DE1FDB966B0037B3C7 /* Nouveau_IBM.ttf in Resources */,
+				5153C3F81FDDFA7D0037B3C7 /* IconGear.svg in Resources */,
 				5153C3B91FDAD3AD0037B3C7 /* Assets.xcassets in Resources */,
 				5153C3E11FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav in Resources */,
 				5153C3B71FDAD3AD0037B3C7 /* Main.storyboard in Resources */,
@@ -253,6 +311,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1866AEF0108580592C705DA8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-minapps-alarm-clock/Pods-minapps-alarm-clock-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40F653F27C4BFBC54426EA10 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-minapps-alarm-clock/Pods-minapps-alarm-clock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DEBEDDF32DD291970545BF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-minapps-alarm-clockTests/Pods-minapps-alarm-clockTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66D98E9F84842A55A647FBFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		825BB8BB1CC0BA3A68BDF230 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-minapps-alarm-clockTests/Pods-minapps-alarm-clockTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E14A2320B9E30E48E0B71915 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5153C3AA1FDAD3AD0037B3C7 /* Sources */ = {
@@ -415,6 +566,7 @@
 		};
 		5153C3CC1FDAD3AD0037B3C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B45C5E596509652AD53D655 /* Pods-minapps-alarm-clock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -431,6 +583,7 @@
 		};
 		5153C3CD1FDAD3AD0037B3C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF3717DF4D4265B1FB5BEBDB /* Pods-minapps-alarm-clock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,6 +600,7 @@
 		};
 		5153C3CF1FDAD3AD0037B3C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 795EF69116EDC746B90BAEF0 /* Pods-minapps-alarm-clockTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -464,6 +618,7 @@
 		};
 		5153C3D01FDAD3AD0037B3C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C4151DFE3DEDA57D39624D9 /* Pods-minapps-alarm-clockTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
