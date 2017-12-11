@@ -31,18 +31,19 @@ class ClockViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Setup all views based off app settings
+        self.onSettingsChanged()
         
-        self.setupColor(SettingsService.instance.getColor())
+        
+        // Setup setting service notification
+        NotificationCenter.default.addObserver(self, selector: #selector(onSettingsChanged), name: UserDefaults.didChangeNotification, object: nil)
         
         // Setup battery monitoring
         UIDevice.current.isBatteryMonitoringEnabled = true
         NotificationCenter.default.addObserver(self, selector: #selector(onBatteryLevelChanged(_:)), name: .UIDeviceBatteryLevelDidChange, object: nil)
-        self.updateBatteryGadge()
         
-        // Needed to prevent user from seeing 00:00 on app start
-        self.updateClockFace()
         
-        // Initialize
+        // Initialize clock update "loop" (accurately a repeating timer event)
         self.initializeClockTimer()
     }
     
@@ -128,10 +129,27 @@ class ClockViewController: UIViewController
         self.clockData.updateTime(withDate: currentDateTime)
         
         // Output string values
-        self.lblHoursAndMinutes.text = "\(clockData.hoursText12):\(clockData.minutesText)"
-        self.lblAmOrPm.text = " \(clockData.amOrPmText.uppercased())"
+        if SettingsService.instance.isUsing24HourConvention()
+        {
+            self.lblHoursAndMinutes.text = "\(clockData.hoursText24):\(clockData.minutesText)"
+            self.lblAmOrPm.text = ""
+        }
+        else
+        {
+            self.lblHoursAndMinutes.text = "\(clockData.hoursText12):\(clockData.minutesText)"
+            self.lblAmOrPm.text = " \(clockData.amOrPmText.uppercased())"
+        }
         
-        self.lblSeconds.text = ":\(clockData.secondsText)"
+        
+        
+        if SettingsService.instance.doesShowSeconds()
+        {
+            self.lblSeconds.text = ":\(clockData.secondsText)"
+        }
+        else
+        {
+            self.lblSeconds.text = ""
+        }
         
         
         // Get current date
@@ -165,6 +183,14 @@ class ClockViewController: UIViewController
     @objc
     func onBatteryLevelChanged(_ notification: Notification)
     {
+        self.updateBatteryGadge()
+    }
+    
+    @objc
+    func onSettingsChanged()
+    {
+        self.setupColor(SettingsService.instance.getColor())
+        self.updateClockFace()
         self.updateBatteryGadge()
     }
     
