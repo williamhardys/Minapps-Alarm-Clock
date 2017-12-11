@@ -20,6 +20,7 @@
 		5153C3E91FDCA7B20037B3C7 /* ClockDateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3E81FDCA7B20037B3C7 /* ClockDateData.swift */; };
 		5153C3EB1FDCAA870037B3C7 /* ClockDateDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3EA1FDCAA870037B3C7 /* ClockDateDataTests.swift */; };
 		5153C3FC1FDF03050037B3C7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3FB1FDF03050037B3C7 /* Settings.bundle */; };
+		518547661FDF36C3002644C9 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518547651FDF36C3002644C9 /* SettingsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		5153C3E81FDCA7B20037B3C7 /* ClockDateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDateData.swift; sourceTree = "<group>"; };
 		5153C3EA1FDCAA870037B3C7 /* ClockDateDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDateDataTests.swift; sourceTree = "<group>"; };
 		5153C3FB1FDF03050037B3C7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		518547651FDF36C3002644C9 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		5153C3B01FDAD3AD0037B3C7 /* minapps-alarm-clock */ = {
 			isa = PBXGroup;
 			children = (
+				518547641FDF36AF002644C9 /* Services */,
 				5153C3DF1FDC3CED0037B3C7 /* Sounds */,
 				5153C3D61FDAE0FA0037B3C7 /* Fonts */,
 				5153C3D31FDAD9CE0037B3C7 /* Model */,
@@ -147,6 +150,14 @@
 				5153C3E01FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		518547641FDF36AF002644C9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				518547651FDF36C3002644C9 /* SettingsService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518547661FDF36C3002644C9 /* SettingsService.swift in Sources */,
 				5153C3E51FDC543C0037B3C7 /* TimeMeridiem.swift in Sources */,
 				5153C3E31FDC3DE50037B3C7 /* ClockTimeData.swift in Sources */,
 				5153C3E91FDCA7B20037B3C7 /* ClockDateData.swift in Sources */,

@@ -30,6 +30,9 @@ class ClockViewController: UIViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.registerSettingsBundle()
+        
         self.setupColor(#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1))
         
         // Setup battery monitoring
@@ -48,7 +51,6 @@ class ClockViewController: UIViewController
     {
         super.viewWillAppear(animated)
         
-        self.setupColor(#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1))
         self.updateClockFace()
         
         if self.clockTimer?.isValid == false
@@ -78,6 +80,11 @@ class ClockViewController: UIViewController
         self.stopClockTimer()
     }
     
+    func registerSettingsBundle()
+    {
+        let appDefaults = [String:Any]()
+        UserDefaults.standard.register(defaults: appDefaults)
+    }
     
     private var batteryPercentage: Int
     {
