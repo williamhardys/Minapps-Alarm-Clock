@@ -20,8 +20,17 @@
 			<key>Key</key>
 			<string>settings_color</string>
 			<key>DefaultValue</key>
-			<integer>0</integer>
+			<real>0</real>
 			<key>Values</key>
+			<array>
+				<real>0</real>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
+			</array>
+			<key>Titles</key>
 			<array>
 				<string>Red</string>
 				<string>Orange</string>
@@ -39,8 +48,12 @@
 			<key>Key</key>
 			<string>settings_font</string>
 			<key>DefaultValue</key>
-			<string>Nouveau IBM</string>
+			<real>0</real>
 			<key>Values</key>
+			<array>
+				<real>0</real>
+			</array>
+			<key>Titles</key>
 			<array>
 				<string>Nouveau IBM</string>
 			</array>
