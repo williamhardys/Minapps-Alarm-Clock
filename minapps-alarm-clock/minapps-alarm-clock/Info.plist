@@ -26,6 +26,7 @@
 	<array>
 		<string>Nouveau_IBM.ttf</string>
 		<string>MODENINE.TTF</string>
+		<string>CallingCode-Regular.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -20,6 +20,7 @@
 		5153C3E91FDCA7B20037B3C7 /* ClockDateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3E81FDCA7B20037B3C7 /* ClockDateData.swift */; };
 		5153C3EB1FDCAA870037B3C7 /* ClockDateDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3EA1FDCAA870037B3C7 /* ClockDateDataTests.swift */; };
 		5153C3FC1FDF03050037B3C7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3FB1FDF03050037B3C7 /* Settings.bundle */; };
+		5170242E1FE09A1900E8FD6B /* CallingCode-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5170242D1FE09A1900E8FD6B /* CallingCode-Regular.ttf */; };
 		518547661FDF36C3002644C9 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518547651FDF36C3002644C9 /* SettingsService.swift */; };
 		5185476A1FE0936B002644C9 /* MODENINE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 518547691FE0936B002644C9 /* MODENINE.TTF */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		5153C3E81FDCA7B20037B3C7 /* ClockDateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDateData.swift; sourceTree = "<group>"; };
 		5153C3EA1FDCAA870037B3C7 /* ClockDateDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDateDataTests.swift; sourceTree = "<group>"; };
 		5153C3FB1FDF03050037B3C7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		5170242D1FE09A1900E8FD6B /* CallingCode-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CallingCode-Regular.ttf"; sourceTree = "<group>"; };
 		518547651FDF36C3002644C9 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		518547691FE0936B002644C9 /* MODENINE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MODENINE.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 		5153C3D61FDAE0FA0037B3C7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				5170242D1FE09A1900E8FD6B /* CallingCode-Regular.ttf */,
 				518547691FE0936B002644C9 /* MODENINE.TTF */,
 				5153C3DD1FDB966B0037B3C7 /* Nouveau_IBM.ttf */,
 			);
@@ -253,6 +256,7 @@
 				5153C3E11FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav in Resources */,
 				5153C3FC1FDF03050037B3C7 /* Settings.bundle in Resources */,
 				5153C3B71FDAD3AD0037B3C7 /* Main.storyboard in Resources */,
+				5170242E1FE09A1900E8FD6B /* CallingCode-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
