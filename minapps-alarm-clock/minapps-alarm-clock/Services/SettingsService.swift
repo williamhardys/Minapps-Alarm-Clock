@@ -81,7 +81,7 @@ class SettingsService
         _settingsData.set(newValue, forKey: KEY_BRIGHTNESS)
     }
     
-    func canSwipeToControllBrightness() -> Bool
+    func canSwipeToControlBrightness() -> Bool
     {
         return _settingsData.bool(forKey: KEY_ENABLE_SWIPE_BRIGHTNESS)
     }

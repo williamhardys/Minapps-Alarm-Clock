@@ -257,16 +257,19 @@ class ClockViewController: UIViewController
     @objc
     func onSwipeScreen(gesture: UISwipeGestureRecognizer)
     {
-        let oldValue = SettingsService.instance.getBrightnessRatio()
-        let delta = (self.touchMoveDelta / 100.0)
-        
-        if gesture.direction == .up
+        if SettingsService.instance.canSwipeToControlBrightness()
         {
-            SettingsService.instance.setBrightnessRatio(oldValue + delta)
-        }
-        else if gesture.direction == .down
-        {
-            SettingsService.instance.setBrightnessRatio(oldValue - delta)
+            let oldValue = SettingsService.instance.getBrightnessRatio()
+            let delta = (self.touchMoveDelta / 100.0)
+            
+            if gesture.direction == .up
+            {
+                SettingsService.instance.setBrightnessRatio(oldValue + delta)
+            }
+            else if gesture.direction == .down
+            {
+                SettingsService.instance.setBrightnessRatio(oldValue - delta)
+            }
         }
     }
     
