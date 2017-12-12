@@ -48,14 +48,16 @@
 			<key>Key</key>
 			<string>settings_font</string>
 			<key>DefaultValue</key>
-			<real>0</real>
+			<string>Nouveau IBM</string>
 			<key>Values</key>
 			<array>
-				<real>0</real>
+				<string>Nouveau IBM</string>
+				<string>ModeNine</string>
 			</array>
 			<key>Titles</key>
 			<array>
 				<string>Nouveau IBM</string>
+				<string>ModeNine</string>
 			</array>
 		</dict>
 		<dict>

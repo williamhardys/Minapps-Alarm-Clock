@@ -262,7 +262,7 @@ class ClockViewController: UIViewController
     func onSettingsChanged()
     {
         self.setupColor(SettingsService.instance.getColor())
-        self.updateFont(named: "Nouveau IBM")
+        self.updateFont(named: SettingsService.instance.getFont())
         self.updateClockFace()
         self.updateBatteryGadge()
         self.updateDisplayBrightness()

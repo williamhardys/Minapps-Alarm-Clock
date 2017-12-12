@@ -21,6 +21,7 @@
 		5153C3EB1FDCAA870037B3C7 /* ClockDateDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3EA1FDCAA870037B3C7 /* ClockDateDataTests.swift */; };
 		5153C3FC1FDF03050037B3C7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3FB1FDF03050037B3C7 /* Settings.bundle */; };
 		518547661FDF36C3002644C9 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518547651FDF36C3002644C9 /* SettingsService.swift */; };
+		5185476A1FE0936B002644C9 /* MODENINE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 518547691FE0936B002644C9 /* MODENINE.TTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		5153C3EA1FDCAA870037B3C7 /* ClockDateDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDateDataTests.swift; sourceTree = "<group>"; };
 		5153C3FB1FDF03050037B3C7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		518547651FDF36C3002644C9 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		518547691FE0936B002644C9 /* MODENINE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MODENINE.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		5153C3D61FDAE0FA0037B3C7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				518547691FE0936B002644C9 /* MODENINE.TTF */,
 				5153C3DD1FDB966B0037B3C7 /* Nouveau_IBM.ttf */,
 			);
 			path = Fonts;
@@ -243,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5185476A1FE0936B002644C9 /* MODENINE.TTF in Resources */,
 				5153C3BC1FDAD3AD0037B3C7 /* LaunchScreen.storyboard in Resources */,
 				5153C3DE1FDB966B0037B3C7 /* Nouveau_IBM.ttf in Resources */,
 				5153C3B91FDAD3AD0037B3C7 /* Assets.xcassets in Resources */,

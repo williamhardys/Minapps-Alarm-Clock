@@ -144,6 +144,10 @@ class SettingsService
     }
     
     
+    func getFont() -> String
+    {
+        return _settingsData.string(forKey: KEY_FONT)!
+    }
     
     
     
