@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,26 +20,26 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ClockViewController" customModule="minapps_alarm_clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gR2-l9-Nup" userLabel="Stack View - Clock">
-                                <rect key="frame" x="32" y="563" width="960" height="240"/>
+                                <rect key="frame" x="32" y="213.5" width="311" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-cy-NQ8">
-                                        <rect key="frame" x="0.0" y="0.0" width="548.5" height="240"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="240"/>
                                         <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="240"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" text=":00" lineBreakMode="tailTruncation" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="QmY-NJ-a5B">
-                                        <rect key="frame" x="548.5" y="0.0" width="206" height="240"/>
+                                        <rect key="frame" x="177.5" y="0.0" width="67" height="240"/>
                                         <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="150"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" text=" AM" lineBreakMode="tailTruncation" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="Gfb-6N-4Rm">
-                                        <rect key="frame" x="754.5" y="0.0" width="205.5" height="240"/>
+                                        <rect key="frame" x="244.5" y="0.0" width="66.5" height="240"/>
                                         <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="150"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -47,23 +47,23 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOc-5j-qLT" userLabel="Stack View - Date &amp; Battery">
-                                <rect key="frame" x="32" y="40" width="960" height="20"/>
+                                <rect key="frame" x="32" y="40" width="311" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="FRI, NOV 24 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iw-oy-4o1">
-                                        <rect key="frame" x="0.0" y="0.0" width="896.5" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="247.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconBattery" translatesAutoresizingMaskIntoConstraints="NO" id="qL3-IZ-clI">
-                                        <rect key="frame" x="896.5" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="247.5" y="0.0" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="WQS-6O-UkY"/>
                                             <constraint firstAttribute="height" constant="20" id="bO3-Rs-BOn"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E3-pD-0vt">
-                                        <rect key="frame" x="916.5" y="0.0" width="43.5" height="20"/>
+                                        <rect key="frame" x="267.5" y="0.0" width="43.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -71,10 +71,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8w6-aJ-Nq9" userLabel="Stack View - Alarm &amp; Setings">
-                                <rect key="frame" x="32" y="1314" width="960" height="32"/>
+                                <rect key="frame" x="32" y="615" width="311" height="32"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lz3-Ln-wW2" userLabel="ViewButtonAlarm">
-                                        <rect key="frame" x="0.0" y="0.0" width="928" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="279" height="32"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconBell" translatesAutoresizingMaskIntoConstraints="NO" id="aZJ-KR-fqa">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -84,13 +84,13 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqz-mL-FEL" userLabel="ButtonAlarm">
-                                                <rect key="frame" x="0.0" y="0.0" width="928" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="279" height="32"/>
                                                 <connections>
                                                     <action selector="onAlarmBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jAb-6W-TD9"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 06:45 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vFL-zY-Wfm">
-                                                <rect key="frame" x="32" y="0.0" width="896" height="32"/>
+                                                <rect key="frame" x="32" y="0.0" width="247" height="32"/>
                                                 <fontDescription key="fontDescription" name="Nouveau_IBM" family="Nouveau IBM" pointSize="20"/>
                                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5K-W1-RhP" userLabel="ButtonGear">
-                                        <rect key="frame" x="928" y="0.0" width="32" height="32"/>
+                                        <rect key="frame" x="279" y="0.0" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="8UF-Rw-nC7"/>
                                             <constraint firstAttribute="height" constant="32" id="pPM-rl-oLr"/>
@@ -123,7 +123,7 @@
                                 </subviews>
                             </stackView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByW-V5-roG" userLabel="View - Brightness Cover">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>

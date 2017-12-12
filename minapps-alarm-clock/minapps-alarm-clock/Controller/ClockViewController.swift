@@ -237,6 +237,16 @@ class ClockViewController: UIViewController
     }
     
     
+    func updateFont(named fontName: String)
+    {
+        self.lblDate.font = UIFont(name: fontName, size: lblDate.font.pointSize)
+        self.lblBatteryGadge.font = UIFont(name: fontName, size: lblBatteryGadge.font.pointSize)
+        self.lblHoursAndMinutes.font = UIFont(name: fontName, size: lblHoursAndMinutes.font.pointSize)
+        self.lblSeconds.font = UIFont(name: fontName, size: lblSeconds.font.pointSize)
+        self.lblAmOrPm.font = UIFont(name: fontName, size: lblAmOrPm.font.pointSize)
+        self.lblAlarmInfo.font = UIFont(name: fontName, size: lblAlarmInfo.font.pointSize)
+    }
+    
     
     
     // Events
@@ -252,6 +262,7 @@ class ClockViewController: UIViewController
     func onSettingsChanged()
     {
         self.setupColor(SettingsService.instance.getColor())
+        self.updateFont(named: "Nouveau IBM")
         self.updateClockFace()
         self.updateBatteryGadge()
         self.updateDisplayBrightness()
