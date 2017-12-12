@@ -74,6 +74,15 @@ class ClockViewController: UIViewController
         NotificationCenter.default.addObserver(self, selector: #selector(onBatteryLevelChanged(_:)), name: .UIDeviceBatteryLevelDidChange, object: nil)
         
         
+        // Setup brightness swipe gestures
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(onSwipeScreen(gesture:)))
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(onSwipeScreen(gesture:)))
+        swipeUp.direction = .up
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeUp)
+        self.view.addGestureRecognizer(swipeDown)
+        
+        
         // Initialize clock update "loop" (accurately a repeating timer event)
         self.initializeClockTimer()
     }
@@ -240,6 +249,20 @@ class ClockViewController: UIViewController
         self.updateClockFace()
         self.updateBatteryGadge()
         self.updateDisplayBrightness()
+    }
+    
+    
+    @objc
+    func onSwipeScreen(gesture: UISwipeGestureRecognizer)
+    {
+        if gesture.direction == .up
+        {
+            print("Upward")
+        }
+        else if gesture.direction == .down
+        {
+            print("Downward")
+        }
     }
     
     
