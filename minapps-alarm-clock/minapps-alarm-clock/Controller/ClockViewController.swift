@@ -172,22 +172,24 @@ class ClockViewController: UIViewController
         if SettingsService.instance.isUsing24HourConvention()
         {
             self.lblHoursAndMinutes.text = "\(clockData.hoursText24):\(clockData.minutesText)"
-            self.lblAmOrPm.text = ""
+            self.lblAmOrPm.isHidden = true
         }
         else
         {
             self.lblHoursAndMinutes.text = "\(clockData.hoursText12):\(clockData.minutesText)"
             self.lblAmOrPm.text = " \(clockData.amOrPmText.uppercased())"
+            self.lblAmOrPm.isHidden = false
         }
         
         // Output seconds
         if SettingsService.instance.doesShowSeconds()
         {
             self.lblSeconds.text = ":\(clockData.secondsText)"
+            self.lblSeconds.isHidden = false
         }
         else
         {
-            self.lblSeconds.text = ""
+            self.lblSeconds.isHidden = true
         }
         
         
@@ -196,10 +198,11 @@ class ClockViewController: UIViewController
         {
             self.dateData.updateDate(withDate: currentDateTime)
             self.lblDate.text = "\(dateData.weekdayShort.uppercased()), \(dateData.monthShort.uppercased()) \(dateData.day) \(dateData.year)"
+            self.lblDate.isHidden = false
         }
         else
         {
-            self.lblDate.text = ""
+            self.lblDate.isHidden = true
         }
     }
     
@@ -218,11 +221,12 @@ class ClockViewController: UIViewController
             {
                 self.lblBatteryGadge.text = "\(self.batteryPercentage)%"
             }
+            self.lblBatteryGadge.isHidden = false
         }
         else
         {
             self.imgBattery.isHidden = true
-            self.lblBatteryGadge.text = ""
+            self.lblBatteryGadge.isHidden = true
         }
     }
     
