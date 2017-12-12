@@ -60,6 +60,27 @@ class SettingsService
         return CGFloat(_settingsData.float(forKey: KEY_BRIGHTNESS))
     }
     
+    func setBrightnessRatio(_ value: CGFloat)
+    {
+        var newValue : CGFloat = 0.0
+        
+        // Clamp
+        if value > 1.0
+        {
+            newValue = 1.0
+        }
+        else if value < 0.0
+        {
+            newValue = 0.0
+        }
+        else
+        {
+            newValue = value
+        }
+        
+        _settingsData.set(newValue, forKey: KEY_BRIGHTNESS)
+    }
+    
     func canSwipeToControllBrightness() -> Bool
     {
         return _settingsData.bool(forKey: KEY_ENABLE_SWIPE_BRIGHTNESS)

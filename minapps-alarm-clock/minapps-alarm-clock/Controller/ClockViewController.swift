@@ -27,7 +27,9 @@ class ClockViewController: UIViewController
     private var clockTimer: Timer?
     private var clockData = ClockTimeData()
     private var dateData = ClockDateData()
-    
+    private var currTouchPos = CGPoint()
+    private var prevTouchPos = CGPoint()
+    private var touchMoveDelta: CGFloat = 0.0
     
     
     
@@ -255,15 +257,45 @@ class ClockViewController: UIViewController
     @objc
     func onSwipeScreen(gesture: UISwipeGestureRecognizer)
     {
+        let oldValue = SettingsService.instance.getBrightnessRatio()
+        let delta = (self.touchMoveDelta / 100.0)
+        
         if gesture.direction == .up
         {
-            print("Upward")
+            SettingsService.instance.setBrightnessRatio(oldValue + delta)
         }
         else if gesture.direction == .down
         {
-            print("Downward")
+            SettingsService.instance.setBrightnessRatio(oldValue - delta)
         }
     }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) 
+    {
+        if let touch = touches.first
+        {
+            self.currTouchPos = touch.location(in: self.view)
+            self.prevTouchPos = self.currTouchPos
+        }
+    }
+    
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) 
+    {
+        if let touch = touches.first
+        {
+            self.currTouchPos = touch.location(in: self.view)
+            
+            // Calculate a movement delta with distance formula
+            let xDelta = self.currTouchPos.x - self.prevTouchPos.x
+            let yDelta = self.currTouchPos.y - self.prevTouchPos.y
+            self.touchMoveDelta = sqrt(xDelta * xDelta + yDelta * yDelta)
+            
+            self.prevTouchPos = self.currTouchPos
+        }
+    }
+    
     
     
     @IBAction func onSettingsBtnPressed(_ sender: Any) 
@@ -278,6 +310,7 @@ class ClockViewController: UIViewController
     {
         
     }
+    
     
     
     
