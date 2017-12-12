@@ -10,6 +10,8 @@ import UIKit
 
 class ClockViewController: UIViewController 
 {
+    static let MAX_COVER_OPACITY: CGFloat = 0.8
+    
     @IBOutlet weak var lblHoursAndMinutes: UILabel!
     @IBOutlet weak var lblSeconds: UILabel!
     @IBOutlet weak var lblAmOrPm: UILabel!
@@ -19,12 +21,41 @@ class ClockViewController: UIViewController
     @IBOutlet weak var imgBattery: UIImageView!
     @IBOutlet weak var btnGear: UIButton!
     @IBOutlet weak var lblAlarmInfo: UILabel!
+    @IBOutlet weak var viewBrightnessCover: UIView!
     
     
     private var clockTimer: Timer?
     private var clockData = ClockTimeData()
     private var dateData = ClockDateData()
     
+    
+    
+    
+    // Properties
+    
+    private var batteryPercentage: Int
+    {
+        get
+        {
+            return Int(UIDevice.current.batteryLevel * 100.0)
+        }
+    }
+    
+    
+    private var brightnessCoverOpacity: CGFloat
+    {
+        get
+        {
+            // Converting brightness (0 to 1) to alpha (0.8 to 0)
+            let brightnessRatio = SettingsService.instance.getBrightnessRatio()
+            return ClockViewController.MAX_COVER_OPACITY * abs(brightnessRatio - 1.0)
+        }
+    }
+    
+    
+    
+    
+    // View Controller Stuff
     
     override func viewDidLoad() 
     {
@@ -81,13 +112,11 @@ class ClockViewController: UIViewController
     }
     
     
-    private var batteryPercentage: Int
-    {
-        get
-        {
-            return Int(UIDevice.current.batteryLevel * 100.0)
-        }
-    }
+    
+    
+    
+    
+    // Methods
     
     
     func setupColor(_ newColor: UIColor)
@@ -128,7 +157,7 @@ class ClockViewController: UIViewController
         // Get current time
         self.clockData.updateTime(withDate: currentDateTime)
         
-        // Output string values
+        // Output Time (hour and minute)
         if SettingsService.instance.isUsing24HourConvention()
         {
             self.lblHoursAndMinutes.text = "\(clockData.hoursText24):\(clockData.minutesText)"
@@ -140,8 +169,7 @@ class ClockViewController: UIViewController
             self.lblAmOrPm.text = " \(clockData.amOrPmText.uppercased())"
         }
         
-        
-        
+        // Output seconds
         if SettingsService.instance.doesShowSeconds()
         {
             self.lblSeconds.text = ":\(clockData.secondsText)"
@@ -170,7 +198,15 @@ class ClockViewController: UIViewController
         if SettingsService.instance.doesShowBattery() 
         {
             self.imgBattery.isHidden = false
-            self.lblBatteryGadge.text = "\(self.batteryPercentage)%"
+            let batteryValue = self.batteryPercentage
+            if batteryValue < 0 // Negative battery meter means we are on the Simulator
+            {
+                self.lblBatteryGadge.text = "SIMU"
+            }
+            else
+            {
+                self.lblBatteryGadge.text = "\(self.batteryPercentage)%"
+            }
         }
         else
         {
@@ -178,6 +214,17 @@ class ClockViewController: UIViewController
             self.lblBatteryGadge.text = ""
         }
     }
+    
+    
+    func updateDisplayBrightness()
+    {
+        self.viewBrightnessCover.backgroundColor = UIColor(white: 0.0, alpha: self.brightnessCoverOpacity)
+    }
+    
+    
+    
+    
+    // Events
     
     
     @objc
@@ -192,9 +239,8 @@ class ClockViewController: UIViewController
         self.setupColor(SettingsService.instance.getColor())
         self.updateClockFace()
         self.updateBatteryGadge()
+        self.updateDisplayBrightness()
     }
-    
-    
     
     
     @IBAction func onSettingsBtnPressed(_ sender: Any) 
@@ -209,6 +255,8 @@ class ClockViewController: UIViewController
     {
         
     }
+    
+    
     
     
     

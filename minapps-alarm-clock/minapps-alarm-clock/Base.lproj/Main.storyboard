@@ -122,6 +122,10 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByW-V5-roG" userLabel="View - Brightness Cover">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -130,10 +134,14 @@
                             <constraint firstItem="bOc-5j-qLT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="6n3-3F-DRg"/>
                             <constraint firstItem="gR2-l9-Nup" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AcD-dV-OSc"/>
                             <constraint firstItem="gR2-l9-Nup" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="KSE-MB-9qB"/>
+                            <constraint firstItem="ByW-V5-roG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SIb-7i-Wtg"/>
                             <constraint firstItem="8w6-aJ-Nq9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="XoG-uf-6TD"/>
+                            <constraint firstItem="ByW-V5-roG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="gvC-cK-dLO"/>
                             <constraint firstItem="bOc-5j-qLT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="kr4-nb-Y4g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8w6-aJ-Nq9" secondAttribute="bottom" constant="20" id="leX-br-5L1"/>
                             <constraint firstItem="gR2-l9-Nup" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="miG-gl-ipO"/>
+                            <constraint firstItem="ByW-V5-roG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="n2h-8q-nS9"/>
+                            <constraint firstItem="ByW-V5-roG" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="nG6-g7-hQM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bOc-5j-qLT" secondAttribute="trailing" constant="32" id="scs-57-dCy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -150,6 +158,7 @@
                         <outlet property="lblDate" destination="6iw-oy-4o1" id="Vre-Ik-FdI"/>
                         <outlet property="lblHoursAndMinutes" destination="JLf-cy-NQ8" id="EGs-3v-xeH"/>
                         <outlet property="lblSeconds" destination="QmY-NJ-a5B" id="sEV-lf-1Gt"/>
+                        <outlet property="viewBrightnessCover" destination="ByW-V5-roG" id="R4n-Y3-L0A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
