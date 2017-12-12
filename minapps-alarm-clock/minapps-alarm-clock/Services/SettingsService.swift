@@ -24,13 +24,36 @@ class SettingsService
     static let instance = SettingsService()
     private init() 
     {
-        // Register the settings bundle
-        let appDefaults = [String:Any]()
-        UserDefaults.standard.register(defaults: appDefaults)
+        _settingsData = UserDefaults.standard
+        _settingsData.synchronize()
+        
+        
+        // Credit to Kamil Szostakowski: https://stackoverflow.com/a/46561995
+        
+        // Get settings dictionary from file
+        let settingsUrl = Bundle.main.url(forResource: "Settings", withExtension: "bundle")!.appendingPathComponent("Root.plist")
+        let settingsPlist = NSDictionary(contentsOf:settingsUrl)!
+        let preferences = settingsPlist["PreferenceSpecifiers"] as! [NSDictionary]
+        
+        // Automatically get default values of all preferences
+        var defaultsToRegister = [String:Any]()
+        for preference in preferences 
+        {
+            guard let key = preference["Key"] as? String else 
+            {
+                print("Key not found for: \(preference)")
+                continue
+            }
+            
+            defaultsToRegister[key] = preference["DefaultValue"]
+        }
+        
+        // Register the preferences from the settings bundle
+        UserDefaults.standard.register(defaults: defaultsToRegister)
     }
     
     
-    private var _settingsData = UserDefaults.standard
+    private var _settingsData: UserDefaults
     
     
     
@@ -119,6 +142,11 @@ class SettingsService
         
         return chosenColor
     }
+    
+    
+    
+    
+    
     
     
 }
