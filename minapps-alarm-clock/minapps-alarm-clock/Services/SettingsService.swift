@@ -57,6 +57,11 @@ class SettingsService
     
     
     
+    
+    
+    
+    
+    
     func isUsing24HourConvention() -> Bool 
     {
         return _settingsData.bool(forKey: KEY_USE_24_HOUR)
@@ -107,6 +112,11 @@ class SettingsService
     func canSwipeToControlBrightness() -> Bool
     {
         return _settingsData.bool(forKey: KEY_ENABLE_SWIPE_BRIGHTNESS)
+    }
+    
+    func willAutoLockWhenPluggedIn() -> Bool
+    {
+        return _settingsData.bool(forKey: KEY_AUTOLOCK_PLUGGED_IN)
     }
     
     

@@ -74,6 +74,7 @@ class ClockViewController: UIViewController
         // Setup battery monitoring
         UIDevice.current.isBatteryMonitoringEnabled = true
         NotificationCenter.default.addObserver(self, selector: #selector(onBatteryLevelChanged(_:)), name: .UIDeviceBatteryLevelDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onBatteryStateChanged(_:)), name: .UIDeviceBatteryStateDidChange, object: nil)
         
         
         // Setup brightness swipe gestures
@@ -247,6 +248,29 @@ class ClockViewController: UIViewController
         self.lblAlarmInfo.font = UIFont(name: fontName, size: lblAlarmInfo.font.pointSize)
     }
     
+    func determineAutolockState()
+    {
+        let isDevicePluggedIn = UIDevice.current.batteryState == .full || UIDevice.current.batteryState == .charging
+        
+        if isDevicePluggedIn
+        {
+            let autolockShouldBeEnabled = SettingsService.instance.willAutoLockWhenPluggedIn()
+            
+            if autolockShouldBeEnabled
+            {
+                UIApplication.shared.isIdleTimerDisabled = false
+            }
+            else // Disale autolock
+            {
+                UIApplication.shared.isIdleTimerDisabled = true
+            }
+        }
+        else
+        {
+            UIApplication.shared.isIdleTimerDisabled = false
+        }
+    }
+    
     
     
     // Events
@@ -258,6 +282,13 @@ class ClockViewController: UIViewController
         self.updateBatteryGadge()
     }
     
+    @objc 
+    func onBatteryStateChanged(_ notification: Notification)
+    {
+        self.determineAutolockState()
+    }
+    
+    
     @objc
     func onSettingsChanged()
     {
@@ -266,6 +297,7 @@ class ClockViewController: UIViewController
         self.updateClockFace()
         self.updateBatteryGadge()
         self.updateDisplayBrightness()
+        self.determineAutolockState()
     }
     
     
