@@ -13,11 +13,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate 
 {
     var window: UIWindow?
-
+    private static var singletonAccess: AppDelegate?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let b = SettingsService.instance.doesShowSeconds()  // Initialize service without warnings
+        
+        AppDelegate.singletonAccess = self
+        
         return true || b
     }
 
@@ -42,12 +45,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         self.saveContext()
+        
+        AppDelegate.singletonAccess = nil
     }
     
     
     
     
     // MARK: - Core Data stack
+    
+    
+    static var coreDataManagedObjectContext: NSManagedObjectContext?
+    {
+        get
+        {
+            return AppDelegate.singletonAccess?.persistentContainer.viewContext
+        }
+    }
+    
     
     lazy var persistentContainer: NSPersistentContainer = {
         /*

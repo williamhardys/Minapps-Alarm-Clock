@@ -9,3 +9,7 @@ Simple Alarm Clock App for iOS
  - [Speculum](https://www.dafont.com/speculum.font) by D. Keith
  - [Origami Mommy](http://www.1001fonts.com/origami-mommy-font.html) by Tepid Monkey Fonts
  - [Ponderosa](http://www.1001fonts.com/ponderosa-font.html) by Tepid Monkey Fonts
+
+### Sound Credits
+
+ - [Digital Alarm](https://freesound.org/people/Tempouser/sounds/123349/) by Tempouser

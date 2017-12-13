@@ -12,7 +12,7 @@
         <attribute name="repeatOnWednesday" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="snoozeDuration" attributeType="Double" minValueString="0" defaultValueString="180" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="snoozeEnabled" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="soundName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="soundName" optional="YES" attributeType="String" defaultValueString="alarm_digital" syncable="YES"/>
         <attribute name="timeHour24" attributeType="Integer 16" minValueString="0" maxValueString="23" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timeMinute" attributeType="Integer 16" minValueString="0" maxValueString="59" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timeSeconds" attributeType="Integer 16" minValueString="0" maxValueString="59" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
