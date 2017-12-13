@@ -24,6 +24,7 @@
 		517024341FE0A66000E8FD6B /* speculum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 517024331FE0A65F00E8FD6B /* speculum.ttf */; };
 		517024381FE0AC2400E8FD6B /* origa___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 517024371FE0AC2400E8FD6B /* origa___.ttf */; };
 		5170243A1FE0ACF700E8FD6B /* ponde___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 517024391FE0ACF700E8FD6B /* ponde___.ttf */; };
+		5170243D1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5170243B1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodeld */; };
 		518547661FDF36C3002644C9 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518547651FDF36C3002644C9 /* SettingsService.swift */; };
 		5185476A1FE0936B002644C9 /* MODENINE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 518547691FE0936B002644C9 /* MODENINE.TTF */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		517024331FE0A65F00E8FD6B /* speculum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = speculum.ttf; sourceTree = "<group>"; };
 		517024371FE0AC2400E8FD6B /* origa___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "origa___.ttf"; sourceTree = "<group>"; };
 		517024391FE0ACF700E8FD6B /* ponde___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ponde___.ttf"; sourceTree = "<group>"; };
+		5170243C1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = minapps_alarm_clock.xcdatamodel; sourceTree = "<group>"; };
 		518547651FDF36C3002644C9 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		518547691FE0936B002644C9 /* MODENINE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MODENINE.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				5153C3BD1FDAD3AD0037B3C7 /* Info.plist */,
 				5153C3B11FDAD3AD0037B3C7 /* AppDelegate.swift */,
 				5153C3BA1FDAD3AD0037B3C7 /* LaunchScreen.storyboard */,
+				5170243B1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodeld */,
 				5153C3B81FDAD3AD0037B3C7 /* Assets.xcassets */,
 				5153C3FB1FDF03050037B3C7 /* Settings.bundle */,
 			);
@@ -288,6 +291,7 @@
 			files = (
 				518547661FDF36C3002644C9 /* SettingsService.swift in Sources */,
 				5153C3E51FDC543C0037B3C7 /* TimeMeridiem.swift in Sources */,
+				5170243D1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodeld in Sources */,
 				5153C3E31FDC3DE50037B3C7 /* ClockTimeData.swift in Sources */,
 				5153C3E91FDCA7B20037B3C7 /* ClockDateData.swift in Sources */,
 				5153C3B21FDAD3AD0037B3C7 /* AppDelegate.swift in Sources */,
@@ -538,6 +542,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5170243B1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5170243C1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodel */,
+			);
+			currentVersion = 5170243C1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodel */;
+			path = minapps_alarm_clock.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5153C3A61FDAD3AC0037B3C7 /* Project object */;
 }
