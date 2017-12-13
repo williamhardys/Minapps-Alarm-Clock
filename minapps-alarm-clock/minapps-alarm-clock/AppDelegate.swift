@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         let b = SettingsService.instance.doesShowSeconds()  // Initialize service without warnings
         DeviceService.instance.determineAutolockState()
         CoreDataService.instance.start()
+        AlarmService.instance.start()
         
         AppDelegate.singletonAccess = self
         

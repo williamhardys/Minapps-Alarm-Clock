@@ -34,7 +34,7 @@ class CoreDataService
     }
     
     
-    func loadEntities<T>(onComplete: @escaping (_ entities: [T]?) -> Void) where T : NSFetchRequestResult
+    func loadEntities<T>(ofType entityType: T.Type, onComplete: @escaping (_ entities: [T]?) -> Void) where T : NSFetchRequestResult
     {
         let fetchRequest = NSFetchRequest<T>(entityName: "\(T.self)")
         
@@ -49,7 +49,7 @@ class CoreDataService
         catch
         {
             debugPrint("Could not fetch entites of type \(T.self): \(error.localizedDescription)")
-            onComplete(foundEntities)
+            onComplete(nil)
         }
     }
     
@@ -74,14 +74,14 @@ class CoreDataService
     }
     
     // Doesn't save. Must do manually
-    func makeNewEntity<T>() -> T where T : NSManagedObject 
+    func makeNewEntity<T>(ofType entityType: T.Type) -> T where T : NSManagedObject 
     {
         let newEntity = T(context: _managedContext)
         return newEntity
     }
     
     // Doesn't save. Must do manually
-    func deleteEntity<T>(entity: T) where T : NSManagedObject
+    func deleteEntity<T>(ofType entityType: T.Type, entity: T) where T : NSManagedObject
     {
         _managedContext.delete(entity)
     }
