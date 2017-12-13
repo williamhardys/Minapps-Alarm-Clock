@@ -35,15 +35,6 @@ class ClockViewController: UIViewController
     
     // Properties
     
-    private var batteryPercentage: Int
-    {
-        get
-        {
-            return Int(UIDevice.current.batteryLevel * 100.0)
-        }
-    }
-    
-    
     private var brightnessCoverOpacity: CGFloat
     {
         get
@@ -74,7 +65,6 @@ class ClockViewController: UIViewController
         // Setup battery monitoring
         UIDevice.current.isBatteryMonitoringEnabled = true
         NotificationCenter.default.addObserver(self, selector: #selector(onBatteryLevelChanged(_:)), name: .UIDeviceBatteryLevelDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onBatteryStateChanged(_:)), name: .UIDeviceBatteryStateDidChange, object: nil)
         
         
         // Setup brightness swipe gestures
@@ -131,7 +121,7 @@ class ClockViewController: UIViewController
     // Methods
     
     
-    func setupColor(_ newColor: UIColor)
+    private func setupColor(_ newColor: UIColor)
     {
         self.btnGear.imageView?.tintColor = newColor
         self.imgBell.tintColor = newColor
@@ -213,14 +203,14 @@ class ClockViewController: UIViewController
         if SettingsService.instance.doesShowBattery() 
         {
             self.imgBattery.isHidden = false
-            let batteryValue = self.batteryPercentage
+            let batteryValue = DeviceService.instance.batteryPercentage
             if batteryValue < 0 // Negative battery meter means we are on the Simulator
             {
                 self.lblBatteryGadge.text = "SIMU"
             }
             else
             {
-                self.lblBatteryGadge.text = "\(self.batteryPercentage)%"
+                self.lblBatteryGadge.text = "\(batteryValue)%"
             }
             self.lblBatteryGadge.isHidden = false
         }
@@ -232,13 +222,13 @@ class ClockViewController: UIViewController
     }
     
     
-    func updateDisplayBrightness()
+    private func updateDisplayBrightness()
     {
         self.viewBrightnessCover.backgroundColor = UIColor(white: 0.0, alpha: self.brightnessCoverOpacity)
     }
     
     
-    func updateFont(named fontName: String)
+    private func updateFont(named fontName: String)
     {
         self.lblDate.font = UIFont(name: fontName, size: lblDate.font.pointSize)
         self.lblBatteryGadge.font = UIFont(name: fontName, size: lblBatteryGadge.font.pointSize)
@@ -248,61 +238,32 @@ class ClockViewController: UIViewController
         self.lblAlarmInfo.font = UIFont(name: fontName, size: lblAlarmInfo.font.pointSize)
     }
     
-    func determineAutolockState()
-    {
-        let isDevicePluggedIn = UIDevice.current.batteryState == .full || UIDevice.current.batteryState == .charging
-        
-        if isDevicePluggedIn
-        {
-            let autolockShouldBeEnabled = SettingsService.instance.willAutoLockWhenPluggedIn()
-            
-            if autolockShouldBeEnabled
-            {
-                UIApplication.shared.isIdleTimerDisabled = false
-            }
-            else // Disale autolock
-            {
-                UIApplication.shared.isIdleTimerDisabled = true
-            }
-        }
-        else
-        {
-            UIApplication.shared.isIdleTimerDisabled = false
-        }
-    }
-    
     
     
     // Events
     
     
     @objc
-    func onBatteryLevelChanged(_ notification: Notification)
+    private func onBatteryLevelChanged(_ notification: Notification)
     {
         self.updateBatteryGadge()
     }
     
-    @objc 
-    func onBatteryStateChanged(_ notification: Notification)
-    {
-        self.determineAutolockState()
-    }
     
     
     @objc
-    func onSettingsChanged()
+    private func onSettingsChanged()
     {
         self.setupColor(SettingsService.instance.getColor())
         self.updateFont(named: SettingsService.instance.getFont())
         self.updateClockFace()
         self.updateBatteryGadge()
         self.updateDisplayBrightness()
-        self.determineAutolockState()
     }
     
     
     @objc
-    func onSwipeScreen(gesture: UISwipeGestureRecognizer)
+    private func onSwipeScreen(gesture: UISwipeGestureRecognizer)
     {
         if SettingsService.instance.canSwipeToControlBrightness()
         {
@@ -338,6 +299,7 @@ class ClockViewController: UIViewController
             self.currTouchPos = touch.location(in: self.view)
             
             // Calculate a movement delta with distance formula
+            // This move delta is used to control screen brightness in self.onSwipeScreen()
             let xDelta = self.currTouchPos.x - self.prevTouchPos.x
             let yDelta = self.currTouchPos.y - self.prevTouchPos.y
             self.touchMoveDelta = sqrt(xDelta * xDelta + yDelta * yDelta)
