@@ -6,6 +6,5 @@ Simple Alarm Clock App for iOS
  - [Nouveau IBM](https://www.dafont.com/nouveau-ibm.font) by Arto Hatanpää
  - [ModeNine](https://www.dafont.com/modenine.font) by Grudnuk
  - [Calling Code](https://www.dafont.com/calling-code.font) by Dharma Type
- - [Erika Type](https://www.dafont.com/erika-type.font) by Peter Wiegel
  - [Speculum](https://www.dafont.com/speculum.font) by D. Keith
  - [White Rabbit](https://www.dafont.com/white-rabbit.font) by Matthew Welch
