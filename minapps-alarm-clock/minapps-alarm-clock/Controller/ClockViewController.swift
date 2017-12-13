@@ -86,7 +86,7 @@ class ClockViewController: UIViewController
         
         self.updateClockFace()
         
-        if self.clockTimer?.isValid == false
+        if self.clockTimer == nil || self.clockTimer!.isValid == false
         {
             self.stopClockTimer()
             self.initializeClockTimer()
@@ -320,7 +320,9 @@ class ClockViewController: UIViewController
     
     @IBAction func onAlarmBtnPressed(_ sender: Any) 
     {
+        guard let alarmsListVC = storyboard?.instantiateViewController(withIdentifier: AlarmListViewController.STRYBRD_ID) else {return}
         
+        present(alarmsListVC, animated: true, completion: nil)
     }
     
     

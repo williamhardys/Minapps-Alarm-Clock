@@ -28,6 +28,7 @@
 		5170243F1FE18CFF00E8FD6B /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5170243E1FE18CFF00E8FD6B /* DeviceService.swift */; };
 		517024411FE19E8B00E8FD6B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517024401FE19E8B00E8FD6B /* CoreDataService.swift */; };
 		517024431FE1AB0900E8FD6B /* AlarmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517024421FE1AB0900E8FD6B /* AlarmService.swift */; };
+		517024451FE1BB8B00E8FD6B /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517024441FE1BB8B00E8FD6B /* AlarmListViewController.swift */; };
 		518547661FDF36C3002644C9 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518547651FDF36C3002644C9 /* SettingsService.swift */; };
 		5185476A1FE0936B002644C9 /* MODENINE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 518547691FE0936B002644C9 /* MODENINE.TTF */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		5170243E1FE18CFF00E8FD6B /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 		517024401FE19E8B00E8FD6B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		517024421FE1AB0900E8FD6B /* AlarmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmService.swift; sourceTree = "<group>"; };
+		517024441FE1BB8B00E8FD6B /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		518547651FDF36C3002644C9 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		518547691FE0936B002644C9 /* MODENINE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MODENINE.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				5153C3D41FDADBCD0037B3C7 /* ClockViewController.swift */,
+				517024441FE1BB8B00E8FD6B /* AlarmListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				518547661FDF36C3002644C9 /* SettingsService.swift in Sources */,
+				517024451FE1BB8B00E8FD6B /* AlarmListViewController.swift in Sources */,
 				517024431FE1AB0900E8FD6B /* AlarmService.swift in Sources */,
 				5153C3E51FDC543C0037B3C7 /* TimeMeridiem.swift in Sources */,
 				5170243D1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodeld in Sources */,

@@ -17,12 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        AppDelegate.singletonAccess = self
+        
         let b = SettingsService.instance.doesShowSeconds()  // Initialize service without warnings
         DeviceService.instance.determineAutolockState()
         CoreDataService.instance.start()
         AlarmService.instance.start()
-        
-        AppDelegate.singletonAccess = self
         
         return true || b
     }

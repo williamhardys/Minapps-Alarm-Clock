@@ -15,6 +15,14 @@ class AlarmService
     static let instance = AlarmService()
     private init()
     {
+    }
+    
+    var alarms: [AlarmEntity_CoreData] = []
+    
+    
+    // Intentionally does nothing. Used to load in AppDelegate
+    func start()
+    {
         self.loadAllAlarms { (success) in
             if success
             {
@@ -25,14 +33,6 @@ class AlarmService
                 print("ERROR: AlarmService failed to load alarms")
             }
         }
-    }
-    
-    var alarms: [AlarmEntity_CoreData] = []
-    
-    
-    // Intentionally does nothing. Used to load in AppDelegate
-    func start()
-    {
     }
     
     
