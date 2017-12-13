@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         // Override point for customization after application launch.
         let b = SettingsService.instance.doesShowSeconds()  // Initialize service without warnings
         DeviceService.instance.determineAutolockState()
+        CoreDataService.instance.start()
         
         AppDelegate.singletonAccess = self
         

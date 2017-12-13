@@ -59,7 +59,7 @@ class DeviceService
                 UIApplication.shared.isIdleTimerDisabled = true
             }
         }
-        else
+        else // Always enable autolock when unplugged
         {
             UIApplication.shared.isIdleTimerDisabled = false
         }
