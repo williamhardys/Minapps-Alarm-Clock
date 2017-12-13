@@ -22,6 +22,8 @@
 		5153C3FC1FDF03050037B3C7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3FB1FDF03050037B3C7 /* Settings.bundle */; };
 		5170242E1FE09A1900E8FD6B /* CallingCode-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5170242D1FE09A1900E8FD6B /* CallingCode-Regular.ttf */; };
 		517024341FE0A66000E8FD6B /* speculum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 517024331FE0A65F00E8FD6B /* speculum.ttf */; };
+		517024381FE0AC2400E8FD6B /* origa___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 517024371FE0AC2400E8FD6B /* origa___.ttf */; };
+		5170243A1FE0ACF700E8FD6B /* ponde___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 517024391FE0ACF700E8FD6B /* ponde___.ttf */; };
 		518547661FDF36C3002644C9 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518547651FDF36C3002644C9 /* SettingsService.swift */; };
 		5185476A1FE0936B002644C9 /* MODENINE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 518547691FE0936B002644C9 /* MODENINE.TTF */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		5153C3FB1FDF03050037B3C7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5170242D1FE09A1900E8FD6B /* CallingCode-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CallingCode-Regular.ttf"; sourceTree = "<group>"; };
 		517024331FE0A65F00E8FD6B /* speculum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = speculum.ttf; sourceTree = "<group>"; };
+		517024371FE0AC2400E8FD6B /* origa___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "origa___.ttf"; sourceTree = "<group>"; };
+		517024391FE0ACF700E8FD6B /* ponde___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ponde___.ttf"; sourceTree = "<group>"; };
 		518547651FDF36C3002644C9 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		518547691FE0936B002644C9 /* MODENINE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MODENINE.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +153,8 @@
 				518547691FE0936B002644C9 /* MODENINE.TTF */,
 				5153C3DD1FDB966B0037B3C7 /* Nouveau_IBM.ttf */,
 				517024331FE0A65F00E8FD6B /* speculum.ttf */,
+				517024371FE0AC2400E8FD6B /* origa___.ttf */,
+				517024391FE0ACF700E8FD6B /* ponde___.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -257,8 +263,10 @@
 				5153C3DE1FDB966B0037B3C7 /* Nouveau_IBM.ttf in Resources */,
 				5153C3B91FDAD3AD0037B3C7 /* Assets.xcassets in Resources */,
 				5153C3E11FDC3D040037B3C7 /* 123349__tempouser__digital-alarm.wav in Resources */,
+				517024381FE0AC2400E8FD6B /* origa___.ttf in Resources */,
 				5153C3FC1FDF03050037B3C7 /* Settings.bundle in Resources */,
 				517024341FE0A66000E8FD6B /* speculum.ttf in Resources */,
+				5170243A1FE0ACF700E8FD6B /* ponde___.ttf in Resources */,
 				5153C3B71FDAD3AD0037B3C7 /* Main.storyboard in Resources */,
 				5170242E1FE09A1900E8FD6B /* CallingCode-Regular.ttf in Resources */,
 			);

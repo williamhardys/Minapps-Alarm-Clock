@@ -7,4 +7,5 @@ Simple Alarm Clock App for iOS
  - [ModeNine](https://www.dafont.com/modenine.font) by Grudnuk
  - [Calling Code](https://www.dafont.com/calling-code.font) by Dharma Type
  - [Speculum](https://www.dafont.com/speculum.font) by D. Keith
- - [White Rabbit](https://www.dafont.com/white-rabbit.font) by Matthew Welch
+ - [Origami Mommy](http://www.1001fonts.com/origami-mommy-font.html) by Tepid Monkey Fonts
+ - [Ponderosa](http://www.1001fonts.com/ponderosa-font.html) by Tepid Monkey Fonts
