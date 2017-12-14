@@ -53,16 +53,17 @@ class ModifyAlarmViewController: UITableViewController
     
     override func viewWillDisappear(_ animated: Bool) 
     {
-        CoreDataService.instance.saveAllEntities { (success) in
-            if success
-            {
-                print("Alarm was successfully edited")
-            }
-            else
-            {
-                print("Alarm failed to be edited")
-            }
-        }
+        // Uncomment when ready vvv
+//        CoreDataService.instance.saveAllEntities { (success) in
+//            if success
+//            {
+//                print("Alarm was successfully edited")
+//            }
+//            else
+//            {
+//                print("Alarm failed to be edited")
+//            }
+//        }
         
         super.viewWillDisappear(animated)
     }

@@ -56,6 +56,17 @@ class AlarmListCell: UITableViewCell
     @IBAction func onSwitchChanged(_ sender: UISwitch) 
     {
         self.alarm.alarmEnabled = sender.isOn
+        
+        CoreDataService.instance.saveAllEntities { (success) in
+            if success
+            {
+                print("Alarm was successfully disabled")
+            }
+            else
+            {
+                print("Alarm failed to be disabled")
+            }
+        }
     }
     
     
