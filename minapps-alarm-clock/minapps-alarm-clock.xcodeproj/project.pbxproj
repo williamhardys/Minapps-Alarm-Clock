@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51498C2D1FE3305200EC60EA /* AlarmSounds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2C1FE3305200EC60EA /* AlarmSounds.plist */; };
 		5153C3B21FDAD3AD0037B3C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3B11FDAD3AD0037B3C7 /* AppDelegate.swift */; };
 		5153C3B71FDAD3AD0037B3C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3B51FDAD3AD0037B3C7 /* Main.storyboard */; };
 		5153C3B91FDAD3AD0037B3C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3B81FDAD3AD0037B3C7 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51498C2C1FE3305200EC60EA /* AlarmSounds.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AlarmSounds.plist; sourceTree = "<group>"; };
 		5153C3AE1FDAD3AD0037B3C7 /* minapps-alarm-clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "minapps-alarm-clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5153C3B11FDAD3AD0037B3C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5153C3B61FDAD3AD0037B3C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				5153C3E01FDC3D040037B3C7 /* alarm_digital.wav */,
+				51498C2C1FE3305200EC60EA /* AlarmSounds.plist */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				517024381FE0AC2400E8FD6B /* origa___.ttf in Resources */,
 				5153C3FC1FDF03050037B3C7 /* Settings.bundle in Resources */,
 				517024341FE0A66000E8FD6B /* speculum.ttf in Resources */,
+				51498C2D1FE3305200EC60EA /* AlarmSounds.plist in Resources */,
 				5170243A1FE0ACF700E8FD6B /* ponde___.ttf in Resources */,
 				5153C3B71FDAD3AD0037B3C7 /* Main.storyboard in Resources */,
 				5170242E1FE09A1900E8FD6B /* CallingCode-Regular.ttf in Resources */,

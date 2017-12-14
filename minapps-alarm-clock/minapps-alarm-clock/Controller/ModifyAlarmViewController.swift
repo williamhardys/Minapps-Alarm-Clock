@@ -32,7 +32,8 @@ class ModifyAlarmViewController: UITableViewController
     private var alarm: AlarmEntity_CoreData!
     
     
-    var testPickerData: [String] = []
+    private var alarmSoundNames: [String] = []
+    private var alarmSoundFiles: [String] = []
     
     
     override func viewDidLoad() 
@@ -44,7 +45,7 @@ class ModifyAlarmViewController: UITableViewController
         self.pickerAlarmSound.dataSource = self
         self.txtFieldAlarmName.delegate = self
         
-        self.testPickerData = ["One", "Two", "Three", "Four", "Five"]
+        self.loadAlarmSoundData()
         
         self.changeSwitchActiveColors( SettingsService.instance.getColor() )
         
@@ -81,7 +82,7 @@ class ModifyAlarmViewController: UITableViewController
     }
     
     
-    func changeSwitchActiveColors(_ color: UIColor)
+    private func changeSwitchActiveColors(_ color: UIColor)
     {
         self.switchSunday.onTintColor = color
         self.switchMonday.onTintColor = color
@@ -95,9 +96,23 @@ class ModifyAlarmViewController: UITableViewController
     }
     
     
+    private func loadAlarmSoundData()
+    {
+        var soundRegistry: NSDictionary?
+        if let soundRegistryPath = Bundle.main.path(forResource: "AlarmSounds", ofType: "plist") 
+        {
+            soundRegistry = NSDictionary(contentsOfFile: soundRegistryPath)
+        }
+        if let registry = soundRegistry 
+        {
+            self.alarmSoundNames = registry.value(forKey: "Alarm Sound Names") as! [String]
+            self.alarmSoundFiles = registry.value(forKey: "Alarm Sound Files") as! [String]
+        }
+    }
+    
     
     @objc
-    func onTap()
+    private func onTap()
     {
         self.view.endEditing(true)
     }
@@ -185,19 +200,19 @@ extension ModifyAlarmViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     // Number of rows
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int 
     {
-        return self.testPickerData.count
+        return self.alarmSoundNames.count
     }
     
     // Populate picker with data to select
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? 
     {
-        return self.testPickerData[row]
+        return self.alarmSoundNames[row]
     }
     
     // When the picker selects something
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) 
     {
-        self.alarm.soundName = self.testPickerData[row]
+        self.alarm.soundName = self.alarmSoundNames[row]
     }
 }
 
