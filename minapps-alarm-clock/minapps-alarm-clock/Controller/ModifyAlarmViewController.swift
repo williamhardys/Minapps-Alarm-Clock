@@ -42,6 +42,7 @@ class ModifyAlarmViewController: UITableViewController
         self.staticTableAlarmSettings.allowsSelection = false
         self.pickerAlarmSound.delegate = self
         self.pickerAlarmSound.dataSource = self
+        self.txtFieldAlarmName.delegate = self
         
         self.testPickerData = ["One", "Two", "Three", "Four", "Five"]
         
@@ -49,6 +50,10 @@ class ModifyAlarmViewController: UITableViewController
         
         let alarmClockTime = ClockTimeData(withHours: Int(alarm.timeHour24), minutes: Int(alarm.timeMinute), andSeconds: 0)
         self.datePickerAlarmTime.date = alarmClockTime.makeDateObject()
+        
+        self.txtFieldAlarmName.text = self.alarm.alarmName
+        let tap = UITapGestureRecognizer(target: self, action: #selector(onTap))
+        self.view.addGestureRecognizer(tap)
     }
     
     override func viewWillDisappear(_ animated: Bool) 
@@ -91,6 +96,13 @@ class ModifyAlarmViewController: UITableViewController
     
     
     
+    @objc
+    func onTap()
+    {
+        self.view.endEditing(true)
+    }
+    
+    
     @IBAction func onDoneBtnPressed(_ sender: Any) 
     {
         dismiss(animated: true, completion: nil)
@@ -105,47 +117,53 @@ class ModifyAlarmViewController: UITableViewController
     
     @IBAction func onSundaySwitchChanged(_ sender: UISwitch) 
     {
-        
+        self.alarm.repeatOnSunday = sender.isOn
     }
     
     @IBAction func onMondaySwitchChanged(_ sender: UISwitch) 
     {
-        
+        self.alarm.repeatOnMonday = sender.isOn
     }
     
     @IBAction func onTuesdaySwitchChanged(_ sender: UISwitch) 
     {
-        
+        self.alarm.repeatOnTuesday = sender.isOn
     }
     
     @IBAction func onWednesdaySwitchChanged(_ sender: UISwitch) 
     {
-        
+        self.alarm.repeatOnWednesday = sender.isOn
     }
     
     @IBAction func onThursdaySwitchChanged(_ sender: UISwitch) 
     {
-        
+        self.alarm.repeatOnThursday = sender.isOn
     }
     
     @IBAction func onFridaySwitchChanged(_ sender: UISwitch) 
     {
-        
+        self.alarm.repeatOnFriday = sender.isOn
     }
     
     @IBAction func onSaturdaySwitchChanged(_ sender: UISwitch) 
     {
-        
+        self.alarm.repeatOnSaturday = sender.isOn
     }
     
     @IBAction func onAlarmNameEditingEnded(_ sender: UITextField) 
     {
+        var newName = "Alarm"
+        if sender.text != nil
+        {
+            newName = sender.text!
+        }
         
+        self.alarm.alarmName = newName
     }
     
     @IBAction func onSnoozeSwitchChanged(_ sender: UISwitch) 
     {
-        
+        self.alarm.snoozeEnabled = sender.isOn
     }
     
     @IBAction func onSnoozeStepperChanged(_ sender: UIStepper) 
@@ -183,6 +201,16 @@ extension ModifyAlarmViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     }
 }
 
+
+
+extension ModifyAlarmViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool 
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+}
 
 
 
