@@ -39,10 +39,16 @@ class ModifyAlarmViewController: UITableViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.staticTableAlarmSettings.allowsSelection = false
         self.pickerAlarmSound.delegate = self
         self.pickerAlarmSound.dataSource = self
         
         self.testPickerData = ["One", "Two", "Three", "Four", "Five"]
+        
+        self.changeSwitchActiveColors( SettingsService.instance.getColor() )
+        
+        let alarmClockTime = ClockTimeData(withHours: Int(alarm.timeHour24), minutes: Int(alarm.timeMinute), andSeconds: 0)
+        self.datePickerAlarmTime.date = alarmClockTime.makeDateObject()
     }
     
     
@@ -52,6 +58,21 @@ class ModifyAlarmViewController: UITableViewController
         
         let _ = AlarmService.instance.setAlarmForEditing(passedAlarm)
     }
+    
+    
+    func changeSwitchActiveColors(_ color: UIColor)
+    {
+        self.switchSunday.onTintColor = color
+        self.switchMonday.onTintColor = color
+        self.switchTuesday.onTintColor = color
+        self.switchWednesday.onTintColor = color
+        self.switchThursday.onTintColor = color
+        self.switchFriday.onTintColor = color
+        self.switchSaturday.onTintColor = color
+        self.switchSnooze.onTintColor = color
+        self.stepperSnoozeTime.tintColor = color
+    }
+    
     
     
     @IBAction func onDoneBtnPressed(_ sender: Any) 
