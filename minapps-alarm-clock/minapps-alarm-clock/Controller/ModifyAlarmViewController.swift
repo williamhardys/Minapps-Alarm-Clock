@@ -30,4 +30,17 @@ class ModifyAlarmViewController: UIViewController
     }
     
     
+    
+    @IBAction func onCancelBtnPressed(_ sender: Any) 
+    {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func onAddAlarmBtnPressed(_ sender: Any) 
+    {
+        
+    }
+    
+    
 }

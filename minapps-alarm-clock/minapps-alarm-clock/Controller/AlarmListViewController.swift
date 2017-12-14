@@ -35,17 +35,17 @@ class AlarmListViewController: UIViewController
     @IBAction func onNewAlarmBtnPressed(_ sender: Any) 
     {
         // Create a new alarm object
-        var newAlarm: AlarmEntity_CoreData!
-        AlarmService.instance.makeNewAlarmAndSave { (returnedAlarm) in
-            guard let alarm = returnedAlarm else {print("Alarm creation failed!"); return}
-            newAlarm = alarm
-        }
+//        var newAlarm: AlarmEntity_CoreData!
+//        AlarmService.instance.makeNewAlarmAndSave { (returnedAlarm) in
+//            guard let alarm = returnedAlarm else {print("Alarm creation failed!"); return}
+//            newAlarm = alarm
+//        }
         
         // Create the ModifyAlarmVC
         guard let modifyAlarmVC = storyboard?.instantiateViewController(withIdentifier: ModifyAlarmViewController.STRYBRD_ID) as? ModifyAlarmViewController else {return}
         
         // Send the new alarm into to VC
-        modifyAlarmVC.loadAlarm(newAlarm)
+        //modifyAlarmVC.loadAlarm(newAlarm)
         
         // Load the VC
         present(modifyAlarmVC, animated: true, completion: nil)
