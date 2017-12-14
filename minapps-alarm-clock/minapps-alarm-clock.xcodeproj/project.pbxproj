@@ -29,8 +29,10 @@
 		517024411FE19E8B00E8FD6B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517024401FE19E8B00E8FD6B /* CoreDataService.swift */; };
 		517024431FE1AB0900E8FD6B /* AlarmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517024421FE1AB0900E8FD6B /* AlarmService.swift */; };
 		517024451FE1BB8B00E8FD6B /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517024441FE1BB8B00E8FD6B /* AlarmListViewController.swift */; };
+		517024481FE1D0B400E8FD6B /* AlarmListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517024471FE1D0B400E8FD6B /* AlarmListCell.swift */; };
 		518547661FDF36C3002644C9 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518547651FDF36C3002644C9 /* SettingsService.swift */; };
 		5185476A1FE0936B002644C9 /* MODENINE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 518547691FE0936B002644C9 /* MODENINE.TTF */; };
+		519C09711FE1F493000E6A60 /* ModifyAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C09701FE1F493000E6A60 /* ModifyAlarmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +72,10 @@
 		517024401FE19E8B00E8FD6B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		517024421FE1AB0900E8FD6B /* AlarmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmService.swift; sourceTree = "<group>"; };
 		517024441FE1BB8B00E8FD6B /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
+		517024471FE1D0B400E8FD6B /* AlarmListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListCell.swift; sourceTree = "<group>"; };
 		518547651FDF36C3002644C9 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		518547691FE0936B002644C9 /* MODENINE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MODENINE.TTF; sourceTree = "<group>"; };
+		519C09701FE1F493000E6A60 /* ModifyAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyAlarmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +117,11 @@
 		5153C3B01FDAD3AD0037B3C7 /* minapps-alarm-clock */ = {
 			isa = PBXGroup;
 			children = (
-				518547641FDF36AF002644C9 /* Services */,
 				5153C3DF1FDC3CED0037B3C7 /* Sounds */,
 				5153C3D61FDAE0FA0037B3C7 /* Fonts */,
+				518547641FDF36AF002644C9 /* Services */,
 				5153C3D31FDAD9CE0037B3C7 /* Model */,
+				517024461FE1D07500E8FD6B /* View */,
 				5153C3D11FDAD9BF0037B3C7 /* Controller */,
 				5153C3B51FDAD3AD0037B3C7 /* Main.storyboard */,
 				5153C3BD1FDAD3AD0037B3C7 /* Info.plist */,
@@ -144,6 +149,7 @@
 			children = (
 				5153C3D41FDADBCD0037B3C7 /* ClockViewController.swift */,
 				517024441FE1BB8B00E8FD6B /* AlarmListViewController.swift */,
+				519C09701FE1F493000E6A60 /* ModifyAlarmViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +183,14 @@
 				5153C3E01FDC3D040037B3C7 /* alarm_digital.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		517024461FE1D07500E8FD6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				517024471FE1D0B400E8FD6B /* AlarmListCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		518547641FDF36AF002644C9 /* Services */ = {
@@ -301,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				519C09711FE1F493000E6A60 /* ModifyAlarmViewController.swift in Sources */,
 				518547661FDF36C3002644C9 /* SettingsService.swift in Sources */,
 				517024451FE1BB8B00E8FD6B /* AlarmListViewController.swift in Sources */,
 				517024431FE1AB0900E8FD6B /* AlarmService.swift in Sources */,
@@ -312,6 +327,7 @@
 				5153C3D51FDADBCD0037B3C7 /* ClockViewController.swift in Sources */,
 				517024411FE19E8B00E8FD6B /* CoreDataService.swift in Sources */,
 				5170243F1FE18CFF00E8FD6B /* DeviceService.swift in Sources */,
+				517024481FE1D0B400E8FD6B /* AlarmListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

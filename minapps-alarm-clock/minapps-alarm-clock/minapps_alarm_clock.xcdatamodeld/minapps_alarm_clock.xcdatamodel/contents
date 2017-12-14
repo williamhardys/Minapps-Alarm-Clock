@@ -15,9 +15,8 @@
         <attribute name="soundName" optional="YES" attributeType="String" defaultValueString="alarm_digital" syncable="YES"/>
         <attribute name="timeHour24" attributeType="Integer 16" minValueString="0" maxValueString="23" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timeMinute" attributeType="Integer 16" minValueString="0" maxValueString="59" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="timeSeconds" attributeType="Integer 16" minValueString="0" maxValueString="59" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AlarmEntity_CoreData" positionX="-63" positionY="-18" width="128" height="268"/>
+        <element name="AlarmEntity_CoreData" positionX="-63" positionY="-18" width="128" height="253"/>
     </elements>
 </model>

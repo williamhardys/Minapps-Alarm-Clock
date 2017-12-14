@@ -41,7 +41,7 @@ class SettingsService
         {
             guard let key = preference["Key"] as? String else 
             {
-                print("Key not found for: \(preference)")
+                //print("Key not found for: \(preference)")
                 continue
             }
             

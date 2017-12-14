@@ -51,4 +51,33 @@ class AlarmService
         }
     }
     
+    
+    func makeNewAlarmAndSave(onComplete: @escaping (_ newAlarm: AlarmEntity_CoreData?) -> Void)
+    {
+        let newAlarm = CoreDataService.instance.makeNewEntity(ofType: AlarmEntity_CoreData.self)
+        
+        CoreDataService.instance.saveAllEntities { (success) in
+            if success
+            {
+                self.loadAllAlarms(onComplete: { (areAlarmsLoaded) in
+                    if areAlarmsLoaded
+                    {
+                        onComplete(newAlarm)
+                    }
+                    else
+                    {
+                        print("Making a new alarm: failed to reload the list of alarms!")
+                        onComplete(nil)
+                    }
+                })
+            }
+            else
+            {
+                CoreDataService.instance.deleteEntity(ofType: AlarmEntity_CoreData.self, entity: newAlarm)
+                print("Making a new alarm: failed to save new alarm!")
+                onComplete(nil)
+            }
+        }
+    }
+    
 }
