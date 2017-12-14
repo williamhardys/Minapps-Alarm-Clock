@@ -15,7 +15,6 @@ class AlarmListViewController: UIViewController
     
     @IBOutlet weak var tableAlarms: UITableView!
     
-    
     override func viewDidLoad() 
     {
         super.viewDidLoad()

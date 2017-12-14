@@ -31,5 +31,9 @@ class ModifyAlarmViewController: UITableViewController
         let _ = AlarmService.instance.setAlarmForEditing(passedAlarm)
     }
     
+    @IBAction func onDoneBtnPressed(_ sender: Any) 
+    {
+        dismiss(animated: true, completion: nil)
+    }
     
 }
