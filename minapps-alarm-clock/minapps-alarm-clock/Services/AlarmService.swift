@@ -81,27 +81,4 @@ class AlarmService
     }
     
     
-    
-    // Edit an alarm
-    
-    private(set) public var selectedAlarmForEditing: AlarmEntity_CoreData?
-    
-    func setAlarmForEditing(_ alarm: AlarmEntity_CoreData) -> Bool
-    {
-        if self.selectedAlarmForEditing != nil
-        {
-            return false
-        }
-        
-        self.selectedAlarmForEditing = alarm
-        
-        return true
-    }
-    
-    func saveEditsOnSelectedAlarm() -> Bool
-    {
-        // TODO: Implement!
-        return true
-    }
-    
 }

@@ -51,12 +51,27 @@ class ModifyAlarmViewController: UITableViewController
         self.datePickerAlarmTime.date = alarmClockTime.makeDateObject()
     }
     
+    override func viewWillDisappear(_ animated: Bool) 
+    {
+        CoreDataService.instance.saveAllEntities { (success) in
+            if success
+            {
+                print("Alarm was successfully edited")
+            }
+            else
+            {
+                print("Alarm failed to be edited")
+            }
+        }
+        
+        super.viewWillDisappear(animated)
+    }
+    
+    
     
     func loadAlarm(_ passedAlarm: AlarmEntity_CoreData)
     {
         self.alarm = passedAlarm
-        
-        let _ = AlarmService.instance.setAlarmForEditing(passedAlarm)
     }
     
     
@@ -82,7 +97,9 @@ class ModifyAlarmViewController: UITableViewController
     
     @IBAction func onAlarmTimePickerChanged(_ sender: UIDatePicker) 
     {
-        
+        let alarmTime = ClockTimeData(withDate: sender.date)
+        self.alarm.timeHour24 = Int16(alarmTime.hours24)
+        self.alarm.timeMinute = Int16(alarmTime.minutes)
     }
     
     @IBAction func onSundaySwitchChanged(_ sender: UISwitch) 
@@ -161,7 +178,7 @@ extension ModifyAlarmViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     // When the picker selects something
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) 
     {
-        // TODO: Implement
+        self.alarm.soundName = self.testPickerData[row]
     }
 }
 
