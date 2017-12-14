@@ -26,7 +26,7 @@ class AlarmService
         self.loadAllAlarms { (success) in
             if success
             {
-                print("AlarmService loaded alarms successfully")
+                print("AlarmService loaded \(self.alarms.count) alarms successfully")
             }
             else
             {
@@ -78,6 +78,30 @@ class AlarmService
                 onComplete(nil)
             }
         }
+    }
+    
+    
+    
+    // Edit an alarm
+    
+    private(set) public var selectedAlarmForEditing: AlarmEntity_CoreData?
+    
+    func setAlarmForEditing(_ alarm: AlarmEntity_CoreData) -> Bool
+    {
+        if self.selectedAlarmForEditing != nil
+        {
+            return false
+        }
+        
+        self.selectedAlarmForEditing = alarm
+        
+        return true
+    }
+    
+    func saveEditsOnSelectedAlarm() -> Bool
+    {
+        // TODO: Implement!
+        return true
     }
     
 }

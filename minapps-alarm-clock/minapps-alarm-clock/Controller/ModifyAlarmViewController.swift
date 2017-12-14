@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ModifyAlarmViewController: UIViewController 
+class ModifyAlarmViewController: UITableViewController 
 {
     static let STRYBRD_ID = "ModifyAlarmVC"
     
@@ -27,19 +27,8 @@ class ModifyAlarmViewController: UIViewController
     func loadAlarm(_ passedAlarm: AlarmEntity_CoreData)
     {
         self.alarm = passedAlarm
-    }
-    
-    
-    
-    @IBAction func onCancelBtnPressed(_ sender: Any) 
-    {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
-    @IBAction func onAddAlarmBtnPressed(_ sender: Any) 
-    {
         
+        let _ = AlarmService.instance.setAlarmForEditing(passedAlarm)
     }
     
     

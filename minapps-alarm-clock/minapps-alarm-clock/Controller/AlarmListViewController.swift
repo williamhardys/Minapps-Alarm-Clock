@@ -21,9 +21,29 @@ class AlarmListViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+        self.tableAlarms.separatorColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     }
-
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        self.tableAlarms.reloadData()
+    }
+    
+    
+    func sendAlarmForEditing(_ alarm: AlarmEntity_CoreData)
+    {
+        // Create the ModifyAlarmVC
+        guard let modifyAlarmVC = storyboard?.instantiateViewController(withIdentifier: ModifyAlarmViewController.STRYBRD_ID) as? ModifyAlarmViewController else {return}
+        
+        // Send the new alarm into to VC
+        modifyAlarmVC.loadAlarm(alarm)
+        
+        // Load the VC
+        present(modifyAlarmVC, animated: true, completion: nil)
+    }
+    
     
     
     @IBAction func onCloseBtnPressed(_ sender: Any) 
@@ -35,23 +55,19 @@ class AlarmListViewController: UIViewController
     @IBAction func onNewAlarmBtnPressed(_ sender: Any) 
     {
         // Create a new alarm object
-//        var newAlarm: AlarmEntity_CoreData!
-//        AlarmService.instance.makeNewAlarmAndSave { (returnedAlarm) in
-//            guard let alarm = returnedAlarm else {print("Alarm creation failed!"); return}
-//            newAlarm = alarm
-//        }
+        var newAlarm: AlarmEntity_CoreData!
+        AlarmService.instance.makeNewAlarmAndSave { (returnedAlarm) in
+            guard let alarm = returnedAlarm else {print("Alarm creation failed!"); return}
+            newAlarm = alarm
+        }
         
-        // Create the ModifyAlarmVC
-        guard let modifyAlarmVC = storyboard?.instantiateViewController(withIdentifier: ModifyAlarmViewController.STRYBRD_ID) as? ModifyAlarmViewController else {return}
-        
-        // Send the new alarm into to VC
-        //modifyAlarmVC.loadAlarm(newAlarm)
-        
-        // Load the VC
-        present(modifyAlarmVC, animated: true, completion: nil)
+        self.sendAlarmForEditing(newAlarm)
     }
     
-
+    
+    
+    
+    
 }
 
 
@@ -77,17 +93,11 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    
-    // Allows table cells to be editable
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) 
     {
-        return true
-    }
-    
-    // No edit icons (unswiped)
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle 
-    {
-        return UITableViewCellEditingStyle.none
+        let alarm = AlarmService.instance.alarms[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: false)
+        self.sendAlarmForEditing(alarm)
     }
     
 }
