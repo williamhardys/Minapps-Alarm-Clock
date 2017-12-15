@@ -14,3 +14,6 @@ Simple Alarm Clock App for iOS
 
  - [Digital Alarm](https://freesound.org/people/Tempouser/sounds/123349/) by Tempouser
  - [modern ringtone tune up fading](https://freesound.org/people/mayanxibalba/sounds/168123/) by mayanxibalba
+ - [Simple ringtone](https://freesound.org/people/TheZero/sounds/273540/) by TheZero
+ - [Perfect Message Ringtone](https://freesound.org/people/xephron/sounds/386453/) by xephron
+ - [trilla 02](https://freesound.org/people/mayanxibalba/sounds/168589/) by mayanxibalba

@@ -269,7 +269,20 @@ class ModifyAlarmViewController: UITableViewController
     
     @IBAction func onDeleteBtnPressed(_ sender: Any) 
     {
+        let alert = UIAlertController(title: "Delete This Alarm?", message: "This cannot be undone.", preferredStyle: .alert)
+        let actionDelete = UIAlertAction(title: "Delete", style: .destructive) { (result) in
+            print("Delete not implemented! TODO")
+            self.dismiss(animated: true, completion: nil)
+        }
         
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (result) in
+            print("Nothing happened")
+        }
+        
+        alert.addAction(actionDelete)
+        alert.addAction(actionCancel)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     
