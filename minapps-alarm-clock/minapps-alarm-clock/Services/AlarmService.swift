@@ -81,4 +81,32 @@ class AlarmService
     }
     
     
+    func deleteAlarmAndSave(_ alarm: AlarmEntity_CoreData, onComplete: @escaping (_ success: Bool) -> Void)
+    {
+        CoreDataService.instance.deleteEntity(ofType: AlarmEntity_CoreData.self, entity: alarm)
+        
+        CoreDataService.instance.saveAllEntities { (success) in
+            if success
+            {
+                self.loadAllAlarms(onComplete: { (areAlarmsLoaded) in
+                    if areAlarmsLoaded
+                    {
+                        onComplete(true)
+                    }
+                    else
+                    {
+                        print("Delete an alarm: failed to reload the list of alarms!")
+                        onComplete(false)
+                    }
+                })
+            }
+            else
+            {
+                print("Deleting an alarm: failed to delete alarm!")
+                onComplete(false)
+            }
+        }
+    }
+    
+    
 }

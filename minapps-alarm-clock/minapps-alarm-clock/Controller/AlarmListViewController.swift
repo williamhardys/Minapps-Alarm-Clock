@@ -20,7 +20,7 @@ class AlarmListViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.tableAlarms.separatorColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        self.tableAlarms.separatorColor = #colorLiteral(red: 0.1219165245, green: 0.1320016853, blue: 0.1466529188, alpha: 1)
     }
     
     override func viewWillAppear(_ animated: Bool)

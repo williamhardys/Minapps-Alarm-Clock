@@ -80,17 +80,20 @@ class ModifyAlarmViewController: UITableViewController
     {
         self.stopAllSounds()
         
-        CoreDataService.instance.saveAllEntities { (success) in
-            if success
-            {
-                print("Alarm was successfully edited")
-            }
-            else
-            {
-                print("Alarm failed to be edited")
+        if self.alarm != nil
+        {
+            CoreDataService.instance.saveAllEntities { (success) in
+                if success
+                {
+                    print("Alarm was successfully edited")
+                }
+                else
+                {
+                    print("Alarm failed to be edited")
+                }
             }
         }
-        
+            
         super.viewWillDisappear(animated)
     }
     
@@ -271,12 +274,24 @@ class ModifyAlarmViewController: UITableViewController
     {
         let alert = UIAlertController(title: "Delete This Alarm?", message: "This cannot be undone.", preferredStyle: .alert)
         let actionDelete = UIAlertAction(title: "Delete", style: .destructive) { (result) in
-            print("Delete not implemented! TODO")
+            
+            // Delete the alarm here!
+            AlarmService.instance.deleteAlarmAndSave(self.alarm, onComplete: { (success) in
+                if success
+                {
+                    self.alarm = nil
+                    print("Alarm was successfully deleted")
+                }
+                else
+                {
+                    print("ERROR: Alarm could not be deleted in a proper way. Alarm will be gone regardless!")
+                }
+            })
+            
             self.dismiss(animated: true, completion: nil)
         }
         
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (result) in
-            print("Nothing happened")
         }
         
         alert.addAction(actionDelete)
