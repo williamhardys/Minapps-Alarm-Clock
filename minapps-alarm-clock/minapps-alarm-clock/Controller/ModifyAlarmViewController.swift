@@ -55,21 +55,34 @@ class ModifyAlarmViewController: UITableViewController
         self.txtFieldAlarmName.text = self.alarm.alarmName
         let tap = UITapGestureRecognizer(target: self, action: #selector(onTap))
         self.view.addGestureRecognizer(tap)
+        
+        self.pickerAlarmSound.selectRow(Int(self.alarm.soundIndex), inComponent: 0, animated: false)
+        
+        self.stepperSnoozeTime.value = self.alarm.snoozeDuration
+        self.lblSnoozeTime.text = "\(Int(self.alarm.snoozeDuration)) min"
+        
+        self.switchSunday.isOn = self.alarm.repeatOnSunday
+        self.switchMonday.isOn = self.alarm.repeatOnMonday
+        self.switchTuesday.isOn = self.alarm.repeatOnTuesday
+        self.switchWednesday.isOn = self.alarm.repeatOnWednesday
+        self.switchThursday.isOn = self.alarm.repeatOnThursday
+        self.switchFriday.isOn = self.alarm.repeatOnFriday
+        self.switchSaturday.isOn = self.alarm.repeatOnSaturday
+        self.switchSnooze.isOn = self.alarm.snoozeEnabled
     }
     
     override func viewWillDisappear(_ animated: Bool) 
     {
-        // Uncomment when ready vvv
-//        CoreDataService.instance.saveAllEntities { (success) in
-//            if success
-//            {
-//                print("Alarm was successfully edited")
-//            }
-//            else
-//            {
-//                print("Alarm failed to be edited")
-//            }
-//        }
+        CoreDataService.instance.saveAllEntities { (success) in
+            if success
+            {
+                print("Alarm was successfully edited")
+            }
+            else
+            {
+                print("Alarm failed to be edited")
+            }
+        }
         
         super.viewWillDisappear(animated)
     }
@@ -183,7 +196,9 @@ class ModifyAlarmViewController: UITableViewController
     
     @IBAction func onSnoozeStepperChanged(_ sender: UIStepper) 
     {
-        
+        let newValue = sender.value
+        self.lblSnoozeTime.text = "\(Int(newValue)) min"
+        self.alarm.snoozeDuration = newValue
     }
     
 }
@@ -212,7 +227,8 @@ extension ModifyAlarmViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     // When the picker selects something
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) 
     {
-        self.alarm.soundName = self.alarmSoundNames[row]
+        self.alarm.soundIndex = Int32(row)
+        self.alarm.soundName = self.alarmSoundFiles[row]
     }
 }
 
