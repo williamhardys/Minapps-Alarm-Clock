@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		51498C2D1FE3305200EC60EA /* AlarmSounds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2C1FE3305200EC60EA /* AlarmSounds.plist */; };
+		51498C321FE3556A00EC60EA /* alarm_simple.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2E1FE3556900EC60EA /* alarm_simple.wav */; };
+		51498C331FE3556A00EC60EA /* alarm_perfect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2F1FE3556900EC60EA /* alarm_perfect.wav */; };
+		51498C341FE3556A00EC60EA /* alarm_fading.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51498C301FE3556900EC60EA /* alarm_fading.wav */; };
+		51498C351FE3556A00EC60EA /* alarm_trilla.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51498C311FE3556A00EC60EA /* alarm_trilla.wav */; };
 		5153C3B21FDAD3AD0037B3C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153C3B11FDAD3AD0037B3C7 /* AppDelegate.swift */; };
 		5153C3B71FDAD3AD0037B3C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3B51FDAD3AD0037B3C7 /* Main.storyboard */; };
 		5153C3B91FDAD3AD0037B3C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5153C3B81FDAD3AD0037B3C7 /* Assets.xcassets */; };
@@ -48,6 +52,10 @@
 
 /* Begin PBXFileReference section */
 		51498C2C1FE3305200EC60EA /* AlarmSounds.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AlarmSounds.plist; sourceTree = "<group>"; };
+		51498C2E1FE3556900EC60EA /* alarm_simple.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_simple.wav; sourceTree = "<group>"; };
+		51498C2F1FE3556900EC60EA /* alarm_perfect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_perfect.wav; sourceTree = "<group>"; };
+		51498C301FE3556900EC60EA /* alarm_fading.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_fading.wav; sourceTree = "<group>"; };
+		51498C311FE3556A00EC60EA /* alarm_trilla.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_trilla.wav; sourceTree = "<group>"; };
 		5153C3AE1FDAD3AD0037B3C7 /* minapps-alarm-clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "minapps-alarm-clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5153C3B11FDAD3AD0037B3C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5153C3B61FDAD3AD0037B3C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -182,6 +190,10 @@
 		5153C3DF1FDC3CED0037B3C7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				51498C301FE3556900EC60EA /* alarm_fading.wav */,
+				51498C2F1FE3556900EC60EA /* alarm_perfect.wav */,
+				51498C2E1FE3556900EC60EA /* alarm_simple.wav */,
+				51498C311FE3556A00EC60EA /* alarm_trilla.wav */,
 				5153C3E01FDC3D040037B3C7 /* alarm_digital.wav */,
 				51498C2C1FE3305200EC60EA /* AlarmSounds.plist */,
 			);
@@ -290,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51498C351FE3556A00EC60EA /* alarm_trilla.wav in Resources */,
 				5185476A1FE0936B002644C9 /* MODENINE.TTF in Resources */,
 				5153C3BC1FDAD3AD0037B3C7 /* LaunchScreen.storyboard in Resources */,
 				5153C3DE1FDB966B0037B3C7 /* Nouveau_IBM.ttf in Resources */,
@@ -297,10 +310,13 @@
 				5153C3E11FDC3D040037B3C7 /* alarm_digital.wav in Resources */,
 				517024381FE0AC2400E8FD6B /* origa___.ttf in Resources */,
 				5153C3FC1FDF03050037B3C7 /* Settings.bundle in Resources */,
+				51498C341FE3556A00EC60EA /* alarm_fading.wav in Resources */,
 				517024341FE0A66000E8FD6B /* speculum.ttf in Resources */,
+				51498C321FE3556A00EC60EA /* alarm_simple.wav in Resources */,
 				51498C2D1FE3305200EC60EA /* AlarmSounds.plist in Resources */,
 				5170243A1FE0ACF700E8FD6B /* ponde___.ttf in Resources */,
 				5153C3B71FDAD3AD0037B3C7 /* Main.storyboard in Resources */,
+				51498C331FE3556A00EC60EA /* alarm_perfect.wav in Resources */,
 				5170242E1FE09A1900E8FD6B /* CallingCode-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

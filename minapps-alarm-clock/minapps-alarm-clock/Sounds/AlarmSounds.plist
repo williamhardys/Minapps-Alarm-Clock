@@ -5,10 +5,18 @@
 	<key>Alarm Sound Names</key>
 	<array>
 		<string>Digital</string>
+		<string>Fading</string>
+		<string>Perfect</string>
+		<string>Simple</string>
+		<string>Trilla</string>
 	</array>
 	<key>Alarm Sound Files</key>
 	<array>
-		<string>alarm_digital.wav</string>
+		<string>alarm_digital</string>
+		<string>alarm_fading</string>
+		<string>alarm_perfect</string>
+		<string>alarm_simple</string>
+		<string>alarm_trilla</string>
 	</array>
 </dict>
 </plist>

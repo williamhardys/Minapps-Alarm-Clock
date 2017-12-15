@@ -13,3 +13,4 @@ Simple Alarm Clock App for iOS
 ### Sound Credits
 
  - [Digital Alarm](https://freesound.org/people/Tempouser/sounds/123349/) by Tempouser
+ - [modern ringtone tune up fading](https://freesound.org/people/mayanxibalba/sounds/168123/) by mayanxibalba

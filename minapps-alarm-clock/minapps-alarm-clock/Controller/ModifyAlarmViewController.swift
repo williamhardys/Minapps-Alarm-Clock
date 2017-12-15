@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class ModifyAlarmViewController: UITableViewController 
 {
@@ -30,7 +31,7 @@ class ModifyAlarmViewController: UITableViewController
     
     
     private var alarm: AlarmEntity_CoreData!
-    
+    private var audioPlayers: [AVAudioPlayer] = []
     
     private var alarmSoundNames: [String] = []
     private var alarmSoundFiles: [String] = []
@@ -73,6 +74,8 @@ class ModifyAlarmViewController: UITableViewController
     
     override func viewWillDisappear(_ animated: Bool) 
     {
+        self.stopAllSounds()
+        
         CoreDataService.instance.saveAllEntities { (success) in
             if success
             {
@@ -120,6 +123,44 @@ class ModifyAlarmViewController: UITableViewController
         {
             self.alarmSoundNames = registry.value(forKey: "Alarm Sound Names") as! [String]
             self.alarmSoundFiles = registry.value(forKey: "Alarm Sound Files") as! [String]
+            
+            for i in 0..<self.alarmSoundNames.count
+            {
+                let audioFilePath = Bundle.main.path(forResource: self.alarmSoundFiles[i], ofType: "wav")
+                
+                if audioFilePath != nil 
+                {
+                    let audioFileUrl = NSURL.fileURL(withPath: audioFilePath!)
+                    
+                    do
+                    {
+                        let audioPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+                        audioPlayer.prepareToPlay()
+                        audioPlayer.numberOfLoops = 0
+                        self.audioPlayers.append(audioPlayer)
+                    }
+                    catch
+                    {
+                        print("ERROR: AudioPlayer for \(self.alarmSoundNames[i]) could not get initialized!")
+                        debugPrint(error.localizedDescription)
+                    }
+                }
+                else 
+                {
+                    print("ERROR: Audio File \(self.alarmSoundNames[i]) was not found!")
+                }
+            }
+        }
+    }
+    
+    
+    private func stopAllSounds()
+    {
+        // Stop all sounds
+        for i in 0 ..< self.audioPlayers.count
+        {
+            self.audioPlayers[i].stop()
+            self.audioPlayers[i].currentTime = 0.0
         }
     }
     
@@ -229,6 +270,11 @@ extension ModifyAlarmViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     {
         self.alarm.soundIndex = Int32(row)
         self.alarm.soundName = self.alarmSoundFiles[row]
+        
+        self.stopAllSounds()
+        
+        // Play only the selected sound
+        self.audioPlayers[row].play()
     }
 }
 
