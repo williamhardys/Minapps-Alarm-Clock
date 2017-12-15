@@ -14,6 +14,9 @@ class AlarmListViewController: UIViewController
     static let STRYBRD_ID = "AlarmsListVC"
     
     @IBOutlet weak var tableAlarms: UITableView!
+    @IBOutlet weak var btnClose: UIButton!
+    @IBOutlet weak var btnAdd: UIButton!
+    
     
     override func viewDidLoad() 
     {
@@ -21,6 +24,9 @@ class AlarmListViewController: UIViewController
         // Do any additional setup after loading the view.
         
         self.tableAlarms.separatorColor = #colorLiteral(red: 0.1219165245, green: 0.1320016853, blue: 0.1466529188, alpha: 1)
+        let themeColor = SettingsService.instance.getColor()
+        self.btnClose.tintColor = themeColor
+        self.btnAdd.tintColor = themeColor
     }
     
     override func viewWillAppear(_ animated: Bool)

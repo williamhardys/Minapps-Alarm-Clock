@@ -29,7 +29,7 @@ class ModifyAlarmViewController: UITableViewController
     @IBOutlet weak var stepperSnoozeTime: UIStepper!
     @IBOutlet weak var lblSnoozeTime: UILabel!
     @IBOutlet weak var lblSnoozeTimeHeader: UILabel!
-    
+    @IBOutlet weak var btnDone: UIButton!
     
     private var alarm: AlarmEntity_CoreData!
     private var audioPlayers: [AVAudioPlayer] = []
@@ -43,6 +43,8 @@ class ModifyAlarmViewController: UITableViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.staticTableAlarmSettings.allowsSelection = false
+        self.staticTableAlarmSettings.separatorColor = #colorLiteral(red: 0.1219165245, green: 0.1320016853, blue: 0.1466529188, alpha: 1)
+        
         self.pickerAlarmSound.delegate = self
         self.pickerAlarmSound.dataSource = self
         self.txtFieldAlarmName.delegate = self
@@ -53,6 +55,7 @@ class ModifyAlarmViewController: UITableViewController
         
         let alarmClockTime = ClockTimeData(withHours: Int(alarm.timeHour24), minutes: Int(alarm.timeMinute), andSeconds: 0)
         self.datePickerAlarmTime.date = alarmClockTime.makeDateObject()
+        self.datePickerAlarmTime.setValue(UIColor.white, forKeyPath: "textColor")
         
         self.switchSunday.isOn = self.alarm.repeatOnSunday
         self.switchMonday.isOn = self.alarm.repeatOnMonday
@@ -67,6 +70,7 @@ class ModifyAlarmViewController: UITableViewController
         self.view.addGestureRecognizer(tap)
         
         self.pickerAlarmSound.selectRow(Int(self.alarm.soundIndex), inComponent: 0, animated: false)
+        //self.pickerAlarmSound.setValue(UIColor.white, forKeyPath: "textColor")
         
         self.switchSnooze.isOn = self.alarm.snoozeEnabled
         self.stepperSnoozeTime.value = self.alarm.snoozeDuration
@@ -107,6 +111,7 @@ class ModifyAlarmViewController: UITableViewController
     
     private func changeSwitchActiveColors(_ color: UIColor)
     {
+        self.btnDone.tintColor = color
         self.switchSunday.onTintColor = color
         self.switchMonday.onTintColor = color
         self.switchTuesday.onTintColor = color
@@ -176,16 +181,16 @@ class ModifyAlarmViewController: UITableViewController
         if isSnoozeEnabled
         {
             self.stepperSnoozeTime.isEnabled = true
-            self.lblSnoozeTimeHeader.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            self.lblSnoozeTime.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            self.lblSnoozeTimeHeader.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            self.lblSnoozeTime.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             self.stepperSnoozeTime.tintColor = SettingsService.instance.getColor()
         }
         else
         {
             self.stepperSnoozeTime.isEnabled = false
-            self.lblSnoozeTimeHeader.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-            self.lblSnoozeTime.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            self.stepperSnoozeTime.tintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            self.lblSnoozeTimeHeader.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            self.lblSnoozeTime.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            self.stepperSnoozeTime.tintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         }
     }
     
@@ -195,6 +200,17 @@ class ModifyAlarmViewController: UITableViewController
     {
         self.view.endEditing(true)
     }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) 
+    {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        
+        header.textLabel?.textColor = UIColor.white
+        header.tintColor = #colorLiteral(red: 0.1499048223, green: 0.1499048223, blue: 0.1499048223, alpha: 1)
+    }
+    
     
     
     @IBAction func onDoneBtnPressed(_ sender: Any) 
@@ -281,14 +297,14 @@ class ModifyAlarmViewController: UITableViewController
                 {
                     self.alarm = nil
                     print("Alarm was successfully deleted")
+                    self.dismiss(animated: true, completion: nil)
                 }
                 else
                 {
                     print("ERROR: Alarm could not be deleted in a proper way. Alarm will be gone regardless!")
+                    self.dismiss(animated: true, completion: nil)
                 }
             })
-            
-            self.dismiss(animated: true, completion: nil)
         }
         
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (result) in
@@ -335,6 +351,12 @@ extension ModifyAlarmViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         
         // Play only the selected sound
         self.audioPlayers[row].play()
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? 
+    {
+        let attributedString = NSAttributedString(string: self.alarmSoundNames[row], attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+        return attributedString
     }
 }
 

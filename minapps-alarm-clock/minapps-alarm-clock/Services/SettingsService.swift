@@ -122,7 +122,7 @@ class SettingsService
     
     func getColor() -> UIColor 
     {
-        var chosenColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        var chosenColor = #colorLiteral(red: 0, green: 0.9914394021, blue: 1, alpha: 1)
         
         let colorCode = _settingsData.integer(forKey: KEY_COLOR)
         
@@ -132,22 +132,22 @@ class SettingsService
             chosenColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
             break
         case 1: // Orange
-            chosenColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+            chosenColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
             break
         case 2: // Yellow
-            chosenColor = #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)
+            chosenColor = #colorLiteral(red: 0.952982206, green: 0.8705216945, blue: 0.01458402639, alpha: 1)
             break
         case 3: // Green
-            chosenColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+            chosenColor = #colorLiteral(red: 0.5563425422, green: 0.9793455005, blue: 0, alpha: 1)
             break
         case 4: // Blue
-            chosenColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
+            chosenColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
             break
         case 5: // Purple
-            chosenColor = #colorLiteral(red: 0.5791940689, green: 0.1280144453, blue: 0.5726861358, alpha: 1)
+            chosenColor = #colorLiteral(red: 0.7321786326, green: 0.3451030194, blue: 1, alpha: 1)
             break
         default:
-            print("SETTINGS ERROR: Invalid Color Code!!! Will default to red color.")
+            print("SETTINGS ERROR: Invalid Color Code!!! Will default to cyan color.")
         }
         
         return chosenColor
