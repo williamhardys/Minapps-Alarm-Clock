@@ -28,6 +28,7 @@ class ModifyAlarmViewController: UITableViewController
     @IBOutlet weak var switchSnooze: UISwitch!
     @IBOutlet weak var stepperSnoozeTime: UIStepper!
     @IBOutlet weak var lblSnoozeTime: UILabel!
+    @IBOutlet weak var lblSnoozeTimeHeader: UILabel!
     
     
     private var alarm: AlarmEntity_CoreData!
@@ -53,15 +54,6 @@ class ModifyAlarmViewController: UITableViewController
         let alarmClockTime = ClockTimeData(withHours: Int(alarm.timeHour24), minutes: Int(alarm.timeMinute), andSeconds: 0)
         self.datePickerAlarmTime.date = alarmClockTime.makeDateObject()
         
-        self.txtFieldAlarmName.text = self.alarm.alarmName
-        let tap = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        self.view.addGestureRecognizer(tap)
-        
-        self.pickerAlarmSound.selectRow(Int(self.alarm.soundIndex), inComponent: 0, animated: false)
-        
-        self.stepperSnoozeTime.value = self.alarm.snoozeDuration
-        self.lblSnoozeTime.text = "\(Int(self.alarm.snoozeDuration)) min"
-        
         self.switchSunday.isOn = self.alarm.repeatOnSunday
         self.switchMonday.isOn = self.alarm.repeatOnMonday
         self.switchTuesday.isOn = self.alarm.repeatOnTuesday
@@ -69,7 +61,19 @@ class ModifyAlarmViewController: UITableViewController
         self.switchThursday.isOn = self.alarm.repeatOnThursday
         self.switchFriday.isOn = self.alarm.repeatOnFriday
         self.switchSaturday.isOn = self.alarm.repeatOnSaturday
+        
+        self.txtFieldAlarmName.text = self.alarm.alarmName
+        let tap = UITapGestureRecognizer(target: self, action: #selector(onTap))
+        self.view.addGestureRecognizer(tap)
+        
+        self.pickerAlarmSound.selectRow(Int(self.alarm.soundIndex), inComponent: 0, animated: false)
+        
         self.switchSnooze.isOn = self.alarm.snoozeEnabled
+        self.stepperSnoozeTime.value = self.alarm.snoozeDuration
+        self.lblSnoozeTime.text = "\(Int(self.alarm.snoozeDuration)) min"
+        self.updateSnoozeSettingUI(isSnoozeEnabled: self.switchSnooze.isOn)
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) 
@@ -164,6 +168,24 @@ class ModifyAlarmViewController: UITableViewController
         }
     }
     
+    private func updateSnoozeSettingUI(isSnoozeEnabled: Bool)
+    {
+        if isSnoozeEnabled
+        {
+            self.stepperSnoozeTime.isEnabled = true
+            self.lblSnoozeTimeHeader.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            self.lblSnoozeTime.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            self.stepperSnoozeTime.tintColor = SettingsService.instance.getColor()
+        }
+        else
+        {
+            self.stepperSnoozeTime.isEnabled = false
+            self.lblSnoozeTimeHeader.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            self.lblSnoozeTime.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            self.stepperSnoozeTime.tintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        }
+    }
+    
     
     @objc
     private func onTap()
@@ -233,6 +255,8 @@ class ModifyAlarmViewController: UITableViewController
     @IBAction func onSnoozeSwitchChanged(_ sender: UISwitch) 
     {
         self.alarm.snoozeEnabled = sender.isOn
+        
+        self.updateSnoozeSettingUI(isSnoozeEnabled: sender.isOn)
     }
     
     @IBAction func onSnoozeStepperChanged(_ sender: UIStepper) 
@@ -241,6 +265,14 @@ class ModifyAlarmViewController: UITableViewController
         self.lblSnoozeTime.text = "\(Int(newValue)) min"
         self.alarm.snoozeDuration = newValue
     }
+    
+    
+    @IBAction func onDeleteBtnPressed(_ sender: Any) 
+    {
+        
+    }
+    
+    
     
 }
 

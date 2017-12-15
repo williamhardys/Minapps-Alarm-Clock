@@ -259,7 +259,7 @@
                                                 <constraint firstItem="Qx5-NX-EYn" firstAttribute="leading" secondItem="8e2-yA-XDt" secondAttribute="leadingMargin" id="xdk-xC-QW9"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="lblAlarmName" destination="c5R-fa-EJj" id="2Hg-sV-Gps"/>
                                             <outlet property="lblAlarmTime" destination="Qx5-NX-EYn" id="BxZ-QK-Be1"/>
@@ -579,7 +579,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alarm" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="F9a-Ue-bY0">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your alarm here" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="F9a-Ue-bY0">
                                                     <rect key="frame" x="16" y="6" width="343" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -687,6 +687,33 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Danger Zone" id="uMI-hd-Jd6">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8TK-sK-KRk">
+                                        <rect key="frame" x="0.0" y="1017" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8TK-sK-KRk" id="erU-ag-BxH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tA9-KR-uZZ">
+                                                    <rect key="frame" x="143" y="6" width="89" height="30"/>
+                                                    <state key="normal" title="Delete Alarm">
+                                                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onDeleteBtnPressed:" destination="Si9-v0-24a" eventType="touchUpInside" id="4TN-XS-Qcz"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tA9-KR-uZZ" firstAttribute="centerX" secondItem="erU-ag-BxH" secondAttribute="centerX" id="e0q-Jz-u6Q"/>
+                                                <constraint firstItem="tA9-KR-uZZ" firstAttribute="centerY" secondItem="erU-ag-BxH" secondAttribute="centerY" id="rmv-sh-IdN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="Si9-v0-24a" id="tXz-V5-whx"/>
@@ -697,6 +724,7 @@
                     <connections>
                         <outlet property="datePickerAlarmTime" destination="0B1-vh-e7N" id="Gkj-JP-7a2"/>
                         <outlet property="lblSnoozeTime" destination="PL6-Bx-tr2" id="gDa-pt-DIg"/>
+                        <outlet property="lblSnoozeTimeHeader" destination="vpM-FZ-eVA" id="6gX-0L-9CG"/>
                         <outlet property="pickerAlarmSound" destination="0Ys-ju-CR8" id="nU1-8k-sHH"/>
                         <outlet property="staticTableAlarmSettings" destination="kgJ-c0-LVP" id="hsd-p6-epc"/>
                         <outlet property="stepperSnoozeTime" destination="D88-cT-3h0" id="jJm-cs-Sc9"/>
