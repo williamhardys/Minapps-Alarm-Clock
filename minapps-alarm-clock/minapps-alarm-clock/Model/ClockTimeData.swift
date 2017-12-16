@@ -171,4 +171,33 @@ struct ClockTimeData
         return "\(trailingHourSpace)\(hourValue)"
     }
     
+    
+    
+    // Operator Overload
+    
+    static func >(left: ClockTimeData, right: ClockTimeData) -> Bool
+    {
+        if left._hoursAbsolute == right._hoursAbsolute
+        {
+            if left._minutes == right._minutes
+            {
+                return left._seconds > right.seconds
+            }
+            else
+            {
+                return left._minutes > right._minutes
+            }
+        }
+        else
+        {
+            return left._hoursAbsolute > right._hoursAbsolute
+        }
+    }
+    
+    static func <=(left: ClockTimeData, right: ClockTimeData) -> Bool
+    {
+        return !(left > right)
+    }
+    
+    
 }

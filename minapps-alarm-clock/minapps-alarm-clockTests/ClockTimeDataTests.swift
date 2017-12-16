@@ -383,4 +383,84 @@ class ClockTimeDataTests: XCTestCase
         XCTAssertEqual(timeData.secondsText, "00")
     }
     
+    
+    func testGreaterThanOperator()
+    {
+        // Left has more hours
+        var leftTime = ClockTimeData(withHours: 9, minutes: 0, andSeconds: 0)
+        var rightTime = ClockTimeData(withHours: 8, minutes: 0, andSeconds: 0)
+        XCTAssertTrue(leftTime > rightTime)
+        
+        // Left has more minutes
+        leftTime.updateTime(withHours: 3, minutes: 9, andSeconds: 0)
+        rightTime.updateTime(withHours: 3, minutes: 8, andSeconds: 0)
+        XCTAssertTrue(leftTime > rightTime)
+        
+        // Left has more seconds
+        leftTime.updateTime(withHours: 3, minutes: 3, andSeconds: 9)
+        rightTime.updateTime(withHours: 3, minutes: 3, andSeconds: 8)
+        XCTAssertTrue(leftTime > rightTime)
+        
+        // Left has more hours and minutes
+        leftTime.updateTime(withHours: 9, minutes: 4, andSeconds: 8)
+        rightTime.updateTime(withHours: 3, minutes: 3, andSeconds: 8)
+        XCTAssertTrue(leftTime > rightTime)
+        
+        // Left has more hours and seconds
+        leftTime.updateTime(withHours: 9, minutes: 3, andSeconds: 9)
+        rightTime.updateTime(withHours: 3, minutes: 3, andSeconds: 8)
+        XCTAssertTrue(leftTime > rightTime)
+        
+        // Left has more minutes and seconds
+        leftTime.updateTime(withHours: 3, minutes: 4, andSeconds: 9)
+        rightTime.updateTime(withHours: 3, minutes: 3, andSeconds: 8)
+        XCTAssertTrue(leftTime > rightTime)
+        
+        // Left has more of everything
+        leftTime.updateTime(withHours: 5, minutes: 4, andSeconds: 9)
+        rightTime.updateTime(withHours: 3, minutes: 3, andSeconds: 8)
+        XCTAssertTrue(leftTime > rightTime)
+        
+        // Left is equal
+        leftTime.updateTime(withHours: 9, minutes: 2, andSeconds: 2)
+        rightTime.updateTime(withHours: 9, minutes: 2, andSeconds: 2)
+        XCTAssertFalse(leftTime > rightTime)
+        
+        // Left has less seconds
+        leftTime.updateTime(withHours: 5, minutes: 5, andSeconds: 2)
+        rightTime.updateTime(withHours: 5, minutes: 5, andSeconds: 5)
+        XCTAssertFalse(leftTime > rightTime)
+        
+        // Left has less minutes
+        leftTime.updateTime(withHours: 5, minutes: 2, andSeconds: 5)
+        rightTime.updateTime(withHours: 5, minutes: 5, andSeconds: 5)
+        XCTAssertFalse(leftTime > rightTime)
+        
+        // Left has less hours
+        leftTime.updateTime(withHours: 2, minutes: 5, andSeconds: 5)
+        rightTime.updateTime(withHours: 5, minutes: 5, andSeconds: 5)
+        XCTAssertFalse(leftTime > rightTime)
+        
+        // Left has less hours and minutes
+        leftTime.updateTime(withHours: 2, minutes: 2, andSeconds: 5)
+        rightTime.updateTime(withHours: 5, minutes: 5, andSeconds: 5)
+        XCTAssertFalse(leftTime > rightTime)
+        
+        // Left has less hours and seconds
+        leftTime.updateTime(withHours: 2, minutes: 5, andSeconds: 2)
+        rightTime.updateTime(withHours: 5, minutes: 5, andSeconds: 5)
+        XCTAssertFalse(leftTime > rightTime)
+        
+        // Left has less minutes and seconds
+        leftTime.updateTime(withHours: 5, minutes: 2, andSeconds: 2)
+        rightTime.updateTime(withHours: 5, minutes: 5, andSeconds: 5)
+        XCTAssertFalse(leftTime > rightTime)
+        
+        // Left has less of everything
+        leftTime.updateTime(withHours: 2, minutes: 2, andSeconds: 2)
+        rightTime.updateTime(withHours: 5, minutes: 5, andSeconds: 5)
+        XCTAssertFalse(leftTime > rightTime)
+    }
+    
+    
 }
