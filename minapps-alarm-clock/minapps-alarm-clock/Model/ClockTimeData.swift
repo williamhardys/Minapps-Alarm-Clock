@@ -199,5 +199,15 @@ struct ClockTimeData
         return !(left > right)
     }
     
+    static func <(left: ClockTimeData, right: ClockTimeData) -> Bool
+    {
+        return right > left
+    }
+    
+    static func >=(left: ClockTimeData, right: ClockTimeData) -> Bool
+    {
+        return !(right > left)
+    }
+    
     
 }
