@@ -67,6 +67,10 @@ class ClockViewController: UIViewController
         NotificationCenter.default.addObserver(self, selector: #selector(onBatteryLevelChanged(_:)), name: .UIDeviceBatteryLevelDidChange, object: nil)
         
         
+        // Get notiifcations for alarm updates
+        NotificationCenter.default.addObserver(self, selector: #selector(updateAlarmInfo), name: AlarmService.NOTIFICATION_ALARMS_UPDATED, object: nil)
+        
+        
         // Setup brightness swipe gestures
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(onSwipeScreen(gesture:)))
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(onSwipeScreen(gesture:)))
@@ -94,6 +98,7 @@ class ClockViewController: UIViewController
         
         self.updateClockFace()
         self.updateBatteryGadge()
+        self.updateAlarmInfo()
     }
     
     
@@ -194,6 +199,32 @@ class ClockViewController: UIViewController
         else
         {
             self.lblDate.isHidden = true
+        }
+    }
+    
+    @objc
+    private func updateAlarmInfo()
+    {
+        if let nextAlarm = AlarmService.instance.nextAlarm
+        {
+            let alarmTime = ClockTimeData(withHours: Int(nextAlarm.timeHour24), minutes: Int(nextAlarm.timeMinute), andSeconds: 0)
+            var textHours = ""
+            var textAmPm = ""
+            if SettingsService.instance.isUsing24HourConvention()
+            {
+                textHours = "\(alarmTime.hours24)"
+            }
+            else
+            {
+                textHours = "\(alarmTime.hours12)"
+                textAmPm = " \(alarmTime.amOrPmText.uppercased())"
+            }
+            
+            self.lblAlarmInfo.text = " \(textHours):\(alarmTime.minutesText)\(textAmPm) - \(nextAlarm.alarmName ?? "Unnamed")"
+        }
+        else
+        {
+            self.lblAlarmInfo.text = " NO ALARMS"
         }
     }
     

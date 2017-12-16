@@ -17,6 +17,7 @@ class AlarmService
     {
     }
     
+    static let NOTIFICATION_ALARMS_UPDATED = Notification.Name("notif_alarms_updated")
     
     var alarms: [AlarmEntity_CoreData] = []
     private(set) public var nextAlarm: AlarmEntity_CoreData? = nil
@@ -132,6 +133,10 @@ class AlarmService
             {
                 closestTime = timeRemaining
                 self.nextAlarm = alarm
+                
+                print("Closer alarm \"\(alarm.alarmName ?? "Unnamed Alarm")\" found:")
+                print("   Date: \(dateAlarm.description(with: Locale.current))")
+                print("   Seconds to Trigger: \(closestTime)")
             }
         }
         
@@ -140,6 +145,7 @@ class AlarmService
         {
             // Schedule next alarm
             self.nextAlarmTimer = Timer.scheduledTimer(timeInterval: closestTime, target: self, selector: #selector(fireAlarm), userInfo: nil, repeats: false)
+            NotificationCenter.default.post(name: AlarmService.NOTIFICATION_ALARMS_UPDATED, object: nil)
             
             print("Next alarm \"\(self.nextAlarm!.alarmName ?? "Unammed Alarm")\" scheduled in \(closestTime) seconds")
         }
