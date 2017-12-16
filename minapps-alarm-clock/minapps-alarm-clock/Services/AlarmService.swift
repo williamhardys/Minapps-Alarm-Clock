@@ -171,7 +171,7 @@ class AlarmService
         print("    Alarm \"\(self.nextAlarm?.alarmName ?? "NIL Alarm")\" was fired off!")
         print(">===========")
         
-        
+        self.determineNextAlarm()
     }
     
 }

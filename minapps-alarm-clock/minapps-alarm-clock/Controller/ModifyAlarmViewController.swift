@@ -97,6 +97,8 @@ class ModifyAlarmViewController: UITableViewController
                 }
             }
         }
+        
+        AlarmService.instance.determineNextAlarm()
             
         super.viewWillDisappear(animated)
     }
