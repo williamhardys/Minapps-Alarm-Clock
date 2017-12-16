@@ -118,17 +118,30 @@ class AlarmService
     {
         self.cancelNextAlarm()
         
-        // TODO: Implement the next alarm algorithm based on the alarm closest to the current time (factoring days of the week)
-        self.nextAlarm = self.alarms.first
+        // Find the alarm closest to the current time
+        // TODO: Factor in the days of the week
+        // TODO: Factor in enabled and disabled alarms
+        var closestTime: TimeInterval = 100_000.0
+        let timeNow = ClockTimeData(withDate: Date())
+        for alarm in self.alarms
+        {
+            let timeAlarm = ClockTimeData(withHours: Int(alarm.timeHour24), minutes: Int(alarm.timeMinute), andSeconds: 0)
+            let dateAlarm = ClockTimeDataUtility.makeFutureDateFrom(target: timeAlarm, with: timeNow)
+            let timeRemaining = dateAlarm.timeIntervalSinceNow
+            if timeRemaining < closestTime
+            {
+                closestTime = timeRemaining
+                self.nextAlarm = alarm
+            }
+        }
         
         
-        if let activeAlarm = self.nextAlarm
+        if self.nextAlarm != nil
         {
             // Schedule next alarm
-            let timeTilAlarmFires = self.determineSecondsTilAlarm(activeAlarm)
-            self.nextAlarmTimer = Timer.scheduledTimer(timeInterval: timeTilAlarmFires, target: self, selector: #selector(fireAlarm), userInfo: nil, repeats: false)
+            self.nextAlarmTimer = Timer.scheduledTimer(timeInterval: closestTime, target: self, selector: #selector(fireAlarm), userInfo: nil, repeats: false)
             
-            print("Next alarm \"\(self.nextAlarm?.alarmName ?? "Unammed Alarm")\" scheduled O")
+            print("Next alarm \"\(self.nextAlarm!.alarmName ?? "Unammed Alarm")\" scheduled in \(closestTime) seconds")
         }
     }
     
@@ -137,7 +150,7 @@ class AlarmService
     {
         if self.nextAlarm != nil && self.nextAlarmTimer != nil
         {
-            print("Next alarm \"\(self.nextAlarm?.alarmName ?? "Unammed Alarm")\" cancelled X")
+            print("Next alarm \"\(self.nextAlarm?.alarmName ?? "Unammed Alarm")\" cancelled")
             self.nextAlarmTimer!.invalidate()
             self.nextAlarmTimer = nil
             self.nextAlarm = nil
@@ -145,19 +158,11 @@ class AlarmService
     }
     
     
-    
-    private func determineSecondsTilAlarm(_ alarm: AlarmEntity_CoreData) -> TimeInterval
-    {
-        // TODO: Calculate, in seconds, the time from now til the active alarm
-        return 10.0
-    }
-    
-    
     @objc
     private func fireAlarm()
     {
         print(">===========")
-        print("    Alarm \"\(self.nextAlarm?.alarmName ?? "Unammed Alarm")\" was fired off!")
+        print("    Alarm \"\(self.nextAlarm?.alarmName ?? "NIL Alarm")\" was fired off!")
         print(">===========")
         
         

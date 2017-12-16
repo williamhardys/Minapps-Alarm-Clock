@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5143C4671FE5CE8400E49514 /* ClockTimeDataUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5143C4661FE5CE8400E49514 /* ClockTimeDataUtility.swift */; };
 		51498C2D1FE3305200EC60EA /* AlarmSounds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2C1FE3305200EC60EA /* AlarmSounds.plist */; };
 		51498C321FE3556A00EC60EA /* alarm_simple.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2E1FE3556900EC60EA /* alarm_simple.wav */; };
 		51498C331FE3556A00EC60EA /* alarm_perfect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2F1FE3556900EC60EA /* alarm_perfect.wav */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5143C4661FE5CE8400E49514 /* ClockTimeDataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTimeDataUtility.swift; sourceTree = "<group>"; };
 		51498C2C1FE3305200EC60EA /* AlarmSounds.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AlarmSounds.plist; sourceTree = "<group>"; };
 		51498C2E1FE3556900EC60EA /* alarm_simple.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_simple.wav; sourceTree = "<group>"; };
 		51498C2F1FE3556900EC60EA /* alarm_perfect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_perfect.wav; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5143C4631FE5797C00E49514 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5143C4661FE5CE8400E49514 /* ClockTimeDataUtility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		5153C3A51FDAD3AC0037B3C7 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +139,7 @@
 			children = (
 				5153C3DF1FDC3CED0037B3C7 /* Sounds */,
 				5153C3D61FDAE0FA0037B3C7 /* Fonts */,
+				5143C4631FE5797C00E49514 /* Utilities */,
 				518547641FDF36AF002644C9 /* Services */,
 				5153C3D31FDAD9CE0037B3C7 /* Model */,
 				517024461FE1D07500E8FD6B /* View */,
@@ -340,6 +351,7 @@
 				517024451FE1BB8B00E8FD6B /* AlarmListViewController.swift in Sources */,
 				517024431FE1AB0900E8FD6B /* AlarmService.swift in Sources */,
 				5153C3E51FDC543C0037B3C7 /* TimeMeridiem.swift in Sources */,
+				5143C4671FE5CE8400E49514 /* ClockTimeDataUtility.swift in Sources */,
 				5170243D1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodeld in Sources */,
 				5153C3E31FDC3DE50037B3C7 /* ClockTimeData.swift in Sources */,
 				5153C3E91FDCA7B20037B3C7 /* ClockDateData.swift in Sources */,
