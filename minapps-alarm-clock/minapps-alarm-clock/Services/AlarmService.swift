@@ -17,10 +17,13 @@ class AlarmService
     {
     }
     
+    
     var alarms: [AlarmEntity_CoreData] = []
+    private(set) public var nextAlarm: AlarmEntity_CoreData? = nil
+    private var nextAlarmTimer: Timer? = nil
     
     
-    // Intentionally does nothing. Used to load in AppDelegate
+    // Used to load in AppDelegate
     func start()
     {
         self.loadAllAlarms { (success) in
@@ -33,6 +36,8 @@ class AlarmService
                 print("ERROR: AlarmService failed to load alarms")
             }
         }
+        
+        //self.determineNextAlarm()
     }
     
     
@@ -108,5 +113,54 @@ class AlarmService
         }
     }
     
+    
+    func determineNextAlarm()
+    {
+        self.cancelNextAlarm()
+        
+        // TODO: Implement the next alarm algorithm based on the alarm closest to the current time (factoring days of the week)
+        self.nextAlarm = self.alarms.first
+        
+        
+        if let activeAlarm = self.nextAlarm
+        {
+            // Schedule next alarm
+            let timeTilAlarmFires = self.determineSecondsTilAlarm(activeAlarm)
+            self.nextAlarmTimer = Timer.scheduledTimer(timeInterval: timeTilAlarmFires, target: self, selector: #selector(fireAlarm), userInfo: nil, repeats: false)
+            
+            print("Next alarm \"\(self.nextAlarm?.alarmName ?? "Unammed Alarm")\" scheduled O")
+        }
+    }
+    
+    
+    func cancelNextAlarm()
+    {
+        if self.nextAlarm != nil && self.nextAlarmTimer != nil
+        {
+            print("Next alarm \"\(self.nextAlarm?.alarmName ?? "Unammed Alarm")\" cancelled X")
+            self.nextAlarmTimer!.invalidate()
+            self.nextAlarmTimer = nil
+            self.nextAlarm = nil
+        }
+    }
+    
+    
+    
+    private func determineSecondsTilAlarm(_ alarm: AlarmEntity_CoreData) -> TimeInterval
+    {
+        // TODO: Calculate, in seconds, the time from now til the active alarm
+        return 10.0
+    }
+    
+    
+    @objc
+    private func fireAlarm()
+    {
+        print(">===========")
+        print("    Alarm \"\(self.nextAlarm?.alarmName ?? "Unammed Alarm")\" was fired off!")
+        print(">===========")
+        
+        
+    }
     
 }
