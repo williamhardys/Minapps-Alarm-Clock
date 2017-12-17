@@ -60,11 +60,12 @@ class AlarmListCell: UITableViewCell
         CoreDataService.instance.saveAllEntities { (success) in
             if success
             {
-                print("Alarm was successfully disabled")
+                print("Alarm was successfully toggled enable/disable")
+                AlarmService.instance.determineNextAlarm()
             }
             else
             {
-                print("Alarm failed to be disabled")
+                print("Alarm failed to be toggle enable/diable")
             }
         }
     }

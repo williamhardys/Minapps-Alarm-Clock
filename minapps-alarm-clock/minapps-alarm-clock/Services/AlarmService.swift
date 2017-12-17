@@ -121,11 +121,16 @@ class AlarmService
         
         // Find the alarm closest to the current time
         // TODO: Factor in the days of the week
-        // TODO: Factor in enabled and disabled alarms
         var closestTime: TimeInterval = 100_000.0
         let timeNow = ClockTimeData(withDate: Date())
         for alarm in self.alarms
         {
+            // Skip if disabled
+            if !alarm.alarmEnabled
+            {
+                continue
+            }
+            
             let timeAlarm = ClockTimeData(withHours: Int(alarm.timeHour24), minutes: Int(alarm.timeMinute), andSeconds: 0)
             let dateAlarm = ClockTimeDataUtility.makeFutureDateFrom(target: timeAlarm, with: timeNow)
             let timeRemaining = dateAlarm.timeIntervalSinceNow
