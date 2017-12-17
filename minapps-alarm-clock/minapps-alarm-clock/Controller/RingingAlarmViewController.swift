@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class RingingAlarmViewController: UIViewController 
 {
@@ -20,7 +21,7 @@ class RingingAlarmViewController: UIViewController
     @IBOutlet weak var lblRingingNowText: UILabel!
     
     private var alarm: AlarmEntity_CoreData!
-    
+    private var audioPlayer: AVAudioPlayer!
     
     
     override func viewDidLoad() 
@@ -52,6 +53,48 @@ class RingingAlarmViewController: UIViewController
         {
             self.btnSnooze.isHidden = true
         }
+        
+        
+        // Load alarm sound
+        let audioFilePath = Bundle.main.path(forResource: self.alarm.soundName, ofType: "wav")
+        
+        if audioFilePath != nil 
+        {
+            let audioFileUrl = NSURL.fileURL(withPath: audioFilePath!)
+            
+            do
+            {
+                self.audioPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+                audioPlayer.prepareToPlay()
+                audioPlayer.numberOfLoops = -1  // Infinite looping sound
+                audioPlayer.volume = 1.0
+            }
+            catch
+            {
+                print("ERROR: AudioPlayer for \(self.alarm.soundName ?? "Undefined sound file") could not get initialized!")
+                debugPrint(error.localizedDescription)
+            }
+        }
+        else 
+        {
+            print("ERROR: Audio File \(self.alarm.soundName ?? "Undefined sound file") was not found!")
+        }
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) 
+    {
+        self.audioPlayer.stop()
+        self.audioPlayer.currentTime = 0.0
+        
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        self.audioPlayer.play()
     }
     
     
@@ -78,15 +121,23 @@ class RingingAlarmViewController: UIViewController
     }
     
     
-    @IBAction func onSnoozeBtnPressed(_ sender: Any) 
+    
+    private func stopAlarm(doSnooze: Bool)
     {
         dismiss(animated: true, completion: nil)
     }
     
     
+    
+    @IBAction func onSnoozeBtnPressed(_ sender: Any) 
+    {
+        self.stopAlarm(doSnooze: true)
+    }
+    
+    
     @IBAction func onStopBtnPressed(_ sender: Any) 
     {
-        dismiss(animated: true, completion: nil)
+        self.stopAlarm(doSnooze: false)
     }
     
     
