@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AlarmListViewController: UIViewController 
+class AlarmListViewController: UIViewController, RingingAlarmLaunchable
 {
     static let STRYBRD_ID = "AlarmsListVC"
     
@@ -58,11 +58,16 @@ class AlarmListViewController: UIViewController
     }
     
     
+    
     @objc
     private func onAlarmFiredOff(_ notification: Notification)
     {
         self.refreshUI()
+        
+        let alarm = notification.userInfo!["Alarm"] as! AlarmEntity_CoreData
+        self.launchAlarm(alarm)
     }
+    
     
     
     @IBAction func onCloseBtnPressed(_ sender: Any) 

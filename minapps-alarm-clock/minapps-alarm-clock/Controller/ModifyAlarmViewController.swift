@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import AVFoundation
 
-class ModifyAlarmViewController: UITableViewController 
+class ModifyAlarmViewController: UITableViewController, RingingAlarmLaunchable
 {
     static let STRYBRD_ID = "ModifyAlarmVC"
     
@@ -77,7 +77,8 @@ class ModifyAlarmViewController: UITableViewController
         self.lblSnoozeTime.text = "\(Int(self.alarm.snoozeDuration)) min"
         self.updateSnoozeSettingUI(isSnoozeEnabled: self.switchSnooze.isOn)
         
-        
+        // Get notified when alarms fire off
+        NotificationCenter.default.addObserver(self, selector: #selector(onAlarmFiredOff(_:)), name: AlarmService.NOTIFICATION_ALARM_FIRED_OFF, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) 
@@ -201,6 +202,14 @@ class ModifyAlarmViewController: UITableViewController
     private func onTap()
     {
         self.view.endEditing(true)
+    }
+    
+    
+    @objc
+    private func onAlarmFiredOff(_ notification: Notification)
+    {
+        let alarm = notification.userInfo!["Alarm"] as! AlarmEntity_CoreData
+        self.launchAlarm(alarm)
     }
     
     

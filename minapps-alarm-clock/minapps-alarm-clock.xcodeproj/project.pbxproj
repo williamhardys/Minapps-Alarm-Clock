@@ -38,6 +38,7 @@
 		517024431FE1AB0900E8FD6B /* AlarmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517024421FE1AB0900E8FD6B /* AlarmService.swift */; };
 		517024451FE1BB8B00E8FD6B /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517024441FE1BB8B00E8FD6B /* AlarmListViewController.swift */; };
 		517024481FE1D0B400E8FD6B /* AlarmListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517024471FE1D0B400E8FD6B /* AlarmListCell.swift */; };
+		51712D6E1FE6BD1D00F5B381 /* RingingAlarmLaunchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51712D6D1FE6BD1D00F5B381 /* RingingAlarmLaunchable.swift */; };
 		518547661FDF36C3002644C9 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518547651FDF36C3002644C9 /* SettingsService.swift */; };
 		5185476A1FE0936B002644C9 /* MODENINE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 518547691FE0936B002644C9 /* MODENINE.TTF */; };
 		519C09711FE1F493000E6A60 /* ModifyAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C09701FE1F493000E6A60 /* ModifyAlarmViewController.swift */; };
@@ -89,6 +90,7 @@
 		517024421FE1AB0900E8FD6B /* AlarmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmService.swift; sourceTree = "<group>"; };
 		517024441FE1BB8B00E8FD6B /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		517024471FE1D0B400E8FD6B /* AlarmListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListCell.swift; sourceTree = "<group>"; };
+		51712D6D1FE6BD1D00F5B381 /* RingingAlarmLaunchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingAlarmLaunchable.swift; sourceTree = "<group>"; };
 		518547651FDF36C3002644C9 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		518547691FE0936B002644C9 /* MODENINE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MODENINE.TTF; sourceTree = "<group>"; };
 		519C09701FE1F493000E6A60 /* ModifyAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyAlarmViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				5153C3DF1FDC3CED0037B3C7 /* Sounds */,
 				5153C3D61FDAE0FA0037B3C7 /* Fonts */,
+				51712D6C1FE6BCE600F5B381 /* Protocols */,
 				5143C4631FE5797C00E49514 /* Utilities */,
 				518547641FDF36AF002644C9 /* Services */,
 				5153C3D31FDAD9CE0037B3C7 /* Model */,
@@ -223,6 +226,14 @@
 				517024471FE1D0B400E8FD6B /* AlarmListCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		51712D6C1FE6BCE600F5B381 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				51712D6D1FE6BD1D00F5B381 /* RingingAlarmLaunchable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		518547641FDF36AF002644C9 /* Services */ = {
@@ -365,6 +376,7 @@
 				5143C46B1FE60DE800E49514 /* RingingAlarmViewController.swift in Sources */,
 				5153C3B21FDAD3AD0037B3C7 /* AppDelegate.swift in Sources */,
 				5153C3D51FDADBCD0037B3C7 /* ClockViewController.swift in Sources */,
+				51712D6E1FE6BD1D00F5B381 /* RingingAlarmLaunchable.swift in Sources */,
 				517024411FE19E8B00E8FD6B /* CoreDataService.swift in Sources */,
 				5170243F1FE18CFF00E8FD6B /* DeviceService.swift in Sources */,
 				517024481FE1D0B400E8FD6B /* AlarmListCell.swift in Sources */,

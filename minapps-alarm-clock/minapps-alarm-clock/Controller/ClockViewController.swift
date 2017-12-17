@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClockViewController: UIViewController 
+class ClockViewController: UIViewController, RingingAlarmLaunchable
 {
     static let MAX_COVER_OPACITY: CGFloat = 0.8
     
@@ -69,6 +69,10 @@ class ClockViewController: UIViewController
         
         // Get notiifcations for alarm updates
         NotificationCenter.default.addObserver(self, selector: #selector(onAlarmsUpdated(_:)), name: AlarmService.NOTIFICATION_ALARMS_UPDATED, object: nil)
+        
+        
+        // Get notification for alarms firing off
+        NotificationCenter.default.addObserver(self, selector: #selector(onAlarmFiredOff(_:)), name: AlarmService.NOTIFICATION_ALARM_FIRED_OFF, object: nil)
         
         
         // Setup brightness swipe gestures
@@ -284,6 +288,14 @@ class ClockViewController: UIViewController
     private func onAlarmsUpdated(_ notification: Notification)
     {
         self.updateAlarmInfo()
+    }
+    
+    
+    @objc
+    private func onAlarmFiredOff(_ notification: Notification)
+    {
+        let alarm = notification.userInfo!["Alarm"] as! AlarmEntity_CoreData
+        self.launchAlarm(alarm)
     }
     
     

@@ -222,7 +222,7 @@ class AlarmService
             })
         }
         
-        NotificationCenter.default.post(name: AlarmService.NOTIFICATION_ALARM_FIRED_OFF, object: nil)
+        NotificationCenter.default.post(name: AlarmService.NOTIFICATION_ALARM_FIRED_OFF, object: nil, userInfo: ["Alarm":currentAlarm])
         
         self.determineNextAlarm()
     }

@@ -46,7 +46,7 @@ class RingingAlarmViewController: UIViewController
         if alarm.snoozeEnabled
         {
             self.btnSnooze.isHidden = false
-            self.btnSnooze.titleLabel!.text = "Snooze (\(Int(self.alarm.snoozeDuration)) min"
+            self.btnSnooze.setTitle("Snooze (\(Int(self.alarm.snoozeDuration)) min)", for: .normal)
         }
         else
         {
