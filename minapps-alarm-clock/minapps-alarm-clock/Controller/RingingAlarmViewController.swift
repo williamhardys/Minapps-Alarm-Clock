@@ -124,6 +124,16 @@ class RingingAlarmViewController: UIViewController
     
     private func stopAlarm(doSnooze: Bool)
     {
+        if doSnooze
+        {
+            // Setup snooze timer
+            AlarmService.instance.scheduleSnooze(forAlarm: self.alarm)
+        }
+        else
+        {
+            AlarmService.instance.cancelSnooze()
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     
