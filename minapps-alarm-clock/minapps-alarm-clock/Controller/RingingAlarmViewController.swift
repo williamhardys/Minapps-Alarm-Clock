@@ -43,7 +43,15 @@ class RingingAlarmViewController: UIViewController
         
         self.lblAlarmName.text = self.alarm.alarmName ?? "Unnamed Alarm"
         
-        self.btnSnooze.titleLabel!.text = "Snooze (\(Int(self.alarm.snoozeDuration)) min"
+        if alarm.snoozeEnabled
+        {
+            self.btnSnooze.isHidden = false
+            self.btnSnooze.titleLabel!.text = "Snooze (\(Int(self.alarm.snoozeDuration)) min"
+        }
+        else
+        {
+            self.btnSnooze.isHidden = true
+        }
     }
     
     

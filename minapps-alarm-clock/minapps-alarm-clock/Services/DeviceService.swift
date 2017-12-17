@@ -14,7 +14,7 @@ class DeviceService
     private init()
     {
         NotificationCenter.default.addObserver(self, selector: #selector(onBatteryStateChanged(_:)), name: .UIDeviceBatteryStateDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onSettingsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onSettingsChanged(_:)), name: UserDefaults.didChangeNotification, object: nil)
     }
     
     
@@ -27,7 +27,7 @@ class DeviceService
     
     
     @objc
-    private func onSettingsChanged()
+    private func onSettingsChanged(_ notification: Notification)
     {
         self.determineAutolockState()
     }

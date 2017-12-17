@@ -56,11 +56,11 @@ class ClockViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         
         // Setup all views based off app settings
-        self.onSettingsChanged()
+        self.updateClockUI()
         
         
         // Setup setting service notification
-        NotificationCenter.default.addObserver(self, selector: #selector(onSettingsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onSettingsChanged(_:)), name: UserDefaults.didChangeNotification, object: nil)
         
         // Setup battery monitoring
         UIDevice.current.isBatteryMonitoringEnabled = true
@@ -68,7 +68,7 @@ class ClockViewController: UIViewController
         
         
         // Get notiifcations for alarm updates
-        NotificationCenter.default.addObserver(self, selector: #selector(updateAlarmInfo), name: AlarmService.NOTIFICATION_ALARMS_UPDATED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onAlarmsUpdated(_:)), name: AlarmService.NOTIFICATION_ALARMS_UPDATED, object: nil)
         
         
         // Setup brightness swipe gestures
@@ -124,6 +124,16 @@ class ClockViewController: UIViewController
     
     
     // Methods
+    
+    
+    private func updateClockUI()
+    {
+        self.setupColor(SettingsService.instance.getColor())
+        self.updateFont(named: SettingsService.instance.getFont())
+        self.updateClockFace()
+        self.updateBatteryGadge()
+        self.updateDisplayBrightness()
+    }
     
     
     private func setupColor(_ newColor: UIColor)
@@ -202,7 +212,6 @@ class ClockViewController: UIViewController
         }
     }
     
-    @objc
     private func updateAlarmInfo()
     {
         if let nextAlarm = AlarmService.instance.nextAlarm
@@ -217,7 +226,7 @@ class ClockViewController: UIViewController
             {
                 alarmTimeString = alarmTime.timeText12WithoutSeconds
             }
-            self.lblAlarmInfo.text = " \(alarmTimeString)"
+            self.lblAlarmInfo.text = " \(alarmTimeString) - \(nextAlarm.alarmName ?? "Unnamed Alarm")"
         }
         else
         {
@@ -272,6 +281,14 @@ class ClockViewController: UIViewController
     
     
     @objc
+    private func onAlarmsUpdated(_ notification: Notification)
+    {
+        self.updateAlarmInfo()
+    }
+    
+    
+    
+    @objc
     private func onBatteryLevelChanged(_ notification: Notification)
     {
         self.updateBatteryGadge()
@@ -280,13 +297,9 @@ class ClockViewController: UIViewController
     
     
     @objc
-    private func onSettingsChanged()
+    private func onSettingsChanged(_ notification: Notification)
     {
-        self.setupColor(SettingsService.instance.getColor())
-        self.updateFont(named: SettingsService.instance.getFont())
-        self.updateClockFace()
-        self.updateBatteryGadge()
-        self.updateDisplayBrightness()
+        self.updateClockUI()
     }
     
     

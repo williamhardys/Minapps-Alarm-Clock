@@ -28,7 +28,7 @@ class AlarmListViewController: UIViewController
         self.btnClose.tintColor = themeColor
         self.btnAdd.tintColor = themeColor
         
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshUI), name: AlarmService.NOTIFICATION_ALARM_FIRED_OFF, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onAlarmFiredOff(_:)), name: AlarmService.NOTIFICATION_ALARM_FIRED_OFF, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -52,10 +52,16 @@ class AlarmListViewController: UIViewController
     }
     
     
-    @objc
     private func refreshUI()
     {
         self.tableAlarms.reloadData()
+    }
+    
+    
+    @objc
+    private func onAlarmFiredOff(_ notification: Notification)
+    {
+        self.refreshUI()
     }
     
     
