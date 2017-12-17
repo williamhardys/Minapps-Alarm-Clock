@@ -49,7 +49,7 @@ class AlarmListCell: UITableViewCell
         
         self.lblAlarmName.text = newAlarm.alarmName ?? "Unnamed Alarm"
         
-        self.switchAlarmEnabled.setOn(newAlarm.alarmEnabled, animated: false)
+        self.switchAlarmEnabled.setOn(newAlarm.alarmEnabled, animated: true)
     }
     
     

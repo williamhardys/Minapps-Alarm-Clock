@@ -18,6 +18,7 @@ class AlarmService
     }
     
     static let NOTIFICATION_ALARMS_UPDATED = Notification.Name("notif_alarms_updated")
+    static let NOTIFICATION_ALARM_FIRED_OFF = Notification.Name("notif_alarm_fired_off")
     
     var alarms: [AlarmEntity_CoreData] = []
     private(set) public var nextAlarm: AlarmEntity_CoreData? = nil
@@ -196,9 +197,32 @@ class AlarmService
     @objc
     private func fireAlarm()
     {
+        guard let currentAlarm = self.nextAlarm else {
+            print("ERROR: Trying to trigger the next alarm, but it's nil!")
+            return
+        }
+        
         print(">===========")
-        print("    Alarm \"\(self.nextAlarm?.alarmName ?? "NIL Alarm")\" was fired off!")
+        print("    Alarm \"\(currentAlarm.alarmName ?? "NIL Alarm")\" was fired off!")
         print(">===========")
+        
+        // Disable this alarm if it has no repeats
+        if AlarmUtility.doesAlarmRepeatNoDays(currentAlarm)
+        {
+            currentAlarm.alarmEnabled = false
+            CoreDataService.instance.saveAllEntities(onComplete: { (success) in
+                if success
+                {
+                    
+                }
+                else
+                {
+                    print("Failed to disable current alarm!")
+                }
+            })
+        }
+        
+        NotificationCenter.default.post(name: AlarmService.NOTIFICATION_ALARM_FIRED_OFF, object: nil)
         
         self.determineNextAlarm()
     }
