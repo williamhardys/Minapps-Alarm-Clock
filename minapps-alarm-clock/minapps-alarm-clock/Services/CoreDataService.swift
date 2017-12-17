@@ -43,7 +43,7 @@ class CoreDataService
         do
         {
             foundEntities = try _managedContext.fetch(fetchRequest)
-            print("Successfully fetched entites of type \(T.self)")
+            //print("Successfully fetched entites of type \(T.self)")
             onComplete(foundEntities)
         }
         catch
@@ -62,7 +62,7 @@ class CoreDataService
             do 
             {
                 try _managedContext.save()
-                print("Core Data successfully saved all entities!")
+                //print("Core Data successfully saved all entities!")
                 onComplete(true)
             }
             catch

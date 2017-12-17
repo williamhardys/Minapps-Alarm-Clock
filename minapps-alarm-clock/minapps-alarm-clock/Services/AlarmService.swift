@@ -30,7 +30,7 @@ class AlarmService
         self.loadAllAlarms { (success) in
             if success
             {
-                print("AlarmService loaded \(self.alarms.count) alarms successfully")
+                //print("AlarmService loaded \(self.alarms.count) alarms successfully")
             }
             else
             {
@@ -122,7 +122,9 @@ class AlarmService
         // Find the alarm closest to the current time
         // TODO: Factor in the days of the week
         var closestTime: TimeInterval = 100_000.0
-        let timeNow = ClockTimeData(withDate: Date())
+        //let dateNow = Date()
+        //let currentWeekday = AlarmUtility.Weekday(rawValue: Calendar.current.component(.weekday, from: dateNow))!
+        let timeNow = ClockTimeData(withDate:  Date())
         for alarm in self.alarms
         {
             // Skip if disabled
@@ -131,8 +133,26 @@ class AlarmService
                 continue
             }
             
+            
+            // Calculate the next time this alarm will trigger
             let timeAlarm = ClockTimeData(withHours: Int(alarm.timeHour24), minutes: Int(alarm.timeMinute), andSeconds: 0)
             let dateAlarm = ClockTimeDataUtility.makeFutureDateFrom(target: timeAlarm, with: timeNow)
+            
+            
+            // Skip if not enabled for current weekday
+            //       Does this alarm only repeat on some days and not others
+            if !(AlarmUtility.doesAlarmRepeatEveryday(alarm) || AlarmUtility.doesAlarmRepeatNoDays(alarm))
+            {
+                // Skip if the alarm doesn't repeat on this weekday
+                let alarmsWeekday = AlarmUtility.Weekday(rawValue: Calendar.current.component(.weekday, from: dateAlarm))!
+                if !(AlarmUtility.doesAlarmRepeat(alarm, on: alarmsWeekday))
+                {
+                    continue
+                }
+            }
+            
+            
+            // Check if this alarm is closer to triggering now than other alarms
             let timeRemaining = dateAlarm.timeIntervalSinceNow
             if timeRemaining < closestTime
             {
@@ -153,6 +173,10 @@ class AlarmService
             NotificationCenter.default.post(name: AlarmService.NOTIFICATION_ALARMS_UPDATED, object: nil)
             
             print("Next alarm \"\(self.nextAlarm!.alarmName ?? "Unammed Alarm")\" scheduled in \(closestTime) seconds")
+        }
+        else
+        {
+            print("No alarms are scheduled X")
         }
     }
     

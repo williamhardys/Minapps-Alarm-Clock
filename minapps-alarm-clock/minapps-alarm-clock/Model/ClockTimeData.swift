@@ -138,15 +138,6 @@ struct ClockTimeData
     }
     
     
-    
-    func makeDateObject() -> Date
-    {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter.date(from: "\(self._hoursAbsolute):\(self._minutes)")!
-    }
-    
-    
     mutating func updateTime(withDate date: Date)
     {
         let cal = Calendar.current

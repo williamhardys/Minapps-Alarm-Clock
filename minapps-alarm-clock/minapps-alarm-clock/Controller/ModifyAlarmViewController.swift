@@ -54,7 +54,7 @@ class ModifyAlarmViewController: UITableViewController
         self.changeSwitchActiveColors( SettingsService.instance.getColor() )
         
         let alarmClockTime = ClockTimeData(withHours: Int(alarm.timeHour24), minutes: Int(alarm.timeMinute), andSeconds: 0)
-        self.datePickerAlarmTime.date = alarmClockTime.makeDateObject()
+        self.datePickerAlarmTime.date = ClockTimeDataUtility.makeDateForTodayFrom(target: alarmClockTime)
         self.datePickerAlarmTime.setValue(UIColor.white, forKeyPath: "textColor")
         
         self.switchSunday.isOn = self.alarm.repeatOnSunday
@@ -89,7 +89,7 @@ class ModifyAlarmViewController: UITableViewController
             CoreDataService.instance.saveAllEntities { (success) in
                 if success
                 {
-                    print("Alarm was successfully edited")
+                    //print("Alarm was successfully edited")
                 }
                 else
                 {
@@ -298,7 +298,7 @@ class ModifyAlarmViewController: UITableViewController
                 if success
                 {
                     self.alarm = nil
-                    print("Alarm was successfully deleted")
+                    //print("Alarm was successfully deleted")
                     self.dismiss(animated: true, completion: nil)
                 }
                 else

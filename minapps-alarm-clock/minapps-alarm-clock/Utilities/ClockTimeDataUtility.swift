@@ -39,6 +39,7 @@ enum ClockTimeDataUtility
         dateData.day = thisDay
         dateData.hour = target.hours24
         dateData.minute = target.minutes
+        dateData.timeZone = TimeZone.current
         dateData.second = 0
         
         // Create date from components        

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5143C4671FE5CE8400E49514 /* ClockTimeDataUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5143C4661FE5CE8400E49514 /* ClockTimeDataUtility.swift */; };
+		5143C4691FE5F21300E49514 /* AlarmUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5143C4681FE5F21300E49514 /* AlarmUtility.swift */; };
 		51498C2D1FE3305200EC60EA /* AlarmSounds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2C1FE3305200EC60EA /* AlarmSounds.plist */; };
 		51498C321FE3556A00EC60EA /* alarm_simple.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2E1FE3556900EC60EA /* alarm_simple.wav */; };
 		51498C331FE3556A00EC60EA /* alarm_perfect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2F1FE3556900EC60EA /* alarm_perfect.wav */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		5143C4661FE5CE8400E49514 /* ClockTimeDataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTimeDataUtility.swift; sourceTree = "<group>"; };
+		5143C4681FE5F21300E49514 /* AlarmUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmUtility.swift; sourceTree = "<group>"; };
 		51498C2C1FE3305200EC60EA /* AlarmSounds.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AlarmSounds.plist; sourceTree = "<group>"; };
 		51498C2E1FE3556900EC60EA /* alarm_simple.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_simple.wav; sourceTree = "<group>"; };
 		51498C2F1FE3556900EC60EA /* alarm_perfect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_perfect.wav; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				5143C4661FE5CE8400E49514 /* ClockTimeDataUtility.swift */,
+				5143C4681FE5F21300E49514 /* AlarmUtility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5143C4691FE5F21300E49514 /* AlarmUtility.swift in Sources */,
 				519C09711FE1F493000E6A60 /* ModifyAlarmViewController.swift in Sources */,
 				518547661FDF36C3002644C9 /* SettingsService.swift in Sources */,
 				517024451FE1BB8B00E8FD6B /* AlarmListViewController.swift in Sources */,
