@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5143C4671FE5CE8400E49514 /* ClockTimeDataUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5143C4661FE5CE8400E49514 /* ClockTimeDataUtility.swift */; };
 		5143C4691FE5F21300E49514 /* AlarmUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5143C4681FE5F21300E49514 /* AlarmUtility.swift */; };
+		5143C46B1FE60DE800E49514 /* RingingAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5143C46A1FE60DE800E49514 /* RingingAlarmViewController.swift */; };
 		51498C2D1FE3305200EC60EA /* AlarmSounds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2C1FE3305200EC60EA /* AlarmSounds.plist */; };
 		51498C321FE3556A00EC60EA /* alarm_simple.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2E1FE3556900EC60EA /* alarm_simple.wav */; };
 		51498C331FE3556A00EC60EA /* alarm_perfect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 51498C2F1FE3556900EC60EA /* alarm_perfect.wav */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		5143C4661FE5CE8400E49514 /* ClockTimeDataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTimeDataUtility.swift; sourceTree = "<group>"; };
 		5143C4681FE5F21300E49514 /* AlarmUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmUtility.swift; sourceTree = "<group>"; };
+		5143C46A1FE60DE800E49514 /* RingingAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingAlarmViewController.swift; sourceTree = "<group>"; };
 		51498C2C1FE3305200EC60EA /* AlarmSounds.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AlarmSounds.plist; sourceTree = "<group>"; };
 		51498C2E1FE3556900EC60EA /* alarm_simple.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_simple.wav; sourceTree = "<group>"; };
 		51498C2F1FE3556900EC60EA /* alarm_perfect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_perfect.wav; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				5153C3D41FDADBCD0037B3C7 /* ClockViewController.swift */,
 				517024441FE1BB8B00E8FD6B /* AlarmListViewController.swift */,
 				519C09701FE1F493000E6A60 /* ModifyAlarmViewController.swift */,
+				5143C46A1FE60DE800E49514 /* RingingAlarmViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				5170243D1FE17B5F00E8FD6B /* minapps_alarm_clock.xcdatamodeld in Sources */,
 				5153C3E31FDC3DE50037B3C7 /* ClockTimeData.swift in Sources */,
 				5153C3E91FDCA7B20037B3C7 /* ClockDateData.swift in Sources */,
+				5143C46B1FE60DE800E49514 /* RingingAlarmViewController.swift in Sources */,
 				5153C3B21FDAD3AD0037B3C7 /* AppDelegate.swift in Sources */,
 				5153C3D51FDADBCD0037B3C7 /* ClockViewController.swift in Sources */,
 				517024411FE19E8B00E8FD6B /* CoreDataService.swift in Sources */,

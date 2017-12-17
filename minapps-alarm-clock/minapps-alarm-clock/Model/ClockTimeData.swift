@@ -108,6 +108,41 @@ struct ClockTimeData
         }
     }
     
+    var timeText24: String
+    {
+        get
+        {
+            return "\(self.hours24):\(self.minutesText):\(self.secondsText)"
+        }
+    }
+    
+    var timeText12: String
+    {
+        get
+        {
+            let textAmPm = " \(self.amOrPmText.uppercased())"
+            
+            return "\(self.hours12):\(self.minutesText):\(self.secondsText)\(textAmPm)"
+        }
+    }
+    
+    var timeText24WithoutSeconds: String
+    {
+        get
+        {
+            return "\(self.hours24):\(self.minutesText)"
+        }
+    }
+    
+    var timeText12WithoutSeconds: String
+    {
+        get
+        {
+            let textAmPm = " \(self.amOrPmText.uppercased())"
+            
+            return "\(self.hours12):\(self.minutesText)\(textAmPm)"
+        }
+    }
     
     
     

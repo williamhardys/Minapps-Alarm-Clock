@@ -206,21 +206,18 @@ class ClockViewController: UIViewController
     private func updateAlarmInfo()
     {
         if let nextAlarm = AlarmService.instance.nextAlarm
-        {
+        {            
             let alarmTime = ClockTimeData(withHours: Int(nextAlarm.timeHour24), minutes: Int(nextAlarm.timeMinute), andSeconds: 0)
-            var textHours = ""
-            var textAmPm = ""
+            var alarmTimeString = ""
             if SettingsService.instance.isUsing24HourConvention()
             {
-                textHours = "\(alarmTime.hours24)"
+                alarmTimeString = alarmTime.timeText24WithoutSeconds
             }
             else
             {
-                textHours = "\(alarmTime.hours12)"
-                textAmPm = " \(alarmTime.amOrPmText.uppercased())"
+                alarmTimeString = alarmTime.timeText12WithoutSeconds
             }
-            
-            self.lblAlarmInfo.text = " \(textHours):\(alarmTime.minutesText)\(textAmPm) - \(nextAlarm.alarmName ?? "Unnamed")"
+            self.lblAlarmInfo.text = " \(alarmTimeString)"
         }
         else
         {
