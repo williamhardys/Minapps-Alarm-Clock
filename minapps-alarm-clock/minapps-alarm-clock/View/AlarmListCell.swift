@@ -31,21 +31,18 @@ class AlarmListCell: UITableViewCell
     func setupCell(withAlarm newAlarm: AlarmEntity_CoreData)
     {
         self.alarm = newAlarm
-        let alarmTime = ClockTimeData(withHours: Int(newAlarm.timeHour24), minutes: Int(newAlarm.timeMinute), andSeconds: 0)
         
-        var hoursText = ""
-        var amOrPmText = ""
+        let alarmTime = ClockTimeData(withHours: Int(newAlarm.timeHour24), minutes: Int(newAlarm.timeMinute), andSeconds: 0)
+        var alarmTimeString = "X"
         if SettingsService.instance.isUsing24HourConvention()
         {
-            hoursText = alarmTime.hoursText24
+            alarmTimeString = alarmTime.timeText24WithoutSeconds
         }
         else
         {
-            hoursText = alarmTime.hoursText12
-            amOrPmText = " \(alarmTime.amOrPmText)"
+            alarmTimeString = alarmTime.timeText12WithoutSeconds
         }
-        
-        self.lblAlarmTime.text = "\(hoursText):\(alarmTime.minutesText)\(amOrPmText)"
+        self.lblAlarmTime.text = alarmTimeString
         
         self.lblAlarmName.text = newAlarm.alarmName ?? "Unnamed Alarm"
         
