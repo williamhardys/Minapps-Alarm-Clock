@@ -200,7 +200,7 @@ class AlarmService
     
     private func calculateNextAlarmAndGetTimeRemaining() -> TimeInterval
     {
-        var closestTime: TimeInterval = 100_000.0
+        var closestTime: TimeInterval = Double.infinity
         
         if self.snoozeMode
         {
@@ -221,7 +221,7 @@ class AlarmService
                 
                 // Calculate the next time this alarm will trigger
                 let timeAlarm = ClockTimeData(withHours: Int(alarm.timeHour24), minutes: Int(alarm.timeMinute), andSeconds: 0)
-                let dateAlarm = ClockTimeDataUtility.makeFutureDateFrom(target: timeAlarm, with: timeNow)
+                var dateAlarm = ClockTimeDataUtility.makeFutureDateFrom(target: timeAlarm, with: timeNow)
                 
                 
                 // Skip if not enabled for current weekday
@@ -232,7 +232,17 @@ class AlarmService
                     let alarmsWeekday = AlarmUtility.Weekday(rawValue: Calendar.current.component(.weekday, from: dateAlarm))!
                     if !(AlarmUtility.doesAlarmRepeat(alarm, on: alarmsWeekday))
                     {
-                        continue
+                        // Check the next closest day of the week for this alarm
+                        let nextEnabledWeekday = self.getNextEnabledWeekday(forAlarm: alarm, startingFrom: alarmsWeekday)
+                        
+                        // Skip if there is no next weekday
+                        if nextEnabledWeekday == nil
+                        {
+                            continue
+                        }
+                        
+                        // Create a new date object for the next day of the week found
+                        dateAlarm = ClockTimeDataUtility.makeDate(from: timeAlarm, forNextWeekday: nextEnabledWeekday!, startingFrom: alarmsWeekday, andTime: timeNow)
                     }
                 }
                 
@@ -253,6 +263,34 @@ class AlarmService
         
         return closestTime
     }
+    
+    
+    private func getNextEnabledWeekday(forAlarm alarm: AlarmEntity_CoreData, startingFrom initialWeekday: AlarmUtility.Weekday) -> AlarmUtility.Weekday?
+    {
+        let initialWeekdayCode = initialWeekday.rawValue
+        var nextWeekday: AlarmUtility.Weekday? = nil
+        
+        for i in 1...6
+        {
+            var nextCode = initialWeekdayCode + i
+            if nextCode != 7
+            {
+                nextCode %= 7
+            }
+            
+            let currentWeekday = AlarmUtility.Weekday(rawValue: nextCode)!
+            if AlarmUtility.doesAlarmRepeat(alarm, on: currentWeekday)
+            {
+                // Found the next enabled weekday
+                nextWeekday = currentWeekday
+                break
+            }
+            
+        }
+        
+        return nextWeekday
+    }
+    
     
     
     
