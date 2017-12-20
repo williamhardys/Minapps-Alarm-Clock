@@ -42,6 +42,7 @@
 		518547661FDF36C3002644C9 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518547651FDF36C3002644C9 /* SettingsService.swift */; };
 		5185476A1FE0936B002644C9 /* MODENINE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 518547691FE0936B002644C9 /* MODENINE.TTF */; };
 		519C09711FE1F493000E6A60 /* ModifyAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C09701FE1F493000E6A60 /* ModifyAlarmViewController.swift */; };
+		51E43D311FEAC4DB00F722FA /* UserNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E43D301FEAC4DB00F722FA /* UserNotificationsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		518547651FDF36C3002644C9 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		518547691FE0936B002644C9 /* MODENINE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MODENINE.TTF; sourceTree = "<group>"; };
 		519C09701FE1F493000E6A60 /* ModifyAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyAlarmViewController.swift; sourceTree = "<group>"; };
+		51E43D301FEAC4DB00F722FA /* UserNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				5170243E1FE18CFF00E8FD6B /* DeviceService.swift */,
 				517024401FE19E8B00E8FD6B /* CoreDataService.swift */,
 				517024421FE1AB0900E8FD6B /* AlarmService.swift */,
+				51E43D301FEAC4DB00F722FA /* UserNotificationsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				5143C4691FE5F21300E49514 /* AlarmUtility.swift in Sources */,
 				519C09711FE1F493000E6A60 /* ModifyAlarmViewController.swift in Sources */,
 				518547661FDF36C3002644C9 /* SettingsService.swift in Sources */,
+				51E43D311FEAC4DB00F722FA /* UserNotificationsService.swift in Sources */,
 				517024451FE1BB8B00E8FD6B /* AlarmListViewController.swift in Sources */,
 				517024431FE1AB0900E8FD6B /* AlarmService.swift in Sources */,
 				5153C3E51FDC543C0037B3C7 /* TimeMeridiem.swift in Sources */,

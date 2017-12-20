@@ -55,6 +55,8 @@ class ClockViewController: UIViewController, RingingAlarmLaunchable
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        UserNotificationsService.instance.authorizeNotifications()
+        
         // Setup all views based off app settings
         self.updateClockUI()
         

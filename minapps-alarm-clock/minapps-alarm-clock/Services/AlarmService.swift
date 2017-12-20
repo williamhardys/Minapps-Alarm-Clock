@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UserNotifications
 
 
 class AlarmService
@@ -19,12 +20,14 @@ class AlarmService
     
     static let NOTIFICATION_ALARMS_UPDATED = Notification.Name("notif_alarms_updated")
     static let NOTIFICATION_ALARM_FIRED_OFF = Notification.Name("notif_alarm_fired_off")
+    static let USER_NOTIF_ID = "userNotification.alarm"
     
     var alarms: [AlarmEntity_CoreData] = []
     private(set) public var nextAlarm: AlarmEntity_CoreData? = nil
     private var nextAlarmTimer: Timer? = nil
     private(set) public var snoozeMode = false
     private var snoozeDate = Date()
+    private var dateAlarm = Date()
     
     
     // Used to load in AppDelegate
@@ -198,6 +201,40 @@ class AlarmService
     
     
     
+    func scheduleAlarmNotification()
+    {
+        self.cancelAlarmNotification()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "\(self.nextAlarm?.alarmName ?? "Unnamed Alarm")"
+        content.body = "This alarm is currently ringing"
+        content.subtitle = "\(self.nextAlarm?.alarmName ?? "Unnamed Alarm")"
+        content.sound = UNNotificationSound(named: "\(self.nextAlarm?.soundName ?? "alarm_digital").wav")
+        
+        
+        var components = DateComponents()
+        components.year = Calendar.current.component(.year, from: self.dateAlarm)
+        components.month = Calendar.current.component(.month, from: self.dateAlarm)
+        components.day = Calendar.current.component(.day, from: self.dateAlarm)
+        components.hour = Calendar.current.component(.hour, from: self.dateAlarm)
+        components.minute = Calendar.current.component(.minute, from: self.dateAlarm)
+        components.second = 0
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: AlarmService.USER_NOTIF_ID, content: content, trigger: trigger)
+        
+        // Send notification
+        UserNotificationsService.instance.scheduleNotification(from: request)
+    }
+    
+    func cancelAlarmNotification()
+    {
+        UserNotificationsService.instance.cancelScheduledNotifications(ofIdentifiers: [AlarmService.USER_NOTIF_ID])
+    }
+    
+    
+    
     private func calculateNextAlarmAndGetTimeRemaining() -> TimeInterval
     {
         var closestTime: TimeInterval = Double.infinity
@@ -221,7 +258,7 @@ class AlarmService
                 
                 // Calculate the next time this alarm will trigger
                 let timeAlarm = ClockTimeData(withHours: Int(alarm.timeHour24), minutes: Int(alarm.timeMinute), andSeconds: 0)
-                var dateAlarm = ClockTimeDataUtility.makeFutureDateFrom(target: timeAlarm, with: timeNow)
+                dateAlarm = ClockTimeDataUtility.makeFutureDateFrom(target: timeAlarm, with: timeNow)
                 
                 
                 // Skip if not enabled for current weekday
