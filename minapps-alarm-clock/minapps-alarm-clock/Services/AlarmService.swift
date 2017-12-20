@@ -208,7 +208,6 @@ class AlarmService
         let content = UNMutableNotificationContent()
         content.title = "\(self.nextAlarm?.alarmName ?? "Unnamed Alarm")"
         content.body = "This alarm is currently ringing"
-        content.subtitle = "\(self.nextAlarm?.alarmName ?? "Unnamed Alarm")"
         content.sound = UNNotificationSound(named: "\(self.nextAlarm?.soundName ?? "alarm_digital").wav")
         
         

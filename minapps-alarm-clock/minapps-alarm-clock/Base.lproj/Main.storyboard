@@ -802,7 +802,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="boN-tP-nxq" userLabel="Stack View - Ringing Now">
-                                <rect key="frame" x="74" y="423.5" width="227" height="38"/>
+                                <rect key="frame" x="74.5" y="423.5" width="227" height="38"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ringing Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="7xf-hm-u5O">
                                         <rect key="frame" x="0.0" y="0.0" width="227" height="38"/>
