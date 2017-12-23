@@ -1,6 +1,14 @@
 # Minapps-Alarm-Clock
 Simple Alarm Clock App for iOS
 
+[Now avaliable on the App Store!](https://itunes.apple.com/us/app/minapps-alarm-clock/id1328048131)
+
+### Screenshots
+
+![Main Screen](screenshot1.png)
+![Alarms List](screenshot2.png)
+![Alarms Option](screenshot3.png)
+
 ### Font Credits
 
  - [Nouveau IBM](https://www.dafont.com/nouveau-ibm.font) by Arto Hatanpää
